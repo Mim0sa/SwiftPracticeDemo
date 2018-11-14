@@ -12,7 +12,7 @@
 		1BED92BB219AAD7300C96CAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BED92B9219AAD7300C96CAF /* Main.storyboard */; };
 		1BED92BD219AAD7500C96CAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BED92BC219AAD7500C96CAF /* Assets.xcassets */; };
 		1BED92C0219AAD7500C96CAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BED92BE219AAD7500C96CAF /* LaunchScreen.storyboard */; };
-		1BED92C8219AD56E00C96CAF /* ContentCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BED92C7219AD56E00C96CAF /* ContentCellView.swift */; };
+		1BED92C8219AD56E00C96CAF /* ScrollViewCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BED92C7219AD56E00C96CAF /* ScrollViewCellView.swift */; };
 		1BED92CA219AF97B00C96CAF /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BED92C9219AF97B00C96CAF /* Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,7 +24,7 @@
 		1BED92BC219AAD7500C96CAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1BED92BF219AAD7500C96CAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1BED92C1219AAD7500C96CAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1BED92C7219AD56E00C96CAF /* ContentCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCellView.swift; sourceTree = "<group>"; };
+		1BED92C7219AD56E00C96CAF /* ScrollViewCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewCellView.swift; sourceTree = "<group>"; };
 		1BED92C9219AF97B00C96CAF /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,8 +60,8 @@
 			children = (
 				1BED92B5219AAD7300C96CAF /* AppDelegate.swift */,
 				1BED92B7219AAD7300C96CAF /* ViewController.swift */,
+				1BED92C7219AD56E00C96CAF /* ScrollViewCellView.swift */,
 				1BED92C9219AF97B00C96CAF /* Extension.swift */,
-				1BED92C7219AD56E00C96CAF /* ContentCellView.swift */,
 				1BED92B9219AAD7300C96CAF /* Main.storyboard */,
 				1BED92BC219AAD7500C96CAF /* Assets.xcassets */,
 				1BED92BE219AAD7500C96CAF /* LaunchScreen.storyboard */,
@@ -141,7 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BED92C8219AD56E00C96CAF /* ContentCellView.swift in Sources */,
+				1BED92C8219AD56E00C96CAF /* ScrollViewCellView.swift in Sources */,
 				1BED92B8219AAD7300C96CAF /* ViewController.swift in Sources */,
 				1BED92B6219AAD7300C96CAF /* AppDelegate.swift in Sources */,
 				1BED92CA219AF97B00C96CAF /* Extension.swift in Sources */,

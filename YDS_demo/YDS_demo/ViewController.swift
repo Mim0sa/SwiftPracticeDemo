@@ -22,60 +22,92 @@ class ViewController: UIViewController {
         headImageView.layer.cornerRadius = 16
         headImageView.layer.masksToBounds = true
         
+        
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(note:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHidden(note:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
     }
     
     //---------------------
     
-    @IBOutlet weak var contentViewOfScrollView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    var contentCellArr:[UIView] = []
     
     var pictureCounter = 0
     
-    @IBOutlet weak var scrollView: UIScrollView!
-    
-    var contentCellArr:[ContentCellView] = []
-    
-    @IBAction func addPicture(_ sender: UIButton) {
+    @IBAction func addPicture() {
+        
         if pictureCounter == 0 {
             //0张图片时直接创建俩个框
-            scrollView.contentSize = CGSize(width: 250, height: 125)
-            contentCellArr.append(createAContentCellView(index: 0))
-            contentViewOfScrollView.addSubview(contentCellArr[0])
-            contentCellArr.append(createAContentCellView(index: 1))//加号cell
-            contentViewOfScrollView.addSubview(contentCellArr[1])
-            
-            pictureCounter += 1
+            UIView.animate(withDuration: 0.5, animations: {
+                self.textView.frame.size.height -= 125
+                self.scrollView.frame.origin.y -= 133//125 + 8
+                self.scrollView.frame.size.height = 133//125 + 8
+            }) { (true) in
+                self.scrollView.contentSize = CGSize(width: 250, height: 125)
+                self.createAContentCellView(index: 0)
+                self.createAButtonCellView(index: 1)
+                
+                self.pictureCounter += 1
+            }
             
         } else if pictureCounter >= 1 && pictureCounter < 8 {
-            //1到7张图片时后面跟着一个加号框
+            //1到7张图片后面跟着一个加号框时
             scrollView.contentSize = CGSize(width: 250 + 125 * pictureCounter, height: 125)
+            
+            contentCellArr[contentCellArr.count - 1].removeFromSuperview()
             contentCellArr.removeLast()
-            contentCellArr.append(createAContentCellView(index: pictureCounter))
-            contentViewOfScrollView.addSubview(contentCellArr[pictureCounter])
-            contentCellArr.append(createAContentCellView(index: pictureCounter + 1))//加号cell
-            contentViewOfScrollView.addSubview(contentCellArr[pictureCounter + 1])
+            
+            createAContentCellView(index: pictureCounter)
+            createAButtonCellView(index: pictureCounter + 1)
+            
+            UIView.animate(withDuration: 0.5) {
+                self.scrollView.contentOffset = CGPoint(x: (self.pictureCounter - 1) * 125, y: 0)
+            }
             
             pictureCounter += 1
-            
+
         } else if pictureCounter == 8{
-            //添加第九张图片，此时数组内有9个cell
-            scrollView.contentSize = CGSize(width: 125 + 125 * pictureCounter, height: 125)
+            //有8张图片，准备添加第九张图片，此时数组内有9个cell
+            scrollView.contentSize = CGSize(width: 125 * 9, height: 125)
+            
+            contentCellArr[contentCellArr.count - 1].removeFromSuperview()
             contentCellArr.removeLast()
-            contentCellArr.append(createAContentCellView(index: pictureCounter))
-            contentViewOfScrollView.addSubview(contentCellArr[pictureCounter])
+            
+            createAContentCellView(index: pictureCounter)
             
             pictureCounter += 1
             
         }
+        
+        print(scrollView.contentOffset)
+        
     }
     
-    func createAContentCellView(index: Int) -> ContentCellView {
-        let contentCellView = ContentCellView(frame: CGRect(x: index * 125, y: 0, width: 125, height: 125))
-        contentCellView.backgroundColor = UIColor.randomColor
-        return contentCellView
+    func createAContentCellView(index: Int){
+        let contentCellView = ContentCellView(frame: CGRect(x: index * 125, y: 0, width: 125, height: 133))
+        contentCellView.imageView.image = UIImage(named: "zebra")
+        
+        contentCellView.deleteBtn.addTarget(self, action: #selector(deleteImage), for: .touchUpInside)
+        
+        contentCellArr.append(contentCellView)
+        contentCellView.tag = 500 + contentCellArr.count - 1
+        scrollView.addSubview(contentCellArr[index])
+    }
+    
+    func createAButtonCellView(index: Int){
+        let btnCellView = ButtonCellView(frame: CGRect(x: index * 125, y: 0, width: 125, height: 133))
+        btnCellView.btnView.setImage(UIImage(named: "add"), for: .normal)
+        btnCellView.btnView.addTarget(self, action: #selector(addPicture), for: .touchUpInside)
+        contentCellArr.append(btnCellView)
+        scrollView.addSubview(contentCellArr[index])
+        
+        
+    }
+    
+    @objc func deleteImage(){
+        print(1)
     }
     
     //--------------------------
@@ -89,9 +121,10 @@ class ViewController: UIViewController {
         let deltaY = keyBoardBounds.size.height
         
         let animations:(() -> Void) = {
-            //键盘的偏移量
+            //键盘弹起动画
             self.bottomView.transform = CGAffineTransform(translationX: 0 , y: -deltaY)
-            
+            self.scrollView.transform = CGAffineTransform(translationX: 0 , y: -deltaY)
+            self.textView.frame.size.height -= deltaY
         }
         
         if duration > 0 {
@@ -105,13 +138,18 @@ class ViewController: UIViewController {
     }
     
     @objc func keyboardWillHidden(note: NSNotification) {
-        let userInfo  = note.userInfo!
+        let userInfo = note.userInfo!
+        let  keyBoardBounds = (userInfo[UIResponder.keyboardFrameEndUserInfoKey]
+            as! NSValue).cgRectValue
         let duration = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey]
             as! NSNumber).doubleValue
+        let deltaY = keyBoardBounds.size.height
         
         let animations:(() -> Void) = {
-            //键盘的偏移量
+            //键盘落下动画
             self.bottomView.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.scrollView.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.textView.frame.size.height += deltaY
         }
         if duration > 0 {
             let options = UIView.AnimationOptions(rawValue: UInt((userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as! NSNumber).intValue << 16))

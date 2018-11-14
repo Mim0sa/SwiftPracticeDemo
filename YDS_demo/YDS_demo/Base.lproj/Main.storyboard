@@ -49,26 +49,26 @@
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aB8-Pm-qGN">
-                                <rect key="frame" x="16" y="73" width="343" height="401"/>
+                                <rect key="frame" x="16" y="73" width="343" height="526"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <string key="text">“但是分院帽把你分到了格莱芬多学院，”邓布利多平静地说道：“听我说，哈利，你碰巧有很多萨拉查·斯莱特林在精心挑选学生的时候非常重视的品质。他本人拥有的罕见的天赋包括蛇佬腔、足智多谋、坚定果断、以及对于规则的漠视，”他补充说道：“但是分院帽还是把你分到了格莱芬多学院。你知道原因是什么吗？想一想。”</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxR-2v-Sz1">
-                                <rect key="frame" x="0.0" y="482" width="375" height="125"/>
+                                <rect key="frame" x="0.0" y="607" width="375" height="0.0"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gFB-ei-o4h">
-                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="125"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" id="Wwx-Dc-FSZ"/>
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="gFB-ei-o4h" firstAttribute="leading" secondItem="bxR-2v-Sz1" secondAttribute="leading" id="1X7-Ah-qHz"/>
-                                    <constraint firstAttribute="height" constant="125" id="Aw9-bi-t30"/>
+                                    <constraint firstAttribute="height" id="Aw9-bi-t30"/>
                                     <constraint firstAttribute="bottom" secondItem="gFB-ei-o4h" secondAttribute="bottom" id="Ucb-aG-xCw"/>
                                     <constraint firstAttribute="trailing" secondItem="gFB-ei-o4h" secondAttribute="trailing" id="Vhy-AF-AY2"/>
                                     <constraint firstItem="gFB-ei-o4h" firstAttribute="centerY" secondItem="bxR-2v-Sz1" secondAttribute="centerY" id="ZiP-ul-vTX"/>
@@ -84,7 +84,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="camera"/>
                                         <connections>
-                                            <action selector="addPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bD9-l9-2Rg"/>
+                                            <action selector="addPicture" destination="BYZ-38-t0r" eventType="touchUpInside" id="8PR-cs-Hz4"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsV-9J-bFS">
@@ -133,7 +133,6 @@
                     </view>
                     <connections>
                         <outlet property="bottomView" destination="9vj-Bd-ekS" id="eNU-EH-PDO"/>
-                        <outlet property="contentViewOfScrollView" destination="gFB-ei-o4h" id="Kgd-8M-TSw"/>
                         <outlet property="headImageView" destination="Ww9-K0-tdk" id="hLL-CF-piS"/>
                         <outlet property="scrollView" destination="bxR-2v-Sz1" id="VZZ-IJ-zBN"/>
                         <outlet property="textView" destination="aB8-Pm-qGN" id="j4O-nR-Xjo"/>
