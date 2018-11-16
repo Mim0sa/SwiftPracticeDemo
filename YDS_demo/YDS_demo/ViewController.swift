@@ -48,8 +48,6 @@ class ViewController: UIViewController {
                 self.scrollView.contentSize = CGSize(width: 250, height: 125)
                 self.createAContentCellView(index: 0)
                 self.createAButtonCellView(index: 1)
-                
-                self.pictureCounter += 1
             }
             
         } else if pictureCounter >= 1 && pictureCounter < 8 {
@@ -65,8 +63,6 @@ class ViewController: UIViewController {
             UIView.animate(withDuration: 0.5) {
                 self.scrollView.contentOffset = CGPoint(x: (self.pictureCounter - 1) * 125, y: 0)
             }
-            
-            pictureCounter += 1
 
         } else if pictureCounter == 8{
             //有8张图片，准备添加第九张图片，此时数组内有9个cell
@@ -76,11 +72,55 @@ class ViewController: UIViewController {
             contentCellArr.removeLast()
             
             createAContentCellView(index: pictureCounter)
-            
-            pictureCounter += 1
+            createAButtonCellView(index: pictureCounter + 1)
             
         }
-        
+        pictureCounter += 1
+    }
+    
+    @objc func deleteImage(sender: UIButton){
+        var targetTag = sender.superview!.superview!.tag - 500
+        contentCellArr[targetTag].removeFromSuperview()
+        if contentCellArr.count == 2 && targetTag == 0 {
+            print(1)
+            //只剩一张照片时删除最后一张
+            UIView.animate(withDuration: 0.5) {
+                self.textView.frame.size.height += 125
+                self.scrollView.frame.origin.y += 133//125 + 8
+                self.scrollView.frame.size.height -= 133//125 + 8
+            }
+            //reset
+            pictureCounter = 0
+            contentCellArr[0].removeFromSuperview()
+            contentCellArr[1].removeFromSuperview()
+            contentCellArr = []
+        } else if contentCellArr.count >= 3 && contentCellArr.count < 10 {
+            //2...9张照片时
+            print(2)
+            targetTag += 1
+            UIView.animate(withDuration: 0.5) {
+                while targetTag <= self.contentCellArr.count - 1 {
+                    self.contentCellArr[targetTag].frame.origin.x -= 125
+                    self.contentCellArr[targetTag].tag -= 1
+                    targetTag += 1
+                }
+                self.scrollView.contentSize.width -= 125
+            }
+            contentCellArr.remove(at: sender.superview!.superview!.tag - 500)
+            pictureCounter -= 1
+        } else if contentCellArr.count == 10 {
+            print(3)
+            targetTag += 1
+            UIView.animate(withDuration: 0.5) {
+                while targetTag <= self.contentCellArr.count - 1 {
+                    self.contentCellArr[targetTag].frame.origin.x -= 125
+                    self.contentCellArr[targetTag].tag -= 1
+                    targetTag += 1
+                }
+            }
+            contentCellArr.remove(at: sender.superview!.superview!.tag - 500)
+            pictureCounter -= 1
+        }
     }
     
     func createAContentCellView(index: Int){
@@ -91,6 +131,7 @@ class ViewController: UIViewController {
         
         contentCellArr.append(contentCellView)
         contentCellView.tag = 500 + contentCellArr.count - 1
+        print("pictureCounter = \(pictureCounter)")
         scrollView.addSubview(contentCellArr[index])
     }
     
@@ -100,37 +141,6 @@ class ViewController: UIViewController {
         btnCellView.btnView.addTarget(self, action: #selector(addPicture), for: .touchUpInside)
         contentCellArr.append(btnCellView)
         scrollView.addSubview(contentCellArr[index])
-        
-        
-    }
-    
-    @objc func deleteImage(sender: UIButton){
-        print(sender.superview!.superview!.tag)//小心
-        var targetTag = sender.superview!.superview!.tag - 500
-        contentCellArr[targetTag].removeFromSuperview()
-        if contentCellArr.count == 2 && targetTag == 0 {
-            //只剩一张照片时删除最后一张
-            UIView.animate(withDuration: 0.5) {
-                self.textView.frame.size.height += 125
-                self.scrollView.frame.origin.y += 133//125 + 8
-                self.scrollView.frame.size.height -= 133//125 + 8
-            }
-            //reset
-            pictureCounter = 0
-            contentCellArr = []
-        } else if contentCellArr.count >= 3 && contentCellArr.count <= 9 {
-            //2...9张照片时
-            UIView.animate(withDuration: 0.5) {
-                targetTag += 1
-                while targetTag <= self.contentCellArr.count - 1 {
-                    self.contentCellArr[targetTag].frame.origin.x -= 125
-                    self.contentCellArr[targetTag].tag -= 1
-                    self.scrollView.contentSize.width -= 125
-                    targetTag += 1
-                }
-            }
-        }
-        contentCellArr.remove(at: sender.superview!.superview!.tag - 500)
     }
     
     //--------------------------

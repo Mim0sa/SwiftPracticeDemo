@@ -43,6 +43,7 @@ class ButtonCellView: UIView {
         
         btnView.layer.cornerRadius = 10
         btnView.layer.masksToBounds = true
+        
         self.addSubview(btnView)
     }
     
