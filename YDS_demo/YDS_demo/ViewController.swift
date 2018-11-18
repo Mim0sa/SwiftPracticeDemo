@@ -89,6 +89,7 @@ class ViewController: UIViewController {
                 self.scrollView.frame.origin.y += 133//125 + 8
                 self.scrollView.frame.size.height -= 133//125 + 8
             }
+            
             //reset
             pictureCounter = 0
             contentCellArr[0].removeFromSuperview()
