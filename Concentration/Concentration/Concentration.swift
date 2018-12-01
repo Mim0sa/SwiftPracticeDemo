@@ -36,12 +36,14 @@ struct Concentration {
         if !cards[index].isMatched {
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
                 //only 1 card face up
+                print("only 1 card face up")
                 if cards[matchIndex] == cards[index]  {
                     cards[matchIndex].isMatched = true
                     cards[index].isMatched = true
                 }
                 cards[index].isFaceUp = true
             } else {
+                print("either no cards or 2 cards face up")
                 //either no cards or 2 cards face up
                 indexOfOneAndOnlyFaceUpCard = index
             }
