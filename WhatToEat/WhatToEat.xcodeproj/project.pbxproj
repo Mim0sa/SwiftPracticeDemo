@@ -12,6 +12,8 @@
 		1BA99E5721BAC08200CE15E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BA99E5521BAC08200CE15E6 /* Main.storyboard */; };
 		1BA99E5921BAC08600CE15E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BA99E5821BAC08600CE15E6 /* Assets.xcassets */; };
 		1BA99E5C21BAC08600CE15E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BA99E5A21BAC08600CE15E6 /* LaunchScreen.storyboard */; };
+		1BA99E6421BBE6ED00CE15E6 /* WhatToEatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA99E6321BBE6ED00CE15E6 /* WhatToEatButton.swift */; };
+		1BA99E6A21BC055F00CE15E6 /* WhatToEatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA99E6921BC055F00CE15E6 /* WhatToEatModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		1BA99E5821BAC08600CE15E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1BA99E5B21BAC08600CE15E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1BA99E5D21BAC08600CE15E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BA99E6321BBE6ED00CE15E6 /* WhatToEatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatToEatButton.swift; sourceTree = "<group>"; };
+		1BA99E6921BC055F00CE15E6 /* WhatToEatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatToEatModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +59,39 @@
 			isa = PBXGroup;
 			children = (
 				1BA99E5121BAC08200CE15E6 /* AppDelegate.swift */,
-				1BA99E5321BAC08200CE15E6 /* ViewController.swift */,
-				1BA99E5521BAC08200CE15E6 /* Main.storyboard */,
-				1BA99E5821BAC08600CE15E6 /* Assets.xcassets */,
-				1BA99E5A21BAC08600CE15E6 /* LaunchScreen.storyboard */,
 				1BA99E5D21BAC08600CE15E6 /* Info.plist */,
+				1BA99E5821BAC08600CE15E6 /* Assets.xcassets */,
+				1BA99E5521BAC08200CE15E6 /* Main.storyboard */,
+				1BA99E5A21BAC08600CE15E6 /* LaunchScreen.storyboard */,
+				1BA99E6821BC050000CE15E6 /* Model */,
+				1BA99E6521BC045D00CE15E6 /* View */,
+				1BA99E6621BC04CD00CE15E6 /* Controller */,
 			);
 			path = WhatToEat;
+			sourceTree = "<group>";
+		};
+		1BA99E6521BC045D00CE15E6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1BA99E6321BBE6ED00CE15E6 /* WhatToEatButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1BA99E6621BC04CD00CE15E6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1BA99E5321BAC08200CE15E6 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1BA99E6821BC050000CE15E6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1BA99E6921BC055F00CE15E6 /* WhatToEatModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +166,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BA99E5421BAC08200CE15E6 /* ViewController.swift in Sources */,
+				1BA99E6A21BC055F00CE15E6 /* WhatToEatModel.swift in Sources */,
+				1BA99E6421BBE6ED00CE15E6 /* WhatToEatButton.swift in Sources */,
 				1BA99E5221BAC08200CE15E6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
