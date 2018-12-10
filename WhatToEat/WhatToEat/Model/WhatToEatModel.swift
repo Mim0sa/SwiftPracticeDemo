@@ -21,7 +21,7 @@ struct WhatToEatModel {
     mutating func getRandomResult() -> String {
         var randomIndex = randomFoodPool.count.arc4random
         if randomIndex == indexOflastResult {
-            randomIndex = randomFoodPool.count - randomIndex
+            randomIndex = randomFoodPool.count + 1 - randomIndex
         }
         indexOflastResult = randomIndex
         print(indexOflastResult!)
