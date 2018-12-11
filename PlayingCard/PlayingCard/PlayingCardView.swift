@@ -10,6 +10,11 @@ import UIKit
 
 class PlayingCardView: UIView {
 
+    private func centeredAttributedString(_ string: String, fontSize: CGFloat) -> NSAttributedString {
+        var font = UIFont.preferredFont(forTextStyle: .body).withSize(fontSize)
+        font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
+    }
+    
     override func draw(_ rect: CGRect) {
         let roundedRect = UIBezierPath(roundedRect: bounds, cornerRadius: 16)
         roundedRect.addClip()
