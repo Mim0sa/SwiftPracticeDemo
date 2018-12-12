@@ -23,11 +23,11 @@ class PlayingCardView: UIView {
     }
     
     private var cornerString: NSAttributedString  {
-        return centeredAttributedString(<#T##string: String##String#>, fontSize: <#T##CGFloat#>)
+        return centeredAttributedString(rankString + "/n" + suit, fontSize: cornerFontSize)
     }
     
     override func draw(_ rect: CGRect) {
-        let roundedRect = UIBezierPath(roundedRect: bounds, cornerRadius: 16)
+        let roundedRect = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius)
         roundedRect.addClip()
         UIColor.white.setFill()
         roundedRect.fill()
