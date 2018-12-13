@@ -27,6 +27,7 @@ class EatWhatViewController: UIViewController {
     
     @IBAction private func touchDown(_ sender: EatWhatButton) {
         sender.setTitle("松手停止", for: .normal)
+        sender.backgroundColor = UIColor.lightGray
         
         eatWhatTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateEatWhatLbl), userInfo: nil, repeats: true)
         eatWhatTimer!.fire()
@@ -37,13 +38,16 @@ class EatWhatViewController: UIViewController {
     }
     
     @IBAction private func touchUpInside(_ sender: EatWhatButton) {
-        sender.setTitle("再来一次", for: .normal)
-        
-        stopEatWhatTimer()
+        touchUp(sender)
     }
     
     @IBAction private func touchUpOutside(_ sender: EatWhatButton) {
+        touchUp(sender)
+    }
+    
+    private func touchUp(_ sender: EatWhatButton){
         sender.setTitle("再来一次", for: .normal)
+        sender.backgroundColor = UIColor.darkGray
         
         stopEatWhatTimer()
     }
