@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B9FAE7E21C92F45007CCDB9 /* CustomizeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9FAE7D21C92F45007CCDB9 /* CustomizeButton.swift */; };
 		1BA99E7A21C1513D00CE15E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA99E7921C1513D00CE15E6 /* AppDelegate.swift */; };
 		1BA99E7C21C1513D00CE15E6 /* EatWhatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA99E7B21C1513D00CE15E6 /* EatWhatViewController.swift */; };
 		1BA99E7F21C1513D00CE15E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BA99E7D21C1513D00CE15E6 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B9FAE7D21C92F45007CCDB9 /* CustomizeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeButton.swift; sourceTree = "<group>"; };
 		1BA99E7621C1513D00CE15E6 /* EatWhat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EatWhat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BA99E7921C1513D00CE15E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BA99E7B21C1513D00CE15E6 /* EatWhatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatWhatViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +41,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B9FAE7F21C93274007CCDB9 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				1BA99E7921C1513D00CE15E6 /* AppDelegate.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		1B9FAE8021C932A0007CCDB9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1BA99E7B21C1513D00CE15E6 /* EatWhatViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1B9FAE8121C932B0007CCDB9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1BA99E8B21C1520300CE15E6 /* EatWhatModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1B9FAE8221C932C5007CCDB9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1BA99E7D21C1513D00CE15E6 /* Main.storyboard */,
+				1B9FAE7D21C92F45007CCDB9 /* CustomizeButton.swift */,
+				1BA99E8D21C1585400CE15E6 /* EatWhatButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		1BA99E6D21C1513D00CE15E6 = {
 			isa = PBXGroup;
 			children = (
@@ -58,11 +94,10 @@
 		1BA99E7821C1513D00CE15E6 /* EatWhat */ = {
 			isa = PBXGroup;
 			children = (
-				1BA99E7921C1513D00CE15E6 /* AppDelegate.swift */,
-				1BA99E7B21C1513D00CE15E6 /* EatWhatViewController.swift */,
-				1BA99E8B21C1520300CE15E6 /* EatWhatModel.swift */,
-				1BA99E8D21C1585400CE15E6 /* EatWhatButton.swift */,
-				1BA99E7D21C1513D00CE15E6 /* Main.storyboard */,
+				1B9FAE7F21C93274007CCDB9 /* SupportingFiles */,
+				1B9FAE8121C932B0007CCDB9 /* Model */,
+				1B9FAE8021C932A0007CCDB9 /* Controller */,
+				1B9FAE8221C932C5007CCDB9 /* View */,
 				1BA99E8021C1514100CE15E6 /* Assets.xcassets */,
 				1BA99E8221C1514100CE15E6 /* LaunchScreen.storyboard */,
 				1BA99E8521C1514100CE15E6 /* Info.plist */,
@@ -141,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B9FAE7E21C92F45007CCDB9 /* CustomizeButton.swift in Sources */,
 				1BA99E8E21C1585400CE15E6 /* EatWhatButton.swift in Sources */,
 				1BA99E7C21C1513D00CE15E6 /* EatWhatViewController.swift in Sources */,
 				1BA99E7A21C1513D00CE15E6 /* AppDelegate.swift in Sources */,

@@ -11,17 +11,17 @@ import UIKit
 class EatWhatViewController: UIViewController {
     
     private var eatWhatPool: [String] =
-        [" 麻辣香锅🥘","麻辣烫","冒菜"," 面条🍝"," 汉堡🍔",
+        [" 麻辣香锅🥘"," 麻辣烫🌶"," 肉蟹煲🦀"," 面条🍝"," 汉堡🍔",
          " 炸鸡🍗"," 馄饨饺子🥟"," 咖喱饭🍛"," 寿司🍣"," 简餐🍱",
-         " 火锅🍲"," 便利店🏪"," 蛋糕🍰"," 汤包生煎"," 披萨🍕",
+         " 火锅🍲"," 便利店🏪"," 蛋糕🍰"," 海鲜🦞"," 披萨🍕",
          " 牛排🥩"," 沙拉🥗"," 三明治🥪"," 烧烤🍺"," 烤肉🍖",
-         " 黄焖鸡米饭🍚","沙县小吃"," 兰州拉面🍜"," 西餐🍸"," 炒菜🍳"]//temporary
+         " 黄焖鸡米饭🍚"," 沙县小吃🥧"," 兰州拉面🍜"," 西餐🍽"," 面包🥐"]//initial
     
     lazy private var eatWhatModel = EatWhatModel(with: eatWhatPool)
 
     @IBOutlet private weak var eatWhatLbl: UILabel!
     
-    private(set) var textForLbl: String = "" { didSet { eatWhatLbl.text = textForLbl } }
+    private(set) var textForLbl: String = "????" { didSet { eatWhatLbl.text = textForLbl } }
     
     private var eatWhatTimer: Timer?
     
@@ -52,7 +52,7 @@ class EatWhatViewController: UIViewController {
         stopEatWhatTimer()
     }
     
-    func stopEatWhatTimer(){
+    private func stopEatWhatTimer(){
         if eatWhatTimer != nil {
             eatWhatTimer!.invalidate()
             eatWhatTimer = nil

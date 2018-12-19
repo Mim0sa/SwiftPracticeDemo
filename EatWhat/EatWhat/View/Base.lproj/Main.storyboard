@@ -35,16 +35,28 @@
                                     <action selector="touchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="BfG-Q1-AFO"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="????" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqN-bi-ozC">
-                                <rect key="frame" x="149" y="245.5" width="77" height="43"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  今天吃什么？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqN-bi-ozC">
+                                <rect key="frame" x="71" y="245.5" width="233" height="43"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
                                 <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cL1-7c-xwf" customClass="CustomizeButton" customModule="EatWhat" customModuleProvider="target">
+                                <rect key="frame" x="315" y="566.5" width="70" height="34"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="TYX-8e-IYI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title=" 自定义"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="cL1-7c-xwf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.75" id="0M9-7e-3M2"/>
+                            <constraint firstItem="cL1-7c-xwf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="10" id="IKt-Nj-NoB"/>
                             <constraint firstItem="dxh-Tq-XFF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cAn-Ng-h8q"/>
+                            <constraint firstItem="cL1-7c-xwf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="g5E-QA-uHd"/>
                             <constraint firstItem="mqN-bi-ozC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jis-iN-iZO"/>
                             <constraint firstItem="mqN-bi-ozC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.8" id="kLZ-2l-cK2"/>
                             <constraint firstItem="dxh-Tq-XFF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.4" id="tLL-Y7-sSi"/>
