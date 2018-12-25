@@ -68,7 +68,6 @@
 		1B9FAE8221C932C5007CCDB9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1BA99E7D21C1513D00CE15E6 /* Main.storyboard */,
 				1B9FAE7D21C92F45007CCDB9 /* CustomizeButton.swift */,
 				1BA99E8D21C1585400CE15E6 /* EatWhatButton.swift */,
 			);
@@ -98,6 +97,7 @@
 				1B9FAE8121C932B0007CCDB9 /* Model */,
 				1B9FAE8021C932A0007CCDB9 /* Controller */,
 				1B9FAE8221C932C5007CCDB9 /* View */,
+				1BA99E7D21C1513D00CE15E6 /* Main.storyboard */,
 				1BA99E8021C1514100CE15E6 /* Assets.xcassets */,
 				1BA99E8221C1514100CE15E6 /* LaunchScreen.storyboard */,
 				1BA99E8521C1514100CE15E6 /* Info.plist */,
