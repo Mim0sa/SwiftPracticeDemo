@@ -22,7 +22,11 @@ class EatWhatViewController: UIViewController {
         sender.setTitle("松手停止", for: .normal)
         sender.backgroundColor = UIColor.lightGray
         
-        eatWhatTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateEatWhatLbl), userInfo: nil, repeats: true)
+        eatWhatTimer = Timer.scheduledTimer(timeInterval: 0.1,
+                                            target: self,
+                                            selector: #selector(updateEatWhatLbl),
+                                            userInfo: nil,
+                                            repeats: true)
         eatWhatTimer!.fire()
     }
     

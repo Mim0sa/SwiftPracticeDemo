@@ -41,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B9B3C2321D66F3700466F91 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				1BA99E8021C1514100CE15E6 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		1B9FAE7F21C93274007CCDB9 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,12 +101,12 @@
 		1BA99E7821C1513D00CE15E6 /* EatWhat */ = {
 			isa = PBXGroup;
 			children = (
+				1B9B3C2321D66F3700466F91 /* Resource */,
 				1B9FAE7F21C93274007CCDB9 /* SupportingFiles */,
 				1B9FAE8121C932B0007CCDB9 /* Model */,
 				1B9FAE8021C932A0007CCDB9 /* Controller */,
 				1B9FAE8221C932C5007CCDB9 /* View */,
 				1BA99E7D21C1513D00CE15E6 /* Main.storyboard */,
-				1BA99E8021C1514100CE15E6 /* Assets.xcassets */,
 				1BA99E8221C1514100CE15E6 /* LaunchScreen.storyboard */,
 				1BA99E8521C1514100CE15E6 /* Info.plist */,
 			);
