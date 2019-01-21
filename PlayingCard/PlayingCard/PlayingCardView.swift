@@ -23,7 +23,7 @@ class PlayingCardView: UIView {
     }
     
     private var cornerString: NSAttributedString  {
-        return centeredAttributedString(rankString + "/n" + suit, fontSize: cornerFontSize)
+        return centeredAttributedString(rankString + "\n" + suit, fontSize: cornerFontSize)
     }
     
     private lazy var upperLeftCornerLabel = createCornerLabel()
@@ -36,8 +36,18 @@ class PlayingCardView: UIView {
         return label
     }
     
+    private func configureCornerLabel(_ label:UILabel) {
+        label.attributedText = cornerString
+        label.frame.size = CGSize.zero
+        label.sizeToFit()
+        label.isHidden = !isFaceUp
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        configureCornerLabel(upperLeftCornerLabel)
+        upperLeftCornerLabel.frame.origin = bounds.origin.offsetBy(dx: cornerOffset, dy: cornerOffset)
         
     }
     
