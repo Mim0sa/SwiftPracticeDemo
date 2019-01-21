@@ -26,6 +26,21 @@ class PlayingCardView: UIView {
         return centeredAttributedString(rankString + "/n" + suit, fontSize: cornerFontSize)
     }
     
+    private lazy var upperLeftCornerLabel = createCornerLabel()
+    private lazy var lowerRightCornerLabel = createCornerLabel()
+        
+    private func createCornerLabel() -> UILabel {
+        let label = UILabel()
+        label.numberOfLines = 0
+        addSubview(label)
+        return label
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+    }
+    
     override func draw(_ rect: CGRect) {
         let roundedRect = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius)
         roundedRect.addClip()
@@ -33,6 +48,8 @@ class PlayingCardView: UIView {
         roundedRect.fill()
     }
 }
+
+
 
 extension PlayingCardView {
     private struct SizeRatio {
