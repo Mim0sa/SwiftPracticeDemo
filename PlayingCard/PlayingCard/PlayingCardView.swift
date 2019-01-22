@@ -49,6 +49,8 @@ class PlayingCardView: UIView {
         configureCornerLabel(upperLeftCornerLabel)
         upperLeftCornerLabel.frame.origin = bounds.origin.offsetBy(dx: cornerOffset, dy: cornerOffset)
         
+        configureCornerLabel(lowerRightCornerLabel)
+        
     }
     
     override func draw(_ rect: CGRect) {
