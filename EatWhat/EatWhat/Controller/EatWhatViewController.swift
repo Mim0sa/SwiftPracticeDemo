@@ -30,17 +30,11 @@ class EatWhatViewController: UIViewController {
         eatWhatTimer!.fire()
     }
     
-    @objc private func updateEatWhatLbl(){
-        textForLbl = eatWhatModel.getRandomResult()
-    }
+    @objc private func updateEatWhatLbl(){ textForLbl = eatWhatModel.getRandomResult() }
     
-    @IBAction private func touchUpInside(_ sender: EatWhatButton) {
-        touchUp(sender)
-    }
+    @IBAction private func touchUpInside(_ sender: EatWhatButton) { touchUp(sender) }
     
-    @IBAction private func touchUpOutside(_ sender: EatWhatButton) {
-        touchUp(sender)
-    }
+    @IBAction private func touchUpOutside(_ sender: EatWhatButton) { touchUp(sender) }
     
     private func touchUp(_ sender: EatWhatButton){
         sender.setTitle("再来一次", for: .normal)
