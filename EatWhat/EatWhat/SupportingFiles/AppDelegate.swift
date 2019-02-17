@@ -27,6 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        let topViewController = getTopViewController() as! EatWhatViewController
+        topViewController.eatWhatBtn.status = .normal
+        topViewController.stopEatWhatTimer()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -41,6 +44,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func getTopViewController() -> UIViewController {
+        var topViewController = UIApplication.shared.delegate!.window!!.rootViewController!
+        while (topViewController.presentedViewController != nil) {
+            topViewController = topViewController.presentedViewController!
+        }
+        return topViewController
+    }
 
 }
 
