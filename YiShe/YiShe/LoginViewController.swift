@@ -9,7 +9,14 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
     
+    let videoBackGroundView = UIView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        videoBackGroundView.backgroundColor = UICOLOR_EEEEEE
+        self.view.addSubview(videoBackGroundView)
+    }
     
 }
