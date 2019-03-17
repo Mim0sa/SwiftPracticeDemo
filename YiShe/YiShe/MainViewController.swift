@@ -11,19 +11,40 @@ import UIKit
 class MainViewController: UIViewController {
     
     typealias FilteringCompletion = ((UIImage?, Error?) -> ())
+    let imagePicker = UIImagePickerController()
     
     let imageView = UIImageView()
+    let applyBtn = UIButton()
+    let pickerBtn = UIButton()
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupUI()
+    }
+    
+    // MARK: - Methods
+    func setupUI() {
         imageView.backgroundColor = UICOLOR_EEEEEE
-        imageView.frame = CGRect(x: view.center.x - 160, y: view.center.y - 120, width: 320, height: 240)
+        imageView.frame = CGRect(x: view.center.x - 160, y: view.center.y - 180, width: 320, height: 240)
         view.addSubview(imageView)
-        
         imageView.image = UIImage(named: "defaultImage")
-
+        imageView.contentMode = .scaleAspectFit
+        
+        applyBtn.backgroundColor = UICOLOR_EEEEEE
+        applyBtn.frame = CGRect(x: view.center.x - 60, y: view.center.y + 150, width: 120, height: 50)
+        view.addSubview(applyBtn)
+        applyBtn.addTarget(self, action: #selector(applyStyleTransfer), for: .touchUpInside)
+        
+        pickerBtn.backgroundColor = UICOLOR_EEEEEE
+        pickerBtn.frame = CGRect(x: view.center.x - 60, y: view.center.y + 80, width: 120, height: 50)
+        view.addSubview(pickerBtn)
+        pickerBtn.addTarget(self, action: #selector(importFromLibrary), for: .touchUpInside)
+    }
+    
+    // MARK: - Targets
+    @objc func applyStyleTransfer() {
         guard let image = imageView.image else { return }
         
         self.process(input: image) { filteredImage, error in
@@ -31,12 +52,22 @@ class MainViewController: UIViewController {
             if let filteredImage = filteredImage {
                 self.imageView.image = filteredImage
             } else if let error = error {
-                //self.showError(error)
+                print(error)
             } else {
-                //self.showError(NSTError.unknown)
+                print(NSTError.unknown)
             }
         }
-        
+    }
+    
+    @objc func importFromLibrary() {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            self.imagePicker.delegate = self
+            self.imagePicker.sourceType = .photoLibrary
+            self.imagePicker.allowsEditing = false
+            self.present(self.imagePicker, animated: true)
+        } else {
+            print("Photo Library not available")
+        }
     }
     
     // MARK: - ProcessTheImage
@@ -92,4 +123,32 @@ class MainViewController: UIViewController {
         }
     }
     
+}
+
+extension MainViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        // Local variable inserted by Swift 4.2 migrator.
+        let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+        
+        if let pickedImage = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage {
+            self.imageView.image = pickedImage
+            self.imageView.backgroundColor = .clear
+        }
+        self.dismiss(animated: true)
+    }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+    return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+    return input.rawValue
 }
