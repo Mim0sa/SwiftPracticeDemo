@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1B1C51F0223D3DA600DD869F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C51EF223D3DA600DD869F /* MainViewController.swift */; };
 		1B1C51F2223D49A600DD869F /* STMuseMLModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C51F1223D49A600DD869F /* STMuseMLModel.mlmodel */; };
+		1B1C51F6223F5AC300DD869F /* STMuseMLModel_linear_8.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C51F5223F5AC300DD869F /* STMuseMLModel_linear_8.mlmodel */; };
 		1BE748D1222FFF8C00DEBCE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE748D0222FFF8C00DEBCE4 /* AppDelegate.swift */; };
 		1BE748D6222FFF8C00DEBCE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BE748D4222FFF8C00DEBCE4 /* Main.storyboard */; };
 		1BE748D8222FFF9000DEBCE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BE748D7222FFF9000DEBCE4 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		1B1C51EF223D3DA600DD869F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1B1C51F1223D49A600DD869F /* STMuseMLModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = STMuseMLModel.mlmodel; sourceTree = "<group>"; };
+		1B1C51F5223F5AC300DD869F /* STMuseMLModel_linear_8.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = STMuseMLModel_linear_8.mlmodel; path = ../../STMuseMLModel_linear_8.mlmodel; sourceTree = "<group>"; };
 		1BE748CD222FFF8C00DEBCE4 /* YiShe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YiShe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BE748D0222FFF8C00DEBCE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BE748D5222FFF8C00DEBCE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				1B1C51EF223D3DA600DD869F /* MainViewController.swift */,
 				1BE748E42230248900DEBCE4 /* Common.swift */,
 				1B1C51F1223D49A600DD869F /* STMuseMLModel.mlmodel */,
+				1B1C51F5223F5AC300DD869F /* STMuseMLModel_linear_8.mlmodel */,
 				1BE748D4222FFF8C00DEBCE4 /* Main.storyboard */,
 				1BE748D7222FFF9000DEBCE4 /* Assets.xcassets */,
 				1BE748D9222FFF9000DEBCE4 /* LaunchScreen.storyboard */,
@@ -148,6 +151,7 @@
 				1BE748E52230248900DEBCE4 /* Common.swift in Sources */,
 				1BE748D1222FFF8C00DEBCE4 /* AppDelegate.swift in Sources */,
 				1B1C51F2223D49A600DD869F /* STMuseMLModel.mlmodel in Sources */,
+				1B1C51F6223F5AC300DD869F /* STMuseMLModel_linear_8.mlmodel in Sources */,
 				1B1C51F0223D3DA600DD869F /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -62,7 +62,7 @@ class MainViewController: UIViewController {
     @objc func importFromLibrary() {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             self.imagePicker.delegate = self
-            self.imagePicker.sourceType = .photoLibrary
+            self.imagePicker.sourceType = .camera
             self.imagePicker.allowsEditing = false
             self.present(self.imagePicker, animated: true)
         } else {
@@ -70,20 +70,22 @@ class MainViewController: UIViewController {
         }
     }
     
+    
     // MARK: - ProcessTheImage
     func process(input: UIImage, completion: @escaping FilteringCompletion) {
         
+        let fixedInput = input.updateImageOrientionUpSide()
         
         let startTime = CFAbsoluteTimeGetCurrent()
         
         // Initialize the NST model
-        let model = STMuseMLModel()
+        let model = STMuseMLModel_linear_8()
         
         // Next steps are pretty heavy, better process them on another thread
         DispatchQueue.global().async {
             
             // 1 - Resize our input image
-            guard let inputImage = input.resize(to: CGSize(width: 480, height: 640)) else {
+            guard let inputImage = fixedInput!.resize(to: CGSize(width: 480, height: 640)) else {
                 completion(nil, NSTError.resizeError)
                 return
             }
@@ -141,6 +143,7 @@ extension MainViewController: UIImagePickerControllerDelegate, UINavigationContr
         }
         self.dismiss(animated: true)
     }
+    
 }
 
 // Helper function inserted by Swift 4.2 migrator.

@@ -19,3 +19,5 @@ import UIKit
 
 let str = "Hello, playground"
 
+setBlue()
+
