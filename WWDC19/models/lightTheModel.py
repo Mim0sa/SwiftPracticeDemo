@@ -25,6 +25,6 @@ def quantize(file, bits, functions):
             quantized_model.save(model_name+"_"+function+"_"+str(bit)+".mlmodel")
 
 # Launch quantization
-quantize("STWaveMLModel.mlmodel", 
+quantize("STPrincessMLModel.mlmodel", 
         [8], 
         ["linear"])
