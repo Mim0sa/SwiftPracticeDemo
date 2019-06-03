@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B01015722A21EBF000DAABB /* ConcentrationThemeChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B01015622A21EBF000DAABB /* ConcentrationThemeChooserViewController.swift */; };
 		1B7A2AA3219EA8DA00C3B7ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7A2AA2219EA8DA00C3B7ED /* AppDelegate.swift */; };
-		1B7A2AA5219EA8DA00C3B7ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7A2AA4219EA8DA00C3B7ED /* ViewController.swift */; };
+		1B7A2AA5219EA8DA00C3B7ED /* ConcentrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7A2AA4219EA8DA00C3B7ED /* ConcentrationViewController.swift */; };
 		1B7A2AA8219EA8DA00C3B7ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B7A2AA6219EA8DA00C3B7ED /* Main.storyboard */; };
 		1B7A2AAA219EA8DC00C3B7ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B7A2AA9219EA8DC00C3B7ED /* Assets.xcassets */; };
 		1B7A2AAD219EA8DC00C3B7ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B7A2AAB219EA8DC00C3B7ED /* LaunchScreen.storyboard */; };
@@ -17,9 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B01015622A21EBF000DAABB /* ConcentrationThemeChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationThemeChooserViewController.swift; sourceTree = "<group>"; };
 		1B7A2A9F219EA8DA00C3B7ED /* Concentration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Concentration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B7A2AA2219EA8DA00C3B7ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1B7A2AA4219EA8DA00C3B7ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1B7A2AA4219EA8DA00C3B7ED /* ConcentrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationViewController.swift; sourceTree = "<group>"; };
 		1B7A2AA7219EA8DA00C3B7ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1B7A2AA9219EA8DC00C3B7ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B7A2AAC219EA8DC00C3B7ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,10 +61,11 @@
 			isa = PBXGroup;
 			children = (
 				1B7A2AA2219EA8DA00C3B7ED /* AppDelegate.swift */,
-				1B7A2AA4219EA8DA00C3B7ED /* ViewController.swift */,
-				1B7A2AA6219EA8DA00C3B7ED /* Main.storyboard */,
+				1B7A2AA4219EA8DA00C3B7ED /* ConcentrationViewController.swift */,
+				1B01015622A21EBF000DAABB /* ConcentrationThemeChooserViewController.swift */,
 				1B7A2AB4219EAEC900C3B7ED /* Concentration.swift */,
 				1B7A2AB6219EB68E00C3B7ED /* Card.swift */,
+				1B7A2AA6219EA8DA00C3B7ED /* Main.storyboard */,
 				1B7A2AA9219EA8DC00C3B7ED /* Assets.xcassets */,
 				1B7A2AAB219EA8DC00C3B7ED /* LaunchScreen.storyboard */,
 				1B7A2AAE219EA8DC00C3B7ED /* Info.plist */,
@@ -102,6 +105,7 @@
 				TargetAttributes = {
 					1B7A2A9E219EA8DA00C3B7ED = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -141,7 +145,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B7A2AA5219EA8DA00C3B7ED /* ViewController.swift in Sources */,
+				1B01015722A21EBF000DAABB /* ConcentrationThemeChooserViewController.swift in Sources */,
+				1B7A2AA5219EA8DA00C3B7ED /* ConcentrationViewController.swift in Sources */,
 				1B7A2AA3219EA8DA00C3B7ED /* AppDelegate.swift in Sources */,
 				1B7A2AB5219EAEC900C3B7ED /* Concentration.swift in Sources */,
 				1B7A2AB7219EB68E00C3B7ED /* Card.swift in Sources */,
@@ -299,7 +304,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mimosa.Concentration;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -317,7 +322,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mimosa.Concentration;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
