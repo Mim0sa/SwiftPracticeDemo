@@ -23,7 +23,7 @@ class EatWhatButton: UIButton {
                 backgroundColor = UIColor.darkGray
                 break
             case .selected:
-                setTitle("再来一次", for: .normal)
+                setTitle("松手停止", for: .normal)
                 backgroundColor = UIColor.lightGray
                 break
             }
