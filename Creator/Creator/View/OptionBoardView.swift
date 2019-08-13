@@ -10,8 +10,37 @@ import UIKit
 
 class OptionBoardView: UIView {
     
-    init(point: CGPoint, height: CGFloat, numberOfOptions: Int) {
-        super.init(frame: CGRect(x: point.x, y: point.y, width: CGFloat(numberOfOptions) * height, height: height))
+    let gap: CGFloat = 20
+    let cornerRadius: CGFloat = 20
+    
+    let options: [Int]
+    let optionsBtnAry: [UIButton] = []
+    
+    init(point: CGPoint, height: CGFloat, options: [Int]) {
+        // initialize
+        self.options = options
+        
+        // super
+        super.init(frame: CGRect(x: point.x, y: point.y, width: CGFloat(options.count) * (height - gap) + gap, height: height))
+        
+        // preference
+        backgroundColor = .init(red: 0, green: 0, blue: 0, alpha: 0.5)
+        layer.cornerRadius = 20
+        
+        // setupUI
+        setupUI()
+    }
+    
+    func setupUI(){
+        for i in 0...options.count - 1 {
+            let btn = UIButton(frame: CGRect(x: gap + CGFloat(i) * (frame.height - gap),
+                                             y: gap,
+                                             width: frame.height - 2 * gap,
+                                             height: frame.height - 2 * gap))
+            btn.backgroundColor = .randomColor
+            btn.layer.cornerRadius = 20
+            addSubview(btn)
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {

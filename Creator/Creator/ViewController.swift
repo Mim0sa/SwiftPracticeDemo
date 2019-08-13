@@ -13,12 +13,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let v = OptionBoardView(point: CGPoint(x: 20, y: 20), height: 100, numberOfOptions: 3)
-        v.backgroundColor = .white
+        let v = OptionBoardView(point: CGPoint(), height: 150, options: [4,1,1,1,2])
+        v.frame = CGRect(x: SCREENWIDTH / 2 - v.frame.width / 2,
+                         y: 20,
+                         width: v.frame.width,
+                         height: v.frame.height)
         view.addSubview(v)
         
-        view.backgroundColor = .orange
-        // Do any additional setup after loading the view.
+        
     }
 
 
