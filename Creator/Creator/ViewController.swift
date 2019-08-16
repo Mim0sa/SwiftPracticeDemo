@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let v = OptionBoardView(point: CGPoint(), height: 150, options: [4,1,1,1,2])
+        let v = OptionBoardView(point: CGPoint(), height: 150, options: [.Start,.Left,.Right,.Down,.Up])
         v.frame = CGRect(x: SCREENWIDTH / 2 - v.frame.width / 2,
                          y: 20,
                          width: v.frame.width,
