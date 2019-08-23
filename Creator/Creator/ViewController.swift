@@ -13,16 +13,32 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let v = OptionBoardView(point: CGPoint(), height: 150, options: [.Start,.Left,.Right,.Down,.Up])
-        v.frame = CGRect(x: SCREENWIDTH / 2 - v.frame.width / 2,
-                         y: 20,
-                         width: v.frame.width,
-                         height: v.frame.height)
-        view.addSubview(v)
+        let p = ProgramBoardView(point: CGPoint(), width: 150, blockNum: 4)
+        p.frame = CGRect(x: SCREENWIDTH - 170,
+                         y: SCREENHEIGHT / 2 - p.frame.height / 2,
+                         width: p.frame.width,
+                         height: p.frame.height)
+        view.addSubview(p)
         
+        let o = OptionBoardView(point: CGPoint(), height: 150, options: [.Start,.Left,.Right,.Down,.Up])
+        o.delegate = self
+        o.frame = CGRect(x: SCREENWIDTH / 2 - o.frame.width / 2,
+                         y: 20,
+                         width: o.frame.width,
+                         height: o.frame.height)
+        view.addSubview(o)
         
     }
 
+}
 
+extension ViewController: OptionBoardViewDelegate {
+    func optionBoardViewDidDrop(optionViewCenter: CGPoint) -> Bool {
+        if optionViewCenter.x < 300 {
+            return true
+        } else {
+            return false
+        }
+    }
 }
 

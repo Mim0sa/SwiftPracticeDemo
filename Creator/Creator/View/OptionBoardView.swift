@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol OptionBoardViewDelegate {
+    func optionBoardViewDidDrop(optionViewCenter: CGPoint) -> Bool
+}
+
 class OptionBoardView: UIView {
     
     let gap: CGFloat = 20
@@ -19,6 +23,8 @@ class OptionBoardView: UIView {
     var panGesture: UIPanGestureRecognizer?
     var currentPanBtnTag: Int?
     let dragView = UIView()
+    
+    var delegate: OptionBoardViewDelegate?
     
     init(point: CGPoint, height: CGFloat, options: [OptionKey]) {
         // initialize
@@ -62,7 +68,6 @@ class OptionBoardView: UIView {
             dragView.frame = recognizer.view!.frame
             addSubview(dragView)
         }
-            
         //拖动过程
         else if recognizer.state == .changed {
             let translation = recognizer.translation(in: self.superview)
@@ -71,20 +76,28 @@ class OptionBoardView: UIView {
                                     width: recognizer.view!.frame.width,
                                     height: recognizer.view!.frame.height)
         }
-            
         //拖动结束
         else if recognizer.state == .ended {
+            didDragStop(recognizer: recognizer)
+        }
+    }
+    
+    func didDragStop(recognizer: UIPanGestureRecognizer) {
+        let optionViewConvertFrame = convert(dragView.frame, to: self.superview)
+        let optionViewCenter = CGPoint(x: optionViewConvertFrame.midX, y: optionViewConvertFrame.midY)
+        // 通过delegate来判断是否接上按钮
+        if delegate?.optionBoardViewDidDrop(optionViewCenter: optionViewCenter) ?? false {
+            self.dragView.removeFromSuperview()
+        } else {
             UIView.animate(withDuration: 0.4, animations: {
                 self.dragView.frame = recognizer.view!.frame
             }) { (isFinished) in
                 self.dragView.removeFromSuperview()
             }
         }
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }

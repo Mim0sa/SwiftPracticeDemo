@@ -14,10 +14,11 @@
 		1B6A987D2301B9CA0032E188 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B6A987B2301B9CA0032E188 /* LaunchScreen.storyboard */; };
 		1B6A98852301BA720032E188 /* OptionBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6A98842301BA720032E188 /* OptionBoardView.swift */; };
 		1B6A98872301BC440032E188 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6A98862301BC440032E188 /* Common.swift */; };
-		1B6A98892301BCA40032E188 /* ReboundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6A98882301BCA40032E188 /* ReboundView.swift */; };
 		1B6A988D2302C72C0032E188 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6A988C2302C72C0032E188 /* Extension+UIColor.swift */; };
 		1B6A98912303E2A30032E188 /* Extension+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6A98902303E2A30032E188 /* Extension+Random.swift */; };
 		1B6A98932303E5150032E188 /* OptionKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6A98922303E5150032E188 /* OptionKey.swift */; };
+		1BA03EBD230EBD4500857E51 /* ProgramBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA03EBC230EBD4500857E51 /* ProgramBoardView.swift */; };
+		1BA03EBF230EE5A400857E51 /* ProgramBoardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA03EBE230EE5A400857E51 /* ProgramBoardTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,10 +31,11 @@
 		1B6A987E2301B9CA0032E188 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B6A98842301BA720032E188 /* OptionBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionBoardView.swift; sourceTree = "<group>"; };
 		1B6A98862301BC440032E188 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
-		1B6A98882301BCA40032E188 /* ReboundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReboundView.swift; sourceTree = "<group>"; };
 		1B6A988C2302C72C0032E188 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
 		1B6A98902303E2A30032E188 /* Extension+Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Random.swift"; sourceTree = "<group>"; };
 		1B6A98922303E5150032E188 /* OptionKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionKey.swift; sourceTree = "<group>"; };
+		1BA03EBC230EBD4500857E51 /* ProgramBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramBoardView.swift; sourceTree = "<group>"; };
+		1BA03EBE230EE5A400857E51 /* ProgramBoardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramBoardTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,8 +83,9 @@
 			isa = PBXGroup;
 			children = (
 				1B6A98842301BA720032E188 /* OptionBoardView.swift */,
+				1BA03EBC230EBD4500857E51 /* ProgramBoardView.swift */,
+				1BA03EBE230EE5A400857E51 /* ProgramBoardTableViewCell.swift */,
 				1B6A98922303E5150032E188 /* OptionKey.swift */,
-				1B6A98882301BCA40032E188 /* ReboundView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -172,8 +175,9 @@
 				1B6A98872301BC440032E188 /* Common.swift in Sources */,
 				1B6A98752301B9C90032E188 /* ViewController.swift in Sources */,
 				1B6A98852301BA720032E188 /* OptionBoardView.swift in Sources */,
-				1B6A98892301BCA40032E188 /* ReboundView.swift in Sources */,
 				1B6A98932303E5150032E188 /* OptionKey.swift in Sources */,
+				1BA03EBF230EE5A400857E51 /* ProgramBoardTableViewCell.swift in Sources */,
+				1BA03EBD230EBD4500857E51 /* ProgramBoardView.swift in Sources */,
 				1B6A98912303E2A30032E188 /* Extension+Random.swift in Sources */,
 				1B6A98732301B9C90032E188 /* AppDelegate.swift in Sources */,
 				1B6A988D2302C72C0032E188 /* Extension+UIColor.swift in Sources */,
