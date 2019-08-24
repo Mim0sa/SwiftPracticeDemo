@@ -26,7 +26,7 @@ class ProgramBoardView: UIView {
         super.init(frame: CGRect(x: point.x, y: point.y, width: width, height: 5 * (width - gap) + gap))
         
         // preference
-        backgroundColor = .init(red: 0, green: 0, blue: 0, alpha: 0.3)
+        backgroundColor = .init(red: 0, green: 0, blue: 0, alpha: 0.2)
         layer.cornerRadius = cornerRadius
         
         //setupUI
@@ -36,9 +36,13 @@ class ProgramBoardView: UIView {
     func setupUI(){
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: frame.width, height: 100))
         headerView.backgroundColor = .clear
+        let headerViewImageView = UIImageView(frame: CGRect(x: 20, y: 20, width: frame.width - 40, height: 100 - 20))
+        headerViewImageView.backgroundColor = .orange
+        headerViewImageView.layer.cornerRadius = cornerRadius
+        headerView.addSubview(headerViewImageView)
         
         tableView.frame = CGRect(x: 0, y: gap, width: frame.width, height: frame.height - 2 * gap)
-        tableView.backgroundColor = .clear
+        tableView.backgroundColor = .lightGray
         tableView.separatorStyle = .none
         tableView.tableHeaderView = headerView
         tableView.showsVerticalScrollIndicator = false
@@ -47,6 +51,8 @@ class ProgramBoardView: UIView {
         tableView.dataSource = self
         tableView.register(ProgramBoardTableViewCell.self, forCellReuseIdentifier: cellID)
         addSubview(tableView)
+        
+        tableView.visibleCells
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -67,6 +73,6 @@ extension ProgramBoardView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 130
     }
 }
