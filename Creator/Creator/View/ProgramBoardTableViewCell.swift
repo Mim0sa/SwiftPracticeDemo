@@ -16,14 +16,17 @@ class ProgramBoardTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         selectionStyle = .none
+        isUserInteractionEnabled = true
+        backgroundColor = .clear
+//        separatorInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         
         setupUI()
     }
     
     func setupUI(){
         blockBtn.frame = CGRect(x: 20, y: 20, width: 150 - 40, height: 150 - 40)
-        blockBtn.backgroundColor = .init(red: 0, green: 0, blue: 0, alpha: 0.2)
         blockBtn.layer.cornerRadius = 20
+        blockBtn.clipsToBounds = true
         addSubview(blockBtn)
     }
     

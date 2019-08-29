@@ -7,11 +7,12 @@
 //
 
 import Foundation
+import UIKit
 
-enum OptionKey: Int {
-    case Start
-    case Left
-    case Right
-    case Up
-    case Down
+enum OptionKey: String {
+    case Null = "OptionKey_Null"
+    case Left = "OptionKey_Left"
+    case Right = "OptionKey_Right"
+    case Up = "OptionKey_Up"
+    case Down = "OptionKey_Down"
 }

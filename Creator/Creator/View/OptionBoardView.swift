@@ -9,7 +9,7 @@
 import UIKit
 
 protocol OptionBoardViewDelegate {
-    func optionBoardViewDidDrop(optionViewCenter: CGPoint) -> Bool
+    func optionBoardViewDidDrop(optionViewCenter: CGPoint, optionViewKey: OptionKey) -> Bool
 }
 
 class OptionBoardView: UIView {
@@ -22,7 +22,7 @@ class OptionBoardView: UIView {
     
     var panGesture: UIPanGestureRecognizer?
     var currentPanBtnTag: Int?
-    let dragView = UIView()
+    let dragView = UIImageView()
     
     var delegate: OptionBoardViewDelegate?
     
@@ -48,24 +48,26 @@ class OptionBoardView: UIView {
                                              y: gap,
                                              width: frame.height - 2 * gap,
                                              height: frame.height - 2 * gap))
-            btn.backgroundColor = .randomColor
+            btn.setImage(UIImage(named: options[i].rawValue), for: .normal)
             btn.layer.cornerRadius = cornerRadius
+            btn.clipsToBounds = true
             addSubview(btn)
             
-            btn.tag = 100 + options[i].rawValue
             panGesture = UIPanGestureRecognizer(target: self, action: #selector(pan(recognizer:)))
             btn.addGestureRecognizer(panGesture!)
         }
         
         //dragView
-        dragView.backgroundColor = .randomColor
         dragView.layer.cornerRadius = cornerRadius
+        dragView.clipsToBounds = true
     }
     
     @objc func pan(recognizer: UIPanGestureRecognizer){
         //拖动开始
         if recognizer.state == .began {
-            dragView.frame = recognizer.view!.frame
+            let btn = recognizer.view as! UIButton
+            dragView.frame = btn.frame
+            dragView.image = btn.image(for: .normal)
             addSubview(dragView)
         }
         //拖动过程
@@ -86,7 +88,7 @@ class OptionBoardView: UIView {
         let optionViewConvertFrame = convert(dragView.frame, to: self.superview)
         let optionViewCenter = CGPoint(x: optionViewConvertFrame.midX, y: optionViewConvertFrame.midY)
         // 通过delegate来判断是否接上按钮
-        if delegate?.optionBoardViewDidDrop(optionViewCenter: optionViewCenter) ?? false {
+        if delegate?.optionBoardViewDidDrop(optionViewCenter: optionViewCenter, optionViewKey: .Right) ?? false {
             self.dragView.removeFromSuperview()
         } else {
             UIView.animate(withDuration: 0.4, animations: {
