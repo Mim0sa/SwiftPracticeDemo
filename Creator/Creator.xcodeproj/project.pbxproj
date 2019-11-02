@@ -12,13 +12,22 @@
 		1B6A98782301B9C90032E188 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B6A98762301B9C90032E188 /* Main.storyboard */; };
 		1B6A987A2301B9CA0032E188 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B6A98792301B9CA0032E188 /* Assets.xcassets */; };
 		1B6A987D2301B9CA0032E188 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B6A987B2301B9CA0032E188 /* LaunchScreen.storyboard */; };
-		1B6A98852301BA720032E188 /* OptionBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6A98842301BA720032E188 /* OptionBoardView.swift */; };
 		1B6A98872301BC440032E188 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6A98862301BC440032E188 /* Common.swift */; };
 		1B6A988D2302C72C0032E188 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6A988C2302C72C0032E188 /* Extension+UIColor.swift */; };
 		1B6A98912303E2A30032E188 /* Extension+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6A98902303E2A30032E188 /* Extension+Random.swift */; };
 		1B6A98932303E5150032E188 /* OptionKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6A98922303E5150032E188 /* OptionKey.swift */; };
-		1BA03EBD230EBD4500857E51 /* ProgramBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA03EBC230EBD4500857E51 /* ProgramBoardView.swift */; };
-		1BA03EBF230EE5A400857E51 /* ProgramBoardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA03EBE230EE5A400857E51 /* ProgramBoardTableViewCell.swift */; };
+		1BC5CD4023582374008CE0DB /* OptionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC5CD3F23582374008CE0DB /* OptionListView.swift */; };
+		1BC5CD42235824DC008CE0DB /* ProgramListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC5CD41235824DC008CE0DB /* ProgramListView.swift */; };
+		1BC5CD4423586CF1008CE0DB /* ChessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC5CD4323586CF1008CE0DB /* ChessView.swift */; };
+		1BC5CD48235970D6008CE0DB /* ChessInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC5CD47235970D6008CE0DB /* ChessInfo.swift */; };
+		1BC5CD4A235D8608008CE0DB /* ChessRoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC5CD49235D8608008CE0DB /* ChessRoadView.swift */; };
+		1BC5CD4C235D95DA008CE0DB /* Charactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC5CD4B235D95DA008CE0DB /* Charactor.swift */; };
+		1BC5CD4E235EBD59008CE0DB /* ChessInfoArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC5CD4D235EBD59008CE0DB /* ChessInfoArray.swift */; };
+		1BC5CD50236086B6008CE0DB /* HomeViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC5CD4F236086B6008CE0DB /* HomeViewContoller.swift */; };
+		1BC5CD7823608B3E008CE0DB /* Chapter1 in Resources */ = {isa = PBXBuildFile; fileRef = 1BC5CD7723608B3E008CE0DB /* Chapter1 */; };
+		1BC5CD7A23608C7A008CE0DB /* Chapter2 in Resources */ = {isa = PBXBuildFile; fileRef = 1BC5CD7923608C7A008CE0DB /* Chapter2 */; };
+		1BC5CD7C23608D29008CE0DB /* Chapter3 in Resources */ = {isa = PBXBuildFile; fileRef = 1BC5CD7B23608D29008CE0DB /* Chapter3 */; };
+		1BFF2B932361B10200F5C963 /* ChapterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFF2B922361B10200F5C963 /* ChapterDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,13 +38,22 @@
 		1B6A98792301B9CA0032E188 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B6A987C2301B9CA0032E188 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B6A987E2301B9CA0032E188 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1B6A98842301BA720032E188 /* OptionBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionBoardView.swift; sourceTree = "<group>"; };
 		1B6A98862301BC440032E188 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		1B6A988C2302C72C0032E188 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
 		1B6A98902303E2A30032E188 /* Extension+Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Random.swift"; sourceTree = "<group>"; };
 		1B6A98922303E5150032E188 /* OptionKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionKey.swift; sourceTree = "<group>"; };
-		1BA03EBC230EBD4500857E51 /* ProgramBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramBoardView.swift; sourceTree = "<group>"; };
-		1BA03EBE230EE5A400857E51 /* ProgramBoardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramBoardTableViewCell.swift; sourceTree = "<group>"; };
+		1BC5CD3F23582374008CE0DB /* OptionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionListView.swift; sourceTree = "<group>"; };
+		1BC5CD41235824DC008CE0DB /* ProgramListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramListView.swift; sourceTree = "<group>"; };
+		1BC5CD4323586CF1008CE0DB /* ChessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessView.swift; sourceTree = "<group>"; };
+		1BC5CD47235970D6008CE0DB /* ChessInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessInfo.swift; sourceTree = "<group>"; };
+		1BC5CD49235D8608008CE0DB /* ChessRoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessRoadView.swift; sourceTree = "<group>"; };
+		1BC5CD4B235D95DA008CE0DB /* Charactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charactor.swift; sourceTree = "<group>"; };
+		1BC5CD4D235EBD59008CE0DB /* ChessInfoArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessInfoArray.swift; sourceTree = "<group>"; };
+		1BC5CD4F236086B6008CE0DB /* HomeViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewContoller.swift; sourceTree = "<group>"; };
+		1BC5CD7723608B3E008CE0DB /* Chapter1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Chapter1; sourceTree = "<group>"; };
+		1BC5CD7923608C7A008CE0DB /* Chapter2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Chapter2; sourceTree = "<group>"; };
+		1BC5CD7B23608D29008CE0DB /* Chapter3 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Chapter3; sourceTree = "<group>"; };
+		1BFF2B922361B10200F5C963 /* ChapterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +89,10 @@
 				1B6A987E2301B9CA0032E188 /* Info.plist */,
 				1B6A988B2301BD070032E188 /* System */,
 				1B6A988A2301BCB10032E188 /* View */,
+				1BC5CD5123608710008CE0DB /* HtmlFiles */,
 				1B6A98742301B9C90032E188 /* ViewController.swift */,
+				1BC5CD4F236086B6008CE0DB /* HomeViewContoller.swift */,
+				1BFF2B922361B10200F5C963 /* ChapterDetailView.swift */,
 				1B6A98862301BC440032E188 /* Common.swift */,
 				1B6A98902303E2A30032E188 /* Extension+Random.swift */,
 				1B6A988C2302C72C0032E188 /* Extension+UIColor.swift */,
@@ -82,10 +103,14 @@
 		1B6A988A2301BCB10032E188 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1B6A98842301BA720032E188 /* OptionBoardView.swift */,
-				1BA03EBC230EBD4500857E51 /* ProgramBoardView.swift */,
-				1BA03EBE230EE5A400857E51 /* ProgramBoardTableViewCell.swift */,
 				1B6A98922303E5150032E188 /* OptionKey.swift */,
+				1BC5CD3F23582374008CE0DB /* OptionListView.swift */,
+				1BC5CD41235824DC008CE0DB /* ProgramListView.swift */,
+				1BC5CD4323586CF1008CE0DB /* ChessView.swift */,
+				1BC5CD47235970D6008CE0DB /* ChessInfo.swift */,
+				1BC5CD4D235EBD59008CE0DB /* ChessInfoArray.swift */,
+				1BC5CD49235D8608008CE0DB /* ChessRoadView.swift */,
+				1BC5CD4B235D95DA008CE0DB /* Charactor.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -99,6 +124,16 @@
 				1B6A98792301B9CA0032E188 /* Assets.xcassets */,
 			);
 			path = System;
+			sourceTree = "<group>";
+		};
+		1BC5CD5123608710008CE0DB /* HtmlFiles */ = {
+			isa = PBXGroup;
+			children = (
+				1BC5CD7B23608D29008CE0DB /* Chapter3 */,
+				1BC5CD7923608C7A008CE0DB /* Chapter2 */,
+				1BC5CD7723608B3E008CE0DB /* Chapter1 */,
+			);
+			path = HtmlFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,9 +194,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BC5CD7823608B3E008CE0DB /* Chapter1 in Resources */,
 				1B6A987D2301B9CA0032E188 /* LaunchScreen.storyboard in Resources */,
+				1BC5CD7C23608D29008CE0DB /* Chapter3 in Resources */,
 				1B6A987A2301B9CA0032E188 /* Assets.xcassets in Resources */,
 				1B6A98782301B9C90032E188 /* Main.storyboard in Resources */,
+				1BC5CD7A23608C7A008CE0DB /* Chapter2 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,13 +212,19 @@
 			files = (
 				1B6A98872301BC440032E188 /* Common.swift in Sources */,
 				1B6A98752301B9C90032E188 /* ViewController.swift in Sources */,
-				1B6A98852301BA720032E188 /* OptionBoardView.swift in Sources */,
 				1B6A98932303E5150032E188 /* OptionKey.swift in Sources */,
-				1BA03EBF230EE5A400857E51 /* ProgramBoardTableViewCell.swift in Sources */,
-				1BA03EBD230EBD4500857E51 /* ProgramBoardView.swift in Sources */,
+				1BC5CD4E235EBD59008CE0DB /* ChessInfoArray.swift in Sources */,
+				1BC5CD48235970D6008CE0DB /* ChessInfo.swift in Sources */,
 				1B6A98912303E2A30032E188 /* Extension+Random.swift in Sources */,
+				1BC5CD42235824DC008CE0DB /* ProgramListView.swift in Sources */,
+				1BC5CD50236086B6008CE0DB /* HomeViewContoller.swift in Sources */,
+				1BC5CD4023582374008CE0DB /* OptionListView.swift in Sources */,
 				1B6A98732301B9C90032E188 /* AppDelegate.swift in Sources */,
+				1BC5CD4A235D8608008CE0DB /* ChessRoadView.swift in Sources */,
+				1BFF2B932361B10200F5C963 /* ChapterDetailView.swift in Sources */,
 				1B6A988D2302C72C0032E188 /* Extension+UIColor.swift in Sources */,
+				1BC5CD4423586CF1008CE0DB /* ChessView.swift in Sources */,
+				1BC5CD4C235D95DA008CE0DB /* Charactor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +373,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RSA8WT4A52;
 				INFOPLIST_FILE = Creator/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -337,7 +381,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mimosa.Creator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -348,7 +392,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RSA8WT4A52;
 				INFOPLIST_FILE = Creator/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -356,7 +400,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mimosa.Creator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

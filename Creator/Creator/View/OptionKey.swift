@@ -15,4 +15,5 @@ enum OptionKey: String {
     case Right = "OptionKey_Right"
     case Up = "OptionKey_Up"
     case Down = "OptionKey_Down"
+    case Cloud = "OptionKey_Cloud"
 }

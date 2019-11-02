@@ -11,3 +11,5 @@ import UIKit
 
 let SCREENWIDTH = UIScreen.main.bounds.width
 let SCREENHEIGHT = UIScreen.main.bounds.height
+
+let adaptRatio = SCREENWIDTH / 1366.0
