@@ -11,6 +11,10 @@ import Foundation
 class PuzzleModel {
     
     func generateValue() -> PuzzleValue {
+        return Int.random(in: 1...5) == 1 ? PuzzleValue.V_4 : PuzzleValue.V_2
+    }
+    
+    func generateInitialValue() -> PuzzleValue {
         return PuzzleValue.V_2
     }
     
