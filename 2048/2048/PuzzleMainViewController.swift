@@ -23,6 +23,8 @@ class PuzzleMainViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        print(puzzleModel.mergeOneLine(line: puzzleModel.testBoardDataLine, direction: .Left))
         
     }
     

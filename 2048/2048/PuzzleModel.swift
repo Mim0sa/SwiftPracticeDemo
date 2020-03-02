@@ -10,7 +10,7 @@ import Foundation
 
 struct PuzzleModel {
     
-    // MARK: - puzzleBoardData
+    // MARK: - boardData
     // |---|---|---|---|
     // |   |   | 2 |   |
     // |---|---|---|---|
@@ -20,11 +20,12 @@ struct PuzzleModel {
     // |---|---|---|---|
     // | 2 | 4 | 8 |128|
     // |---|---|---|---|
-    var puzzleBoardData: [[PuzzleValue]]
+    var boardData: [[PuzzleValue]]
+    var testBoardDataLine: [PuzzleValue] = [.V_2, .V_4, .V_4, .V_4]
     
     // MARK: - initialize
     init() {
-        puzzleBoardData = [[PuzzleValue]](repeating: [PuzzleValue](repeating: .V_None, count: 4), count: 4)
+        boardData = [[PuzzleValue]](repeating: [PuzzleValue](repeating: .V_None, count: 4), count: 4)
     }
     
     // MARK: - generate new data
@@ -37,8 +38,59 @@ struct PuzzleModel {
     }
     
     // MARK: - merge Data
-    func mergeData(with direction: PuzzleDirection) {
+    func mergeData(with direction: PuzzleDirection) -> [[PuzzleDirection]] {
+        switch direction {
+        case .Left:
+            break
+        case .Right:
+            break
+        case .Up:
+            break
+        case .Down:
+            break
+        }
+        return []
+    }
+    
+    func mergeOneLine(line: [PuzzleValue], direction: PuzzleDirection) -> [PuzzleValue] {
         
+        var needToReverse: Bool = {
+            switch direction {
+            case .Left, .Up:
+                return false
+            case .Right, .Down:
+                return true
+            }
+        }()
+        
+        func makeIndentation(_ line: [PuzzleValue]) -> [PuzzleValue] {
+            var indentLine: [PuzzleValue] = []
+            var indentationCount = 0
+            line.forEach { (value) in
+                if value != .V_None { indentLine.append(value) } else { indentationCount += 1 }
+            }
+            while indentationCount > 0 {
+                if needToReverse { indentLine.insert(.V_None, at: 0) } else { indentLine.append(.V_None) }
+                indentationCount -= 1
+            }
+            return indentLine
+        }
+        
+        func mergeSameValue(_ line: [PuzzleValue]) -> [PuzzleValue] {
+            var mergedLine: [PuzzleValue] = line
+            for i in 0...mergedLine.count - 2 {
+                let pioneer = needToReverse ? mergedLine.count - i - 1 : i
+                let nexter  = needToReverse ? mergedLine.count - i - 2 : i + 1
+                if mergedLine[pioneer] == mergedLine[nexter] {
+                    assert(PuzzleValue(rawValue: mergedLine[pioneer].rawValue * 2) != nil, "puzzleValue should not be nil")
+                    mergedLine[pioneer] = PuzzleValue(rawValue: mergedLine[pioneer].rawValue * 2) ?? PuzzleValue.V_None
+                    mergedLine[nexter] = .V_None
+                }
+            }
+            return mergedLine
+        }
+        
+        return makeIndentation(mergeSameValue(makeIndentation(line)))
     }
     
 }
