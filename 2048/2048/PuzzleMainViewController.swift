@@ -17,6 +17,9 @@ class PuzzleMainViewController: UIViewController {
     let puzzleAnimator = PuzzleAnimator()
     lazy var puzzleBoardCoordinator = PuzzleBoardCoordinator(with: puzzleBoardView)
     
+    // MARK: - Model
+    let puzzleModel = PuzzleModel()
+    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()

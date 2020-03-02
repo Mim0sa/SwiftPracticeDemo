@@ -18,7 +18,6 @@
 		1BC5FE0D24096CAE00F77F76 /* PuzzleBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC5FE0C24096CAE00F77F76 /* PuzzleBoardView.swift */; };
 		1BC5FE0F240ACB8B00F77F76 /* PuzzleBoardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC5FE0E240ACB8B00F77F76 /* PuzzleBoardCoordinator.swift */; };
 		1BD435D52401073600BA0961 /* PuzzleCubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD435D42401073600BA0961 /* PuzzleCubeView.swift */; };
-		1BD435D724010B0E00BA0961 /* PuzzleValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD435D624010B0E00BA0961 /* PuzzleValue.swift */; };
 		1BF7B7CB2403B97700FC6D3D /* PuzzleAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF7B7CA2403B97700FC6D3D /* PuzzleAnimator.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +35,6 @@
 		1BC5FE0C24096CAE00F77F76 /* PuzzleBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleBoardView.swift; sourceTree = "<group>"; };
 		1BC5FE0E240ACB8B00F77F76 /* PuzzleBoardCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleBoardCoordinator.swift; sourceTree = "<group>"; };
 		1BD435D42401073600BA0961 /* PuzzleCubeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleCubeView.swift; sourceTree = "<group>"; };
-		1BD435D624010B0E00BA0961 /* PuzzleValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleValue.swift; sourceTree = "<group>"; };
 		1BF7B7CA2403B97700FC6D3D /* PuzzleAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,7 +74,6 @@
 				1BC5FE0C24096CAE00F77F76 /* PuzzleBoardView.swift */,
 				1BC5FE0E240ACB8B00F77F76 /* PuzzleBoardCoordinator.swift */,
 				1BD435D42401073600BA0961 /* PuzzleCubeView.swift */,
-				1BD435D624010B0E00BA0961 /* PuzzleValue.swift */,
 				1B3563D024010C96007FEDC2 /* PuzzleModel.swift */,
 				1BF7B7CA2403B97700FC6D3D /* PuzzleAnimator.swift */,
 				1B3563D224010D68007FEDC2 /* Extension+UIcolor.swift */,
@@ -168,7 +165,6 @@
 				1BC5FE0D24096CAE00F77F76 /* PuzzleBoardView.swift in Sources */,
 				1B3563D124010C96007FEDC2 /* PuzzleModel.swift in Sources */,
 				1BD435D52401073600BA0961 /* PuzzleCubeView.swift in Sources */,
-				1BD435D724010B0E00BA0961 /* PuzzleValue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
