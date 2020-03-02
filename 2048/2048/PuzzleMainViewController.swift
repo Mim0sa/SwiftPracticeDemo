@@ -18,14 +18,13 @@ class PuzzleMainViewController: UIViewController {
     lazy var puzzleBoardCoordinator = PuzzleBoardCoordinator(with: puzzleBoardView)
     
     // MARK: - Model
-    let puzzleModel = PuzzleModel()
+    var puzzleModel = PuzzleModel()
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print(puzzleModel.mergeOneLine(line: puzzleModel.testBoardDataLine, direction: .Left))
-        
+        print(puzzleModel.mergeData(with: .Up))
     }
     
 }

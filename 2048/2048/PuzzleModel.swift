@@ -21,7 +21,10 @@ struct PuzzleModel {
     // | 2 | 4 | 8 |128|
     // |---|---|---|---|
     var boardData: [[PuzzleValue]]
-    var testBoardDataLine: [PuzzleValue] = [.V_2, .V_4, .V_4, .V_4]
+    var testBoardData: [[PuzzleValue]] = [[PuzzleValue.V_None, PuzzleValue.V_None, PuzzleValue.V_2, PuzzleValue.V_None],
+                                            [PuzzleValue.V_2,    PuzzleValue.V_None, PuzzleValue.V_2, PuzzleValue.V_4],
+                                            [PuzzleValue.V_None, PuzzleValue.V_None, PuzzleValue.V_2, PuzzleValue.V_8],
+                                            [PuzzleValue.V_2,    PuzzleValue.V_4,    PuzzleValue.V_8, PuzzleValue.V_128]]
     
     // MARK: - initialize
     init() {
@@ -38,18 +41,27 @@ struct PuzzleModel {
     }
     
     // MARK: - merge Data
-    func mergeData(with direction: PuzzleDirection) -> [[PuzzleDirection]] {
+    mutating func mergeData(with direction: PuzzleDirection) -> [[PuzzleValue]] {
+        var boardData = self.testBoardData
         switch direction {
-        case .Left:
-            break
-        case .Right:
-            break
-        case .Up:
-            break
-        case .Down:
-            break
+        case .Left, .Right:
+            for i in 0...boardData.count - 1 { boardData[i] = mergeOneLine(line: boardData[i], direction: direction) }
+        case .Up, .Down:
+            var transposedData = transpose(boardData)
+            for i in 0...boardData.count - 1 { transposedData[i] = mergeOneLine(line: transposedData[i], direction: direction) }
+            boardData = transpose(transposedData)
         }
-        return []
+        return boardData
+    }
+    
+    func transpose(_ data: [[PuzzleValue]]) -> [[PuzzleValue]] {
+        var tmp = [[PuzzleValue]](repeating: [PuzzleValue](repeating: .V_None, count: 4), count: 4)
+        for i in 0...data[0].count - 1 {
+            for j in 0...data.count - 1 {
+                tmp[i][j] = data[j][i]
+            }
+        }
+        return tmp
     }
     
     func mergeOneLine(line: [PuzzleValue], direction: PuzzleDirection) -> [PuzzleValue] {
