@@ -27,17 +27,19 @@ class PuzzleBoardView: UIView {
         cubeEdge = cubeGap * 4.5
         
         layer.cornerRadius = 14
+        backgroundColor = UIColor.pzBoardUIColor
         
         locationPionts = generateLocationPionts()
         backLayers = generateBackLayer()
     }
     
-    // MARK: - LayoutSubviews
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        backLayers.forEach { (layer) in
-            layer.backgroundColor = UIColor.pzBackLayerUIColor.cgColor
+    // MARK: - TraitCollectionDidChange
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+            backLayers.forEach { (layer) in
+                layer.backgroundColor = UIColor.pzBackLayerUIColor.cgColor
+            }
         }
     }
     
@@ -61,6 +63,7 @@ class PuzzleBoardView: UIView {
             backLayer.cornerRadius = 14
             backLayer.frame.size = CGSize(width: cubeEdge - 2, height: cubeEdge - 2)
             backLayer.position = locationPionts[i - 1]
+            backLayer.backgroundColor = UIColor.pzBackLayerUIColor.cgColor
             layer.addSublayer(backLayer)
             backLayers.append(backLayer)
         }

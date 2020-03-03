@@ -17,13 +17,11 @@
                         <subviews>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TS9-bi-NLN" customClass="PuzzleBoardView" customModule="_048" customModuleProvider="target">
                                 <rect key="frame" x="24" y="265" width="366" height="366"/>
-                                <color key="backgroundColor" red="0.8901960784313725" green="0.68235294117647061" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="TS9-bi-NLN" secondAttribute="height" multiplier="1:1" id="nc5-pO-Rsy"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.85882352941176465" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="TS9-bi-NLN" secondAttribute="bottom" constant="24" id="4jo-ed-IKD"/>
                             <constraint firstItem="TS9-bi-NLN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5js-12-Jpa"/>

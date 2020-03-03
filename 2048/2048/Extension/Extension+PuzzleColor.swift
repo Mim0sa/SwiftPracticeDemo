@@ -12,9 +12,25 @@ extension UIColor {
     
     static var pzBackLayerUIColor = UIColor { (trainCollection) -> UIColor in
         if trainCollection.userInterfaceStyle == .dark {
-            return UIColor(withHex: 0xFCE2B8)
+            return UIColor(withHex: 0x7A8B8E)
         } else {
             return UIColor(withHex: 0xFCE2B8)
+        }
+    }
+    
+    static var pzBackgroundUIColor = UIColor { (trainCollection) -> UIColor in
+        if trainCollection.userInterfaceStyle == .dark {
+            return UIColor(withHex: 0x11212D)
+        } else {
+            return UIColor(withHex: 0xFFDB8D)
+        }
+    }
+    
+    static var pzBoardUIColor = UIColor { (trainCollection) -> UIColor in
+        if trainCollection.userInterfaceStyle == .dark {
+            return UIColor(withHex: 0x2A4C59)
+        } else {
+            return UIColor(withHex: 0xF8C671)
         }
     }
     

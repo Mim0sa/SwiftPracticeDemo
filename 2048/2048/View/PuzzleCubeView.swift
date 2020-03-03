@@ -50,12 +50,6 @@ class PuzzleCubeView: UIView {
                                  y: position.y - currentCubeEdge / 2,
                                  width: currentCubeEdge,
                                  height: currentCubeEdge))
-    }
-    
-    // MARK: - setupViews
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
         setupCubeViewUI()
     }
     
@@ -63,7 +57,6 @@ class PuzzleCubeView: UIView {
         backgroundColor = .clear
         if cubeStatus == .Shrinked { alpha = 0.5 }
         
-        // FIXME: setupCubeShadowView()
         //setupCubeShadowView()
         setupCubeShapeView()
         setupCubeTitleLabel()
