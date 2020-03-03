@@ -36,6 +36,7 @@ class PuzzleBoardView: UIView {
     // MARK: - TraitCollectionDidChange
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
+        
         if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
             backLayers.forEach { (layer) in
                 layer.backgroundColor = UIColor.pzBackLayerUIColor.cgColor

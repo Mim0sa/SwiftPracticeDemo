@@ -21,10 +21,10 @@ struct PuzzleModel {
     // | 2 | 4 | 8 |128|
     // |---|---|---|---|
     var boardData: [[PuzzleValue]]
-    var testBoardData: [[PuzzleValue]] = [[PuzzleValue.V_None, PuzzleValue.V_None, PuzzleValue.V_2, PuzzleValue.V_None],
-                                            [PuzzleValue.V_2,    PuzzleValue.V_None, PuzzleValue.V_2, PuzzleValue.V_4],
-                                            [PuzzleValue.V_None, PuzzleValue.V_None, PuzzleValue.V_2, PuzzleValue.V_8],
-                                            [PuzzleValue.V_2,    PuzzleValue.V_4,    PuzzleValue.V_8, PuzzleValue.V_128]]
+    var testBoardData: [[PuzzleValue]] = [[PuzzleValue.V_4, PuzzleValue.V_2, PuzzleValue.V_4, PuzzleValue.V_2],
+                                          [PuzzleValue.V_2, PuzzleValue.V_4, PuzzleValue.V_2, PuzzleValue.V_4],
+                                          [PuzzleValue.V_4, PuzzleValue.V_2, PuzzleValue.V_4, PuzzleValue.V_2],
+                                          [PuzzleValue.V_2, PuzzleValue.V_8, PuzzleValue.V_2, PuzzleValue.V_4]]
     
     // MARK: - initialize
     init() {
@@ -52,16 +52,6 @@ struct PuzzleModel {
             boardData = transpose(transposedData)
         }
         return boardData
-    }
-    
-    func transpose(_ data: [[PuzzleValue]]) -> [[PuzzleValue]] {
-        var tmp = [[PuzzleValue]](repeating: [PuzzleValue](repeating: .V_None, count: 4), count: 4)
-        for i in 0...data[0].count - 1 {
-            for j in 0...data.count - 1 {
-                tmp[i][j] = data[j][i]
-            }
-        }
-        return tmp
     }
     
     func mergeOneLine(line: [PuzzleValue], direction: PuzzleDirection) -> [PuzzleValue] {
@@ -105,6 +95,36 @@ struct PuzzleModel {
         return makeIndentation(mergeSameValue(makeIndentation(line)))
     }
     
+    // MARK: - checkIfGameOver
+    mutating func checkIfIsFinished() -> Bool {
+        //
+        boardData = testBoardData
+        
+        func checkHorizontally(_ boardData: [[PuzzleValue]]) -> Bool {
+            for i in 0...boardData.count - 1 {
+                for j in 0...boardData[i].count - 2 {
+                    if boardData[i][j] == boardData[i][j + 1] {
+                        return false
+                    }
+                }
+            }
+            return true
+        }
+         
+        if checkHorizontally(boardData) && checkHorizontally(transpose(boardData)) { return true }
+        return false
+    }
+    
+    // MARK: - transpose the matrix
+    func transpose(_ data: [[PuzzleValue]]) -> [[PuzzleValue]] {
+        var tmp = [[PuzzleValue]](repeating: [PuzzleValue](repeating: .V_None, count: 4), count: 4)
+        for i in 0...data[0].count - 1 {
+            for j in 0...data.count - 1 {
+                tmp[i][j] = data[j][i]
+            }
+        }
+        return tmp
+    }
 }
 
 enum PuzzleValue: Int {
