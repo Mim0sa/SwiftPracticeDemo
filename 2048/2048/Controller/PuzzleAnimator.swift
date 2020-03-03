@@ -27,4 +27,18 @@ class PuzzleAnimator {
         })
     }
     
+    func vanishAllCubeViews(_ cubeViews: [[PuzzleCubeView?]], vanishAllCubeViewsCompletion: @escaping () -> Void) {
+        UIView.animate(withDuration: 0.5, animations: {
+            for cubeViewLine in cubeViews {
+                for cubeView in cubeViewLine {
+                    if let cubeView = cubeView {
+                        cubeView.alpha = 0
+                    }
+                }
+            }
+        }) { (finish) in
+            vanishAllCubeViewsCompletion()
+        }
+    }
+    
 }

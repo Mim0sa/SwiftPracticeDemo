@@ -14,7 +14,6 @@ class PuzzleMainViewController: UIViewController {
     @IBOutlet weak var puzzleBoardView: PuzzleBoardView!
     
     // MARK: - Controller
-    let puzzleAnimator = PuzzleAnimator()
     lazy var puzzleBoardCoordinator = PuzzleBoardCoordinator(with: puzzleBoardView)
     
     // MARK: - Model
@@ -25,7 +24,21 @@ class PuzzleMainViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.pzBackgroundUIColor
         
-        puzzleBoardCoordinator.boardView.generateAllCubes()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        puzzleBoardCoordinator.generateAllCubes()
+        launchGame()
+    }
+    
+    // MARK: - Control Flows
+    func launchGame() {
+        puzzleModel.cleanTheBoardData()
+        puzzleBoardCoordinator.cleanTheBoard {
+            print("clean finished")
+        }
     }
     
 }

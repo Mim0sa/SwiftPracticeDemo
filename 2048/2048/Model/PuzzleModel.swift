@@ -96,9 +96,7 @@ struct PuzzleModel {
     }
     
     // MARK: - checkIfGameOver
-    mutating func checkIfIsFinished() -> Bool {
-        //
-        boardData = testBoardData
+    func checkIfIsFinished() -> Bool {
         
         func checkHorizontally(_ boardData: [[PuzzleValue]]) -> Bool {
             for i in 0...boardData.count - 1 {
@@ -114,6 +112,12 @@ struct PuzzleModel {
         if checkHorizontally(boardData) && checkHorizontally(transpose(boardData)) { return true }
         return false
     }
+    
+    // MARK: - cleanTheBoard
+    mutating func cleanTheBoardData() {
+        boardData = [[PuzzleValue]](repeating: [PuzzleValue](repeating: .V_None, count: 4), count: 4)
+    }
+    
     
     // MARK: - transpose the matrix
     func transpose(_ data: [[PuzzleValue]]) -> [[PuzzleValue]] {

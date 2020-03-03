@@ -71,7 +71,9 @@ class PuzzleBoardView: UIView {
         return backLayers
     }
     
-    func generateAllCubes() {
+    // MARK: for test
+    func generateAllCubes() -> [PuzzleCubeView] {
+        var cubeViews: [PuzzleCubeView] = []
         for i in 1...13 {
             let value = pow(2, Double(i)) > 8192 ? 0 : pow(2, Double(i))
             let cubeView = PuzzleCubeView(position: locationPionts[i - 1],
@@ -79,7 +81,9 @@ class PuzzleBoardView: UIView {
                                           cubeStatus: .Expanded,
                                           puzzleValue: PuzzleValue(rawValue: Int(value))!)
             addSubview(cubeView)
+            cubeViews.append(cubeView)
         }
+        return cubeViews
     }
     
 }
