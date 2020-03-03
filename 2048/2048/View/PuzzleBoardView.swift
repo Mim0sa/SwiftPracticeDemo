@@ -26,9 +26,6 @@ class PuzzleBoardView: UIView {
         cubeGap = frame.width / 23
         cubeEdge = cubeGap * 4.5
         
-        layer.shadowOffset = CGSize(width: 0, height: 3)
-        layer.shadowOpacity = 0.5
-        layer.shadowRadius = 3
         layer.cornerRadius = 14
         
         locationPionts = generateLocationPionts()
@@ -39,9 +36,8 @@ class PuzzleBoardView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        layer.shadowColor = UIColor("BoardView_Shadow")?.cgColor(with: traitCollection)
         backLayers.forEach { (layer) in
-            layer.backgroundColor = UIColor("CubeLayer_Background")?.cgColor(with: traitCollection)
+            layer.backgroundColor = UIColor.pzBackLayerUIColor.cgColor
         }
     }
     
@@ -69,6 +65,17 @@ class PuzzleBoardView: UIView {
             backLayers.append(backLayer)
         }
         return backLayers
+    }
+    
+    func generateAllCubes() {
+        for i in 1...13 {
+            let value = pow(2, Double(i)) > 8192 ? 0 : pow(2, Double(i))
+            let cubeView = PuzzleCubeView(position: locationPionts[i - 1],
+                                          cubeEdge: cubeEdge,
+                                          cubeStatus: .Expanded,
+                                          puzzleValue: PuzzleValue(rawValue: Int(value))!)
+            addSubview(cubeView)
+        }
     }
     
 }

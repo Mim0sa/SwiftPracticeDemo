@@ -17,7 +17,7 @@
 		1B8B58752400FF7D0085293A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B8B58732400FF7D0085293A /* LaunchScreen.storyboard */; };
 		1BC5FE0D24096CAE00F77F76 /* PuzzleBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC5FE0C24096CAE00F77F76 /* PuzzleBoardView.swift */; };
 		1BC5FE0F240ACB8B00F77F76 /* PuzzleBoardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC5FE0E240ACB8B00F77F76 /* PuzzleBoardCoordinator.swift */; };
-		1BC5FE11240DF47700F77F76 /* PuzzleColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC5FE10240DF47700F77F76 /* PuzzleColorManager.swift */; };
+		1BC5FE11240DF47700F77F76 /* Extension+PuzzleColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC5FE10240DF47700F77F76 /* Extension+PuzzleColor.swift */; };
 		1BD435D52401073600BA0961 /* PuzzleCubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD435D42401073600BA0961 /* PuzzleCubeView.swift */; };
 		1BF7B7CB2403B97700FC6D3D /* PuzzleAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF7B7CA2403B97700FC6D3D /* PuzzleAnimator.swift */; };
 /* End PBXBuildFile section */
@@ -35,7 +35,7 @@
 		1B8B58762400FF7D0085293A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BC5FE0C24096CAE00F77F76 /* PuzzleBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleBoardView.swift; sourceTree = "<group>"; };
 		1BC5FE0E240ACB8B00F77F76 /* PuzzleBoardCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleBoardCoordinator.swift; sourceTree = "<group>"; };
-		1BC5FE10240DF47700F77F76 /* PuzzleColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleColorManager.swift; sourceTree = "<group>"; };
+		1BC5FE10240DF47700F77F76 /* Extension+PuzzleColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+PuzzleColor.swift"; sourceTree = "<group>"; };
 		1BD435D42401073600BA0961 /* PuzzleCubeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleCubeView.swift; sourceTree = "<group>"; };
 		1BF7B7CA2403B97700FC6D3D /* PuzzleAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,7 +75,6 @@
 				1BC5FE13240DF4FD00F77F76 /* View */,
 				1BC5FE14240DF50800F77F76 /* Model */,
 				1BC5FE15240DF52600F77F76 /* Extension */,
-				1B8B586E2400FF7A0085293A /* Puzzle.storyboard */,
 				1B8B58762400FF7D0085293A /* Info.plist */,
 			);
 			path = 2048;
@@ -94,9 +93,9 @@
 		1BC5FE13240DF4FD00F77F76 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1B8B586E2400FF7A0085293A /* Puzzle.storyboard */,
 				1BC5FE0C24096CAE00F77F76 /* PuzzleBoardView.swift */,
 				1BD435D42401073600BA0961 /* PuzzleCubeView.swift */,
-				1BC5FE10240DF47700F77F76 /* PuzzleColorManager.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -113,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				1B3563D224010D68007FEDC2 /* Extension+UIcolor.swift */,
+				1BC5FE10240DF47700F77F76 /* Extension+PuzzleColor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -122,8 +122,8 @@
 			children = (
 				1B8B58682400FF7A0085293A /* AppDelegate.swift */,
 				1B8B586A2400FF7A0085293A /* SceneDelegate.swift */,
-				1B8B58712400FF7D0085293A /* Assets.xcassets */,
 				1B8B58732400FF7D0085293A /* LaunchScreen.storyboard */,
+				1B8B58712400FF7D0085293A /* Assets.xcassets */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -204,7 +204,7 @@
 				1B8B586D2400FF7A0085293A /* PuzzleMainViewController.swift in Sources */,
 				1B8B58692400FF7A0085293A /* AppDelegate.swift in Sources */,
 				1B8B586B2400FF7A0085293A /* SceneDelegate.swift in Sources */,
-				1BC5FE11240DF47700F77F76 /* PuzzleColorManager.swift in Sources */,
+				1BC5FE11240DF47700F77F76 /* Extension+PuzzleColor.swift in Sources */,
 				1BF7B7CB2403B97700FC6D3D /* PuzzleAnimator.swift in Sources */,
 				1BC5FE0D24096CAE00F77F76 /* PuzzleBoardView.swift in Sources */,
 				1B3563D124010C96007FEDC2 /* PuzzleModel.swift in Sources */,

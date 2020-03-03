@@ -23,8 +23,18 @@ class PuzzleMainViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print(puzzleModel.mergeData(with: .Up))
+        
+        puzzleBoardCoordinator.boardView.generateAllCubes()
+//        print(puzzleModel.mergeData(with: .Up))
+        view.backgroundColor = backgroundColor
+    }
+    
+    let backgroundColor = UIColor { (trainCollection) -> UIColor in
+        if trainCollection.userInterfaceStyle == .dark {
+            return UIColor.black
+        } else {
+            return UIColor.white
+        }
     }
     
 }

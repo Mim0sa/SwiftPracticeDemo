@@ -63,7 +63,8 @@ class PuzzleCubeView: UIView {
         backgroundColor = .clear
         if cubeStatus == .Shrinked { alpha = 0.5 }
         
-        setupCubeShadowView()
+        // FIXME: setupCubeShadowView()
+        //setupCubeShadowView()
         setupCubeShapeView()
         setupCubeTitleLabel()
     }
@@ -79,7 +80,7 @@ class PuzzleCubeView: UIView {
     }
     
     func setupCubeShapeView() {
-        cubeShapeView.backgroundColor = UIColor("CubeView_Background")
+        cubeShapeView.backgroundColor = UIColor.pzCubeUIColor(puzzleValue)
         cubeShapeView.layer.cornerRadius = 14
         addSubview(cubeShapeView)
     }
@@ -90,7 +91,7 @@ class PuzzleCubeView: UIView {
         cubeTitleLabel.text = "\(puzzleValue.rawValue)"
         cubeTitleLabel.adjustsFontSizeToFitWidth = true
         cubeTitleLabel.baselineAdjustment = .alignCenters
-        cubeTitleLabel.textColor = UIColor("CubeView_Text")
+        cubeTitleLabel.textColor = UIColor.pzTextUIColor(puzzleValue)
         cubeTitleLabel.font = UIFont.systemFont(ofSize: 38, weight: .bold)
         addSubview(cubeTitleLabel)
     }
