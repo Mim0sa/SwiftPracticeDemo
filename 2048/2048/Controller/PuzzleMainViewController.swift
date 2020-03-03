@@ -37,7 +37,10 @@ class PuzzleMainViewController: UIViewController {
     func launchGame() {
         puzzleModel.cleanTheBoardData()
         puzzleBoardCoordinator.cleanTheBoard {
-            print("clean finished")
+            let initialData = self.puzzleModel.generateInitialData()
+            self.puzzleBoardCoordinator.showTwoInitialCube(initialData) {
+                print("finished")
+            }
         }
     }
     

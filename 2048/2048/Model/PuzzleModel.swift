@@ -32,8 +32,8 @@ struct PuzzleModel {
     }
     
     // MARK: - generate new data
-    func generateInitialData() -> PuzzleValue {
-        return PuzzleValue.V_2
+    func generateInitialData() -> (PuzzleValue, PuzzleValue) {
+        return (generateRandomData(), generateRandomData())
     }
     
     func generateRandomData() -> PuzzleValue {

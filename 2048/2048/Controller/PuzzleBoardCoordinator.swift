@@ -15,6 +15,7 @@ class PuzzleBoardCoordinator {
     let boardView: PuzzleBoardView
     
     // MARK: - Varibles
+    var cubeEdge: CGFloat
     var locationPionts: [CGPoint]
     var cubeViews: [[PuzzleCubeView?]] = []
     var boardData: [[PuzzleValue]] = []
@@ -25,6 +26,7 @@ class PuzzleBoardCoordinator {
     // MARK: - Initialize
     init(with boardView: PuzzleBoardView) {
         self.boardView = boardView
+        self.cubeEdge = boardView.cubeEdge
         locationPionts = boardView.locationPionts
     }
     
@@ -35,6 +37,36 @@ class PuzzleBoardCoordinator {
         puzzleAnimator.vanishAllCubeViews(cubeViews) {
             completion()
         }
+    }
+    
+    func showTwoInitialCube(_ value: (v1: PuzzleValue, v2: PuzzleValue), completion: @escaping () -> Void) {
+        let positionIndex = getInitialPositionIndex()
+        // generate two initial cubeViews
+        let cubeView1 = PuzzleCubeView(position: locationPionts[positionIndex.p1],
+                                      cubeEdge: cubeEdge,
+                                      cubeStatus: .Shrinked,
+                                      puzzleValue: value.v1)
+        let cubeView2 = PuzzleCubeView(position: locationPionts[positionIndex.p2],
+                                       cubeEdge: cubeEdge,
+                                       cubeStatus: .Shrinked,
+                                       puzzleValue: value.v2)
+        // 
+        boardView.addSubview(cubeView1)
+        puzzleAnimator.expandCubeView(cubeView1) {
+            self.boardView.addSubview(cubeView2)
+            self.puzzleAnimator.expandCubeView(cubeView2) {
+                completion()
+            }
+        }
+    }
+    
+    // MARK: - tricky methods
+    func getInitialPositionIndex() -> (p1: Int, p2: Int) {
+        var initialPositionIndex = (Int.random(in: 0...15), Int.random(in: 0...15))
+        if initialPositionIndex.0 == initialPositionIndex.1 {
+            initialPositionIndex = getInitialPositionIndex()
+        }
+        return initialPositionIndex
     }
     
     // MARK: for test
