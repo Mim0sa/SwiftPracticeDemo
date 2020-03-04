@@ -15,6 +15,7 @@ class PuzzleMainViewController: UIViewController {
     
     // MARK: - Controller
     lazy var puzzleBoardCoordinator = PuzzleBoardCoordinator(with: puzzleBoardView)
+    lazy var puzzleGestureManager   = PuzzleGestureManager(with: puzzleBoardView)
     
     // MARK: - Model
     var puzzleModel = PuzzleModel()
@@ -24,6 +25,7 @@ class PuzzleMainViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.pzBackgroundUIColor
         
+        puzzleGestureManager.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -35,14 +37,25 @@ class PuzzleMainViewController: UIViewController {
     
     // MARK: - Control Flows
     func launchGame() {
+        puzzleGestureManager.isGesturesEnabled = false
         puzzleModel.cleanTheBoardData()
         puzzleBoardCoordinator.cleanTheBoard {
             let initialData = self.puzzleModel.generateInitialData()
             self.puzzleBoardCoordinator.showTwoInitialCube(initialData) {
+                self.puzzleGestureManager.isGesturesEnabled = true
                 print("-- launchGame() finished --")
             }
         }
     }
     
+}
+
+extension PuzzleMainViewController: PuzzleGestureManagerDelegate {
+    
+    func puzzleGestureRecognizerResponse(with direction: PuzzleDirection) {
+        print(puzzleModel.boardData)
+        print(puzzleModel.mergeData(with: direction))
+    }
+
 }
 

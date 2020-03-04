@@ -54,7 +54,7 @@ struct PuzzleModel {
         return boardData
     }
     
-    func mergeOneLine(line: [PuzzleValue], direction: PuzzleDirection) -> [PuzzleValue] {
+    private func mergeOneLine(line: [PuzzleValue], direction: PuzzleDirection) -> [PuzzleValue] {
         
         var needToReverse: Bool = {
             switch direction {
@@ -148,9 +148,9 @@ enum PuzzleValue: Int {
     case V_8192 = 8192
 }
 
-enum PuzzleDirection {
-    case Left
-    case Right
-    case Up
-    case Down
+enum PuzzleDirection: UInt {
+    case Up    = 4
+    case Down  = 8
+    case Left  = 2
+    case Right = 1
 }
