@@ -59,12 +59,12 @@ class PuzzleBoardCoordinator {
         // update board data
         let coordinate1 = convertChainToCoordinate(chainIndex.p1)
         let coordinate2 = convertChainToCoordinate(chainIndex.p2)
-        boardData[coordinate1.c1][coordinate1.c2] = value.v1
-        boardData[coordinate2.c1][coordinate2.c2] = value.v2
+        boardData[coordinate1.row][coordinate1.col] = value.v1
+        boardData[coordinate2.row][coordinate2.col] = value.v2
         
         // update cubeViews
-        cubeViews[coordinate1.c1][coordinate1.c2] = cubeView1
-        cubeViews[coordinate2.c1][coordinate2.c2] = cubeView2
+        cubeViews[coordinate1.row][coordinate1.col] = cubeView1
+        cubeViews[coordinate2.row][coordinate2.col] = cubeView2
         
         boardView.addSubview(cubeView1)
         boardView.addSubview(cubeView2)
@@ -73,7 +73,33 @@ class PuzzleBoardCoordinator {
         }
     }
     
+    func showANewCube(_ value: PuzzleValue, completion: @escaping ([[PuzzleValue]]) -> Void) {
+        let position = getRandomEmptyPosition()
+        // generate cubeView
+        let cubeView = PuzzleCubeView(position: locationPionts[convertCoordinateToChain(position)],
+                                      cubeEdge: cubeEdge,
+                                      cubeStatus: .Shrinked,
+                                      puzzleValue: value)
+        // update board data
+        boardData[position.row][position.col] = value
+        // update cubeViews
+        cubeViews[position.row][position.col] = cubeView
+        
+        boardView.addSubview(cubeView)
+        puzzleAnimator.expandCubeViews([cubeView]) {
+            completion(self.boardData)
+        }
+    }
+    
     // MARK: - Tricky Methods
+    func getRandomEmptyPosition() -> (row: Int, col: Int) {
+        var coordinate = convertChainToCoordinate(Int.random(in: 0...15))
+        if boardData[coordinate.row][coordinate.col] == .V_None {
+            coordinate = getRandomEmptyPosition()
+        }
+        return coordinate
+    }
+    
     func getInitialPositionIndex() -> (p1: Int, p2: Int) {
         var initialPositionIndex = (Int.random(in: 0...15), Int.random(in: 0...15))
         if initialPositionIndex.0 == initialPositionIndex.1 {
@@ -82,11 +108,15 @@ class PuzzleBoardCoordinator {
         return initialPositionIndex
     }
     
-    func convertChainToCoordinate(_ chainValue: Int) -> (c1: Int, c2: Int) {
+    func convertChainToCoordinate(_ chainValue: Int) -> (row: Int, col: Int) {
         assert(chainValue < 15 || chainValue > 0, "chainValue should in 0...15")
         let row = chainValue / 4
         let col = (chainValue + 4) % 4
         return (row, col)
+    }
+    
+    func convertCoordinateToChain(_ coordinate: (row: Int, col: Int)) -> Int {
+        return coordinate.row * 4 + coordinate.col
     }
     
     // MARK: For Test

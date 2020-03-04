@@ -63,4 +63,11 @@ class PuzzleAnimator {
         }
     }
     
+    func moveCubeViews(_ cubeViews: [[PuzzleCubeView?]],
+                       moveData: [[Int]],
+                       direction: PuzzleDirection,
+                       moveCubeViewsCompletion: @escaping () -> Void) {
+        
+    }
+    
 }
