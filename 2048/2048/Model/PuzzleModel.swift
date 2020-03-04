@@ -41,7 +41,7 @@ struct PuzzleModel {
     }
     
     // MARK: - Merge Data
-    mutating func mergeData(with direction: PuzzleDirection) -> [[PuzzleValue]] {
+    mutating func mergeData(with direction: PuzzleDirection) -> (newData: [[PuzzleValue]], moveData: [[Int]]) {
         var boardData = self.boardData
         switch direction {
         case .Left, .Right:
@@ -51,17 +51,15 @@ struct PuzzleModel {
             for i in 0...boardData.count - 1 { transposedData[i] = mergeOneLine(line: transposedData[i], direction: direction) }
             boardData = transpose(transposedData)
         }
-        return boardData
+        return (boardData, [])
     }
     
     private func mergeOneLine(line: [PuzzleValue], direction: PuzzleDirection) -> [PuzzleValue] {
         
         var needToReverse: Bool = {
             switch direction {
-            case .Left, .Up:
-                return false
-            case .Right, .Down:
-                return true
+            case .Left, .Up: return false
+            case .Right, .Down: return true
             }
         }()
         

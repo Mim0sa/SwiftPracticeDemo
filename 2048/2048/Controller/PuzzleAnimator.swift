@@ -64,10 +64,19 @@ class PuzzleAnimator {
     }
     
     func moveCubeViews(_ cubeViews: [[PuzzleCubeView?]],
-                       moveData: [[Int]],
-                       direction: PuzzleDirection,
+                       targetPosition: [[CGPoint?]],
                        moveCubeViewsCompletion: @escaping () -> Void) {
-        
+        UIView.animate(withDuration: 0.15, delay: 0, options: [], animations: {
+            for i in 0...cubeViews.count - 1 {
+                for j in 0...cubeViews[i].count - 1 {
+                    if let position = targetPosition[i][j] {
+                        cubeViews[i][j]?.center = position
+                    }
+                }
+            }
+        }) { (finish) in
+            moveCubeViewsCompletion()
+        }
     }
     
 }

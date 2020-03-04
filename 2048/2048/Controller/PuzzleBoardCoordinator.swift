@@ -73,6 +73,10 @@ class PuzzleBoardCoordinator {
         }
     }
     
+    func moveTheCubeViews(_ direction: PuzzleDirection, moveData: [[Int]], completion: @escaping () -> Void) {
+        
+    }
+    
     func showANewCube(_ value: PuzzleValue, completion: @escaping ([[PuzzleValue]]) -> Void) {
         let position = getRandomEmptyPosition()
         // generate cubeView

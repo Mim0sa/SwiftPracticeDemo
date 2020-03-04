@@ -54,10 +54,13 @@ class PuzzleMainViewController: UIViewController {
 extension PuzzleMainViewController: PuzzleGestureManagerDelegate {
     
     func puzzleGestureRecognizerResponse(with direction: PuzzleDirection) {
-        puzzleModel.boardData = puzzleModel.mergeData(with: direction)
-        puzzleModel.printBoardData()
         
+        let result = puzzleModel.mergeData(with: direction)
         
+        puzzleBoardCoordinator.moveTheCubeViews(direction, moveData: result.moveData) {
+            self.puzzleModel.boardData = result.newData
+            self.puzzleModel.printBoardData()
+        }
     }
 
 }
