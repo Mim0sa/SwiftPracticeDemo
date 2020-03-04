@@ -41,8 +41,9 @@ class PuzzleMainViewController: UIViewController {
         puzzleModel.cleanTheBoardData()
         puzzleBoardCoordinator.cleanTheBoard {
             let initialData = self.puzzleModel.generateInitialData()
-            self.puzzleBoardCoordinator.showTwoInitialCube(initialData) {
+            self.puzzleBoardCoordinator.showTwoInitialCube(initialData) { (boardData) in
                 self.puzzleGestureManager.isGesturesEnabled = true
+                self.puzzleModel.boardData = boardData
                 print("-- launchGame() finished --")
             }
         }
@@ -53,8 +54,10 @@ class PuzzleMainViewController: UIViewController {
 extension PuzzleMainViewController: PuzzleGestureManagerDelegate {
     
     func puzzleGestureRecognizerResponse(with direction: PuzzleDirection) {
-        print(puzzleModel.boardData)
-        print(puzzleModel.mergeData(with: direction))
+        puzzleModel.boardData = puzzleModel.mergeData(with: direction)
+        puzzleModel.printBoardData()
+        
+        
     }
 
 }

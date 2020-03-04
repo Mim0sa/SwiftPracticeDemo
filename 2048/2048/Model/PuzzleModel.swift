@@ -10,7 +10,7 @@ import Foundation
 
 struct PuzzleModel {
     
-    // MARK: - boardData
+    // MARK: - BoardData
     // |---|---|---|---|
     // |   |   | 2 |   |
     // |---|---|---|---|
@@ -26,12 +26,12 @@ struct PuzzleModel {
                                           [PuzzleValue.V_4, PuzzleValue.V_2, PuzzleValue.V_4, PuzzleValue.V_2],
                                           [PuzzleValue.V_2, PuzzleValue.V_8, PuzzleValue.V_2, PuzzleValue.V_4]]
     
-    // MARK: - initialize
+    // MARK: - Initialize
     init() {
         boardData = [[PuzzleValue]](repeating: [PuzzleValue](repeating: .V_None, count: 4), count: 4)
     }
     
-    // MARK: - generate new data
+    // MARK: - Generate New Data
     func generateInitialData() -> (PuzzleValue, PuzzleValue) {
         return (generateRandomData(), generateRandomData())
     }
@@ -40,9 +40,9 @@ struct PuzzleModel {
         return Int.random(in: 1...5) == 1 ? PuzzleValue.V_4 : PuzzleValue.V_2
     }
     
-    // MARK: - merge Data
+    // MARK: - Merge Data
     mutating func mergeData(with direction: PuzzleDirection) -> [[PuzzleValue]] {
-        var boardData = self.testBoardData
+        var boardData = self.boardData
         switch direction {
         case .Left, .Right:
             for i in 0...boardData.count - 1 { boardData[i] = mergeOneLine(line: boardData[i], direction: direction) }
@@ -95,7 +95,7 @@ struct PuzzleModel {
         return makeIndentation(mergeSameValue(makeIndentation(line)))
     }
     
-    // MARK: - checkIfGameOver
+    // MARK: - CheckIfGameOver
     func checkIfIsFinished() -> Bool {
         
         func checkHorizontally(_ boardData: [[PuzzleValue]]) -> Bool {
@@ -113,13 +113,13 @@ struct PuzzleModel {
         return false
     }
     
-    // MARK: - cleanTheBoard
+    // MARK: - CleanTheBoard
     mutating func cleanTheBoardData() {
         boardData = [[PuzzleValue]](repeating: [PuzzleValue](repeating: .V_None, count: 4), count: 4)
     }
     
     
-    // MARK: - transpose the matrix
+    // MARK: - Transpose Matrix
     func transpose(_ data: [[PuzzleValue]]) -> [[PuzzleValue]] {
         var tmp = [[PuzzleValue]](repeating: [PuzzleValue](repeating: .V_None, count: 4), count: 4)
         for i in 0...data[0].count - 1 {
@@ -129,6 +129,19 @@ struct PuzzleModel {
         }
         return tmp
     }
+    
+    // MARK: - For Test
+    func printBoardData() {
+        print("|-----------")
+        boardData.forEach { (line) in
+            print("|", terminator: "")
+            line.forEach { (value) in
+                print(value.rawValue, terminator: "|")
+            }
+            print("")
+        }
+    }
+
 }
 
 enum PuzzleValue: Int {
