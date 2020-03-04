@@ -39,7 +39,7 @@ class PuzzleMainViewController: UIViewController {
         puzzleBoardCoordinator.cleanTheBoard {
             let initialData = self.puzzleModel.generateInitialData()
             self.puzzleBoardCoordinator.showTwoInitialCube(initialData) {
-                print("finished")
+                print("-- launchGame() finished --")
             }
         }
     }

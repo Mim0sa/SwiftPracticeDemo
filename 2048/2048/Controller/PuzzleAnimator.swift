@@ -27,6 +27,24 @@ class PuzzleAnimator {
         })
     }
     
+    func expandCubeViews(_ cubeViews: [PuzzleCubeView], expandCubeViewsCompletion: @escaping () -> Void) {
+        UIView.animate(
+            withDuration: 0.15,
+            delay: 0,
+            usingSpringWithDamping: 0.5,
+            initialSpringVelocity: 20,
+            options: [],
+            animations:
+        {   // Animation Content
+            cubeViews.forEach { (cubeView) in
+                assert(cubeView.cubeStatus == .Shrinked , "cubeStatus should be .Shrinked")
+                cubeView.cubeStatus = .Expanded
+            }
+        }, completion: { (isFinished) in
+            expandCubeViewsCompletion()
+        })
+    }
+    
     func vanishAllCubeViews(_ cubeViews: [[PuzzleCubeView?]], vanishAllCubeViewsCompletion: @escaping () -> Void) {
         UIView.animate(withDuration: 0.5,
                        delay: 2,

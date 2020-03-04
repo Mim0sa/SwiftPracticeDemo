@@ -50,13 +50,10 @@ class PuzzleBoardCoordinator {
                                        cubeEdge: cubeEdge,
                                        cubeStatus: .Shrinked,
                                        puzzleValue: value.v2)
-        // 
         boardView.addSubview(cubeView1)
-        puzzleAnimator.expandCubeView(cubeView1) {
-            self.boardView.addSubview(cubeView2)
-            self.puzzleAnimator.expandCubeView(cubeView2) {
-                completion()
-            }
+        boardView.addSubview(cubeView2)
+        puzzleAnimator.expandCubeViews([cubeView1, cubeView2]) {
+            completion()
         }
     }
     
