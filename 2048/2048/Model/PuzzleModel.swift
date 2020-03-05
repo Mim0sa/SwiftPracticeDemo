@@ -43,19 +43,31 @@ struct PuzzleModel {
     // MARK: - Merge Data
     mutating func mergeData(with direction: PuzzleDirection) -> (newData: [[PuzzleValue]], moveData: [[Int]]) {
         var boardData = self.boardData
+        var moveData = [[Int]](repeating: [Int](repeating: 0, count: 4), count: 4)
+        
         switch direction {
         case .Left, .Right:
-            for i in 0...boardData.count - 1 { boardData[i] = mergeOneLine(line: boardData[i], direction: direction) }
+            for i in 0...3 {
+                let result = mergeOneLine(line: boardData[i], direction: direction)
+                boardData[i] = result.v
+                moveData[i] = result.m
+            }
         case .Up, .Down:
             var transposedData = transpose(boardData)
-            for i in 0...boardData.count - 1 { transposedData[i] = mergeOneLine(line: transposedData[i], direction: direction) }
+            for i in 0...boardData.count - 1 {
+                let result = mergeOneLine(line: boardData[i], direction: direction)
+                transposedData[i] = result.v
+                moveData[i] = result.m
+            }
             boardData = transpose(transposedData)
+            moveData = transpose(moveData)
         }
-        return (boardData, [])
+        return (boardData, moveData)
     }
     
-    private func mergeOneLine(line: [PuzzleValue], direction: PuzzleDirection) -> [PuzzleValue] {
+    private func mergeOneLine(line: [PuzzleValue], direction: PuzzleDirection) -> (v: [PuzzleValue], m: [Int]) {
         
+        var blankMove = [0,0,0,0]
         var needToReverse: Bool = {
             switch direction {
             case .Left, .Up: return false
@@ -63,20 +75,29 @@ struct PuzzleModel {
             }
         }()
         
-        func makeIndentation(_ line: [PuzzleValue]) -> [PuzzleValue] {
+        func makeIndentation(_ line: [PuzzleValue],_ move: [Int]) -> ([PuzzleValue], [Int]) {
+            var move = move
             var indentLine: [PuzzleValue] = []
             var indentationCount = 0
-            line.forEach { (value) in
-                if value != .V_None { indentLine.append(value) } else { indentationCount += 1 }
+            
+            for i in 0...3 {
+                if line[i] != .V_None {
+                    indentLine.append(line[i])
+                    move[i] += indentationCount
+                } else {
+                    indentationCount += 1
+                }
             }
+            
             while indentationCount > 0 {
                 if needToReverse { indentLine.insert(.V_None, at: 0) } else { indentLine.append(.V_None) }
                 indentationCount -= 1
             }
-            return indentLine
+            
+            return (indentLine, [1])
         }
         
-        func mergeSameValue(_ line: [PuzzleValue]) -> [PuzzleValue] {
+        func mergeSameValue(_ line: [PuzzleValue],_ move: [Int]) -> ([PuzzleValue], [Int]) {
             var mergedLine: [PuzzleValue] = line
             for i in 0...mergedLine.count - 2 {
                 let pioneer = needToReverse ? mergedLine.count - i - 1 : i
@@ -87,10 +108,10 @@ struct PuzzleModel {
                     mergedLine[nexter] = .V_None
                 }
             }
-            return mergedLine
+            return (mergedLine, [1])
         }
         
-        return makeIndentation(mergeSameValue(makeIndentation(line)))
+        return makeIndentation(line, blankMove)
     }
     
     // MARK: - CheckIfGameOver
@@ -120,6 +141,16 @@ struct PuzzleModel {
     // MARK: - Transpose Matrix
     func transpose(_ data: [[PuzzleValue]]) -> [[PuzzleValue]] {
         var tmp = [[PuzzleValue]](repeating: [PuzzleValue](repeating: .V_None, count: 4), count: 4)
+        for i in 0...data[0].count - 1 {
+            for j in 0...data.count - 1 {
+                tmp[i][j] = data[j][i]
+            }
+        }
+        return tmp
+    }
+    
+    func transpose(_ data: [[Int]]) -> [[Int]] {
+        var tmp = [[Int]](repeating: [Int](repeating: 0, count: 4), count: 4)
         for i in 0...data[0].count - 1 {
             for j in 0...data.count - 1 {
                 tmp[i][j] = data[j][i]
