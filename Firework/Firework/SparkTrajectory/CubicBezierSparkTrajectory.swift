@@ -1,5 +1,5 @@
 //
-//  SparkTrajectory.swift
+//  CubicBezierSparkTrajectory.swift
 //  Firework
 //
 //  Created by 吉乞悠 on 2020/3/8.
@@ -9,12 +9,7 @@
 import Foundation
 import UIKit
 
-protocol SparkTrajectory {
-    var points: [CGPoint] { get set }
-    var path: UIBezierPath { get }
-}
-
-struct CubicBezierSparkTrajectory: SparkTrajectory {
+struct CubicBezierTrajectory: Trajectory {
 
     var points = [CGPoint]()
 

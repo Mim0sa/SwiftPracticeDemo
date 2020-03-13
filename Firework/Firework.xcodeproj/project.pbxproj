@@ -13,8 +13,9 @@
 		1B5686112415437400C1D5EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B56860F2415437400C1D5EE /* Main.storyboard */; };
 		1B5686132415437900C1D5EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B5686122415437900C1D5EE /* Assets.xcassets */; };
 		1B5686162415437900C1D5EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B5686142415437900C1D5EE /* LaunchScreen.storyboard */; };
-		1B56861E241543FF00C1D5EE /* SparkTrajectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B56861D241543FF00C1D5EE /* SparkTrajectory.swift */; };
+		1B56861E241543FF00C1D5EE /* CubicBezierSparkTrajectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B56861D241543FF00C1D5EE /* CubicBezierSparkTrajectory.swift */; };
 		1B5686202415E8FE00C1D5EE /* ClassicSparkTrajectoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B56861F2415E8FE00C1D5EE /* ClassicSparkTrajectoryFactory.swift */; };
+		1B633D7924176C3C004C0C8D /* SparkTrajectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B633D7824176C3C004C0C8D /* SparkTrajectory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +27,9 @@
 		1B5686122415437900C1D5EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B5686152415437900C1D5EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B5686172415437900C1D5EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1B56861D241543FF00C1D5EE /* SparkTrajectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkTrajectory.swift; sourceTree = "<group>"; };
+		1B56861D241543FF00C1D5EE /* CubicBezierSparkTrajectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubicBezierSparkTrajectory.swift; sourceTree = "<group>"; };
 		1B56861F2415E8FE00C1D5EE /* ClassicSparkTrajectoryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicSparkTrajectoryFactory.swift; sourceTree = "<group>"; };
+		1B633D7824176C3C004C0C8D /* SparkTrajectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkTrajectory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,14 +65,31 @@
 				1B5686092415437400C1D5EE /* AppDelegate.swift */,
 				1B56860B2415437400C1D5EE /* SceneDelegate.swift */,
 				1B56860D2415437400C1D5EE /* ViewController.swift */,
-				1B56861D241543FF00C1D5EE /* SparkTrajectory.swift */,
-				1B56861F2415E8FE00C1D5EE /* ClassicSparkTrajectoryFactory.swift */,
+				1B633D7724176C0F004C0C8D /* SparkTrajectory */,
+				1B633D7A24176E6E004C0C8D /* SparkTrajectoryFactory */,
 				1B56860F2415437400C1D5EE /* Main.storyboard */,
 				1B5686122415437900C1D5EE /* Assets.xcassets */,
 				1B5686142415437900C1D5EE /* LaunchScreen.storyboard */,
 				1B5686172415437900C1D5EE /* Info.plist */,
 			);
 			path = Firework;
+			sourceTree = "<group>";
+		};
+		1B633D7724176C0F004C0C8D /* SparkTrajectory */ = {
+			isa = PBXGroup;
+			children = (
+				1B633D7824176C3C004C0C8D /* SparkTrajectory.swift */,
+				1B56861D241543FF00C1D5EE /* CubicBezierSparkTrajectory.swift */,
+			);
+			path = SparkTrajectory;
+			sourceTree = "<group>";
+		};
+		1B633D7A24176E6E004C0C8D /* SparkTrajectoryFactory */ = {
+			isa = PBXGroup;
+			children = (
+				1B56861F2415E8FE00C1D5EE /* ClassicSparkTrajectoryFactory.swift */,
+			);
+			path = SparkTrajectoryFactory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,10 +163,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B56861E241543FF00C1D5EE /* SparkTrajectory.swift in Sources */,
+				1B56861E241543FF00C1D5EE /* CubicBezierSparkTrajectory.swift in Sources */,
 				1B5686202415E8FE00C1D5EE /* ClassicSparkTrajectoryFactory.swift in Sources */,
 				1B56860E2415437400C1D5EE /* ViewController.swift in Sources */,
 				1B56860A2415437400C1D5EE /* AppDelegate.swift in Sources */,
+				1B633D7924176C3C004C0C8D /* SparkTrajectory.swift in Sources */,
 				1B56860C2415437400C1D5EE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
