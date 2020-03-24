@@ -11,7 +11,7 @@ import UIKit
 
 class GPControl {
     
-    func addGamePaddleArea() {
+    func addGamePaddleArea(at frame: CGRect) {
         
     }
     
