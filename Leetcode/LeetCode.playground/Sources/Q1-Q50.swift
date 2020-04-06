@@ -30,7 +30,7 @@ extension LeetCodeSupport {
     
     // MARK: - Q14
     func longestCommonPrefix(_ strs: [String]) -> String {
-        return ""
+
     }
     
 }
