@@ -9,6 +9,7 @@
 import UIKit
 
 extension UIImage {
+    
     func pixellated(scale: Int = 8) -> UIImage? { guard
         let ciImage = CIImage(image: self),
         let filter = CIFilter(name: "CIPixellate")
@@ -20,4 +21,5 @@ extension UIImage {
         guard let output = filter.outputImage else { return nil }
         return UIImage(ciImage: output)
     }
+    
 }
