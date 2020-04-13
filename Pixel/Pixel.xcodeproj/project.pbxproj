@@ -13,6 +13,8 @@
 		1BD4A711243B90DA0053EF83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BD4A70F243B90DA0053EF83 /* Main.storyboard */; };
 		1BD4A713243B90E90053EF83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BD4A712243B90E90053EF83 /* Assets.xcassets */; };
 		1BD4A716243B90E90053EF83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BD4A714243B90E90053EF83 /* LaunchScreen.storyboard */; };
+		1BD4A71E243C4A820053EF83 /* UIImage+Pixellate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD4A71D243C4A820053EF83 /* UIImage+Pixellate.swift */; };
+		1BD4A720243D74010053EF83 /* PixelImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD4A71F243D74010053EF83 /* PixelImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		1BD4A712243B90E90053EF83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1BD4A715243B90E90053EF83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1BD4A717243B90E90053EF83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BD4A71D243C4A820053EF83 /* UIImage+Pixellate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Pixellate.swift"; sourceTree = "<group>"; };
+		1BD4A71F243D74010053EF83 /* PixelImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				1BD4A709243B90DA0053EF83 /* AppDelegate.swift */,
 				1BD4A70B243B90DA0053EF83 /* SceneDelegate.swift */,
 				1BD4A70D243B90DA0053EF83 /* ViewController.swift */,
+				1BD4A71D243C4A820053EF83 /* UIImage+Pixellate.swift */,
+				1BD4A71F243D74010053EF83 /* PixelImage.swift */,
 				1BD4A70F243B90DA0053EF83 /* Main.storyboard */,
 				1BD4A712243B90E90053EF83 /* Assets.xcassets */,
 				1BD4A714243B90E90053EF83 /* LaunchScreen.storyboard */,
@@ -140,6 +146,8 @@
 			files = (
 				1BD4A70E243B90DA0053EF83 /* ViewController.swift in Sources */,
 				1BD4A70A243B90DA0053EF83 /* AppDelegate.swift in Sources */,
+				1BD4A720243D74010053EF83 /* PixelImage.swift in Sources */,
+				1BD4A71E243C4A820053EF83 /* UIImage+Pixellate.swift in Sources */,
 				1BD4A70C243B90DA0053EF83 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
