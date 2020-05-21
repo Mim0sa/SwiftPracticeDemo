@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B34EAEB247521F6009AC43B /* PPBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B34EAEA247521F6009AC43B /* PPBaseViewController.swift */; };
+		1B34EAED24761A42009AC43B /* PPCanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B34EAEC24761A42009AC43B /* PPCanvasViewController.swift */; };
 		1B3C39D62462CCD60082AF94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3C39D52462CCD60082AF94 /* AppDelegate.swift */; };
 		1B3C39D82462CCD60082AF94 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3C39D72462CCD60082AF94 /* SceneDelegate.swift */; };
 		1B3C39DA2462CCD60082AF94 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3C39D92462CCD60082AF94 /* ViewController.swift */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		1A5D18D6BD1039EFFC580209 /* Pods_ProtoPipe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProtoPipe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B34EAEA247521F6009AC43B /* PPBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPBaseViewController.swift; sourceTree = "<group>"; };
+		1B34EAEC24761A42009AC43B /* PPCanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPCanvasViewController.swift; sourceTree = "<group>"; };
 		1B3C39D22462CCD60082AF94 /* ProtoPipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProtoPipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B3C39D52462CCD60082AF94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B3C39D72462CCD60082AF94 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 				1B3C39D52462CCD60082AF94 /* AppDelegate.swift */,
 				1B3C39D72462CCD60082AF94 /* SceneDelegate.swift */,
 				1B3C39D92462CCD60082AF94 /* ViewController.swift */,
+				1B34EAEC24761A42009AC43B /* PPCanvasViewController.swift */,
+				1B34EAEA247521F6009AC43B /* PPBaseViewController.swift */,
 				1B3C39DB2462CCD60082AF94 /* Main.storyboard */,
 				1B3C39DE2462CCDE0082AF94 /* Assets.xcassets */,
 				1B3C39E02462CCDE0082AF94 /* LaunchScreen.storyboard */,
@@ -120,6 +126,7 @@
 		1B3C39CA2462CCD60082AF94 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = PP;
 				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "吉乞悠";
@@ -222,6 +229,8 @@
 				1B3C39DA2462CCD60082AF94 /* ViewController.swift in Sources */,
 				1B3C39D62462CCD60082AF94 /* AppDelegate.swift in Sources */,
 				1B3C39D82462CCD60082AF94 /* SceneDelegate.swift in Sources */,
+				1B34EAEB247521F6009AC43B /* PPBaseViewController.swift in Sources */,
+				1B34EAED24761A42009AC43B /* PPCanvasViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,11 +378,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RSA8WT4A52;
 				INFOPLIST_FILE = ProtoPipe/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = mimosa.ProtoPipe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -385,11 +397,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RSA8WT4A52;
 				INFOPLIST_FILE = ProtoPipe/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = mimosa.ProtoPipe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

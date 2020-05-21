@@ -7,20 +7,19 @@
 //
 
 import UIKit
-
 import SnapKit
 
-class ViewController: UIViewController {
+class PPViewController: PPBaseViewController {
 
-    lazy var box = UIView()
+    lazy var box = UIButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.view.addSubview(box)
-        box.backgroundColor = .green
+        box.backgroundColor = .orange
         box.snp.makeConstraints { (make) -> Void in
-           make.width.height.equalTo(50)
+           make.width.height.equalTo(200)
            make.center.equalTo(self.view)
         }
     }
