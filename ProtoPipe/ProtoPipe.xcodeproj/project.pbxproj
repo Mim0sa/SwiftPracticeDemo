@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		1B34EAEB247521F6009AC43B /* PPBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B34EAEA247521F6009AC43B /* PPBaseViewController.swift */; };
 		1B34EAED24761A42009AC43B /* PPCanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B34EAEC24761A42009AC43B /* PPCanvasViewController.swift */; };
+		1B34EAF124761FA3009AC43B /* PPFolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B34EAF024761FA3009AC43B /* PPFolderViewController.swift */; };
+		1B34EAF52476311A009AC43B /* MagicMoveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B34EAF42476311A009AC43B /* MagicMoveAnimator.swift */; };
 		1B3C39D62462CCD60082AF94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3C39D52462CCD60082AF94 /* AppDelegate.swift */; };
 		1B3C39D82462CCD60082AF94 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3C39D72462CCD60082AF94 /* SceneDelegate.swift */; };
-		1B3C39DA2462CCD60082AF94 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3C39D92462CCD60082AF94 /* ViewController.swift */; };
 		1B3C39DD2462CCD60082AF94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B3C39DB2462CCD60082AF94 /* Main.storyboard */; };
 		1B3C39DF2462CCDE0082AF94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B3C39DE2462CCDE0082AF94 /* Assets.xcassets */; };
 		1B3C39E22462CCDE0082AF94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B3C39E02462CCDE0082AF94 /* LaunchScreen.storyboard */; };
@@ -22,10 +23,11 @@
 		1A5D18D6BD1039EFFC580209 /* Pods_ProtoPipe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProtoPipe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B34EAEA247521F6009AC43B /* PPBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPBaseViewController.swift; sourceTree = "<group>"; };
 		1B34EAEC24761A42009AC43B /* PPCanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPCanvasViewController.swift; sourceTree = "<group>"; };
+		1B34EAF024761FA3009AC43B /* PPFolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPFolderViewController.swift; sourceTree = "<group>"; };
+		1B34EAF42476311A009AC43B /* MagicMoveAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicMoveAnimator.swift; sourceTree = "<group>"; };
 		1B3C39D22462CCD60082AF94 /* ProtoPipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProtoPipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B3C39D52462CCD60082AF94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B3C39D72462CCD60082AF94 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1B3C39D92462CCD60082AF94 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1B3C39DC2462CCD60082AF94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1B3C39DE2462CCDE0082AF94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B3C39E12462CCDE0082AF94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -69,9 +71,10 @@
 			children = (
 				1B3C39D52462CCD60082AF94 /* AppDelegate.swift */,
 				1B3C39D72462CCD60082AF94 /* SceneDelegate.swift */,
-				1B3C39D92462CCD60082AF94 /* ViewController.swift */,
+				1B34EAF024761FA3009AC43B /* PPFolderViewController.swift */,
 				1B34EAEC24761A42009AC43B /* PPCanvasViewController.swift */,
 				1B34EAEA247521F6009AC43B /* PPBaseViewController.swift */,
+				1B34EAF42476311A009AC43B /* MagicMoveAnimator.swift */,
 				1B3C39DB2462CCD60082AF94 /* Main.storyboard */,
 				1B3C39DE2462CCDE0082AF94 /* Assets.xcassets */,
 				1B3C39E02462CCDE0082AF94 /* LaunchScreen.storyboard */,
@@ -226,9 +229,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B3C39DA2462CCD60082AF94 /* ViewController.swift in Sources */,
 				1B3C39D62462CCD60082AF94 /* AppDelegate.swift in Sources */,
+				1B34EAF52476311A009AC43B /* MagicMoveAnimator.swift in Sources */,
 				1B3C39D82462CCD60082AF94 /* SceneDelegate.swift in Sources */,
+				1B34EAF124761FA3009AC43B /* PPFolderViewController.swift in Sources */,
 				1B34EAEB247521F6009AC43B /* PPBaseViewController.swift in Sources */,
 				1B34EAED24761A42009AC43B /* PPCanvasViewController.swift in Sources */,
 			);
