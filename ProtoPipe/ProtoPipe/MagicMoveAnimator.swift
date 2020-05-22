@@ -34,12 +34,17 @@ class MagicMoveAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         containerView.addSubview(tempView)
         
         let transitionDuration = self.transitionDuration(using: transitionContext)
-        UIView.animate(withDuration: transitionDuration, animations: {
-            tempView.frame = transitionContext.finalFrame(for: toViewController!)
-        }) { (finished: Bool) -> Void in
-            tempView.alpha = 0
-            toView!.alpha = 1.0
+        
+        UIView.animateKeyframes(withDuration: transitionDuration, delay: 0, options: [], animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.6) {
+                tempView.frame = transitionContext.finalFrame(for: toViewController!)
+            }
             
+            UIView.addKeyframe(withRelativeStartTime: 0.6, relativeDuration: 0.2) {
+                tempView.alpha = 0
+                toView!.alpha = 1.0
+            }
+        }) { (finished: Bool) -> Void in
             let wasCancelled = transitionContext.transitionWasCancelled
             transitionContext.completeTransition(!wasCancelled)
         }

@@ -12,17 +12,23 @@ import SnapKit
 class PPFolderViewController: PPBaseViewController, PPCanvasViewControllerDelegate, UIViewControllerTransitioningDelegate {
 
     lazy var box = UIButton()
+    
+    let folderNavigationBar = PPFolderNavigationBar()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.view.addSubview(box)
+        
+        view.backgroundColor = UIColor(withHex: 0x191B1D)
+        
+        view.addSubview(box)
         box.backgroundColor = .orange
         box.snp.makeConstraints { (make) -> Void in
            make.width.height.equalTo(200)
            make.center.equalTo(self.view)
         }
         box.addTarget(self, action: #selector(buttonClicked(sender:)), for: .touchUpInside)
+        
+        view.addSubview(folderNavigationBar)
     }
 
     @objc func buttonClicked(sender: UIButton) {
