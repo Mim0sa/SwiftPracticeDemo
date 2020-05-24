@@ -18,6 +18,8 @@
 		1B3C39DD2462CCD60082AF94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B3C39DB2462CCD60082AF94 /* Main.storyboard */; };
 		1B3C39DF2462CCDE0082AF94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B3C39DE2462CCDE0082AF94 /* Assets.xcassets */; };
 		1B3C39E22462CCDE0082AF94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B3C39E02462CCDE0082AF94 /* LaunchScreen.storyboard */; };
+		1B9E6728247A29DC00D649B3 /* PPFolderCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E6727247A29DC00D649B3 /* PPFolderCollectionViewFlowLayout.swift */; };
+		1B9E672A247A2AB300D649B3 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E6729247A2AB300D649B3 /* Common.swift */; };
 		38241CB9BD9C7728BAC23700 /* Pods_ProtoPipe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5D18D6BD1039EFFC580209 /* Pods_ProtoPipe.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +38,8 @@
 		1B3C39DE2462CCDE0082AF94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B3C39E12462CCDE0082AF94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B3C39E32462CCDE0082AF94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B9E6727247A29DC00D649B3 /* PPFolderCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPFolderCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		1B9E6729247A2AB300D649B3 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		334305D6CEA0E208BF38B60B /* Pods-ProtoPipe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProtoPipe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProtoPipe/Pods-ProtoPipe.debug.xcconfig"; sourceTree = "<group>"; };
 		4567E6E41458F82F47AB6789 /* Pods-ProtoPipe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProtoPipe.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProtoPipe/Pods-ProtoPipe.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,18 +79,28 @@
 			children = (
 				1B3C39D52462CCD60082AF94 /* AppDelegate.swift */,
 				1B3C39D72462CCD60082AF94 /* SceneDelegate.swift */,
-				1B34EAF024761FA3009AC43B /* PPFolderViewController.swift */,
-				1B34EAF62477BCF0009AC43B /* PPFolderNavigationBar.swift */,
+				1B9E6726247A185D00D649B3 /* FolderViewController */,
 				1B34EAEC24761A42009AC43B /* PPCanvasViewController.swift */,
 				1B34EAEA247521F6009AC43B /* PPBaseViewController.swift */,
 				1B34EAF42476311A009AC43B /* MagicMoveAnimator.swift */,
 				1B34EAF82477C521009AC43B /* Extension+UIcolor.swift */,
+				1B9E6729247A2AB300D649B3 /* Common.swift */,
 				1B3C39DB2462CCD60082AF94 /* Main.storyboard */,
 				1B3C39DE2462CCDE0082AF94 /* Assets.xcassets */,
 				1B3C39E02462CCDE0082AF94 /* LaunchScreen.storyboard */,
 				1B3C39E32462CCDE0082AF94 /* Info.plist */,
 			);
 			path = ProtoPipe;
+			sourceTree = "<group>";
+		};
+		1B9E6726247A185D00D649B3 /* FolderViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1B34EAF024761FA3009AC43B /* PPFolderViewController.swift */,
+				1B34EAF62477BCF0009AC43B /* PPFolderNavigationBar.swift */,
+				1B9E6727247A29DC00D649B3 /* PPFolderCollectionViewFlowLayout.swift */,
+			);
+			path = FolderViewController;
 			sourceTree = "<group>";
 		};
 		BCBBD3E578BDEBB343B337F0 /* Frameworks */ = {
@@ -243,6 +257,8 @@
 				1B34EAEB247521F6009AC43B /* PPBaseViewController.swift in Sources */,
 				1B34EAED24761A42009AC43B /* PPCanvasViewController.swift in Sources */,
 				1B34EAF92477C521009AC43B /* Extension+UIcolor.swift in Sources */,
+				1B9E672A247A2AB300D649B3 /* Common.swift in Sources */,
+				1B9E6728247A29DC00D649B3 /* PPFolderCollectionViewFlowLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

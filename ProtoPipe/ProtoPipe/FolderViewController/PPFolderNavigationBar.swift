@@ -26,7 +26,7 @@ class PPFolderNavigationBar: UIView {
         
         let barItem_new = UIButton(type: .system)
         barItem_new.setTitle("New", for: .normal)
-        barItem_new.titleLabel?.font = UIFont.systemFont(ofSize: 24, weight: .medium)
+        barItem_new.titleLabel?.font = UIFont.systemFont(ofSize: 21, weight: .regular)
         barItem_new.tintColor = UIColor(withHex: 0xeeeeee)
         barItem_new.sizeToFit()
         barItems.append(barItem_new)
@@ -34,20 +34,11 @@ class PPFolderNavigationBar: UIView {
         
         let barItem_select = UIButton(type: .system)
         barItem_select.setTitle("Select", for: .normal)
-        barItem_select.titleLabel?.font = UIFont.systemFont(ofSize: 24, weight: .medium)
+        barItem_select.titleLabel?.font = UIFont.systemFont(ofSize: 21, weight: .regular)
         barItem_select.tintColor = UIColor(withHex: 0xeeeeee)
         barItem_select.sizeToFit()
         barItems.append(barItem_select)
         addSubview(barItem_select)
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        snp.makeConstraints { (make) in
-            make.left.right.top.equalTo(0)
-            make.height.equalTo(90)
-        }
         
         barIcon.snp.makeConstraints { (make) in
             make.left.equalTo(40)
