@@ -17,12 +17,17 @@ class PPFolderCollectionViewFlowLayout: UICollectionViewFlowLayout {
         scrollDirection = .vertical
         minimumLineSpacing = 0
         minimumInteritemSpacing = 0
-        
-        let itemWidth = firstLaunchScreenWidth > firstLaunchScreenHeight ? firstLaunchScreenWidth / 4 : firstLaunchScreenHeight / 4
-        itemSize = CGSize(width: itemWidth - 5, height: (itemWidth - 5) / 5 * 4)
+
+        itemSize = folderCollectionViewCellSize
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+var folderCollectionViewCellSize: CGSize {
+     return CGSize(width: screenWidth > screenHeight ? screenWidth / 4 : screenWidth / 3,
+                   height: screenWidth > screenHeight ? screenWidth / 4 / 1.25 : screenWidth / 3 / 1.25)
+}
+

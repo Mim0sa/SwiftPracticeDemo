@@ -8,5 +8,5 @@
 
 import UIKit
 
-let firstLaunchScreenWidth = UIScreen.main.bounds.width
-let firstLaunchScreenHeight = UIScreen.main.bounds.height
+var screenWidth: CGFloat { return UIScreen.main.bounds.width }
+var screenHeight: CGFloat { return UIScreen.main.bounds.height }

@@ -13,6 +13,8 @@ class PPFolderViewController: PPBaseViewController, PPCanvasViewControllerDelega
     
     let folderNavigationBar = PPFolderNavigationBar()
     var collectionView: UICollectionView!
+    
+    let folderCollectionViewCellID = "FolderCollectionViewCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,13 +30,22 @@ class PPFolderViewController: PPBaseViewController, PPCanvasViewControllerDelega
         collectionView = UICollectionView(frame: CGRect(), collectionViewLayout: PPFolderCollectionViewFlowLayout())
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        collectionView.register(PPFolderCollectionViewCell.self, forCellWithReuseIdentifier: folderCollectionViewCellID)
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints { (make) in
             make.left.bottom.equalTo(0)
             make.right.equalTo(10)
             make.top.equalTo(90)
         }
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        guard let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
+        
+        flowLayout.itemSize = folderCollectionViewCellSize
+        flowLayout.invalidateLayout()
     }
 
     @objc func buttonClicked(sender: UIButton) {
@@ -53,9 +64,13 @@ extension PPFolderViewController {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: folderCollectionViewCellID, for: indexPath)
         cell.backgroundColor = .randomColor
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(collectionView.cellForItem(at: indexPath)?.frame.size)
     }
 }
 
