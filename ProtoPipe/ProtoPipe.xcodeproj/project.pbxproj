@@ -21,6 +21,8 @@
 		1B9E6728247A29DC00D649B3 /* PPFolderCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E6727247A29DC00D649B3 /* PPFolderCollectionViewFlowLayout.swift */; };
 		1B9E672A247A2AB300D649B3 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E6729247A2AB300D649B3 /* Common.swift */; };
 		1B9E672C247BD41F00D649B3 /* PPFolderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E672B247BD41F00D649B3 /* PPFolderCollectionViewCell.swift */; };
+		1B9E672E247CC68200D649B3 /* PPItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E672D247CC68200D649B3 /* PPItem.swift */; };
+		1B9E6730247CC68E00D649B3 /* PPFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E672F247CC68E00D649B3 /* PPFolder.swift */; };
 		38241CB9BD9C7728BAC23700 /* Pods_ProtoPipe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5D18D6BD1039EFFC580209 /* Pods_ProtoPipe.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +44,8 @@
 		1B9E6727247A29DC00D649B3 /* PPFolderCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPFolderCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		1B9E6729247A2AB300D649B3 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		1B9E672B247BD41F00D649B3 /* PPFolderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPFolderCollectionViewCell.swift; sourceTree = "<group>"; };
+		1B9E672D247CC68200D649B3 /* PPItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPItem.swift; sourceTree = "<group>"; };
+		1B9E672F247CC68E00D649B3 /* PPFolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPFolder.swift; sourceTree = "<group>"; };
 		334305D6CEA0E208BF38B60B /* Pods-ProtoPipe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProtoPipe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProtoPipe/Pods-ProtoPipe.debug.xcconfig"; sourceTree = "<group>"; };
 		4567E6E41458F82F47AB6789 /* Pods-ProtoPipe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProtoPipe.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProtoPipe/Pods-ProtoPipe.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +106,8 @@
 				1B34EAF62477BCF0009AC43B /* PPFolderNavigationBar.swift */,
 				1B9E6727247A29DC00D649B3 /* PPFolderCollectionViewFlowLayout.swift */,
 				1B9E672B247BD41F00D649B3 /* PPFolderCollectionViewCell.swift */,
+				1B9E672D247CC68200D649B3 /* PPItem.swift */,
+				1B9E672F247CC68E00D649B3 /* PPFolder.swift */,
 			);
 			path = FolderViewController;
 			sourceTree = "<group>";
@@ -262,7 +268,9 @@
 				1B34EAF92477C521009AC43B /* Extension+UIcolor.swift in Sources */,
 				1B9E672A247A2AB300D649B3 /* Common.swift in Sources */,
 				1B9E6728247A29DC00D649B3 /* PPFolderCollectionViewFlowLayout.swift in Sources */,
+				1B9E672E247CC68200D649B3 /* PPItem.swift in Sources */,
 				1B9E672C247BD41F00D649B3 /* PPFolderCollectionViewCell.swift in Sources */,
+				1B9E6730247CC68E00D649B3 /* PPFolder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

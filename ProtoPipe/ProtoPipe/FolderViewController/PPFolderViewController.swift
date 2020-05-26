@@ -60,12 +60,12 @@ class PPFolderViewController: PPBaseViewController, PPCanvasViewControllerDelega
 
 extension PPFolderViewController {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return 17
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: folderCollectionViewCellID, for: indexPath)
-        cell.backgroundColor = .randomColor
+        //cell.backgroundColor = .randomColor
         return cell
     }
     

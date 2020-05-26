@@ -27,7 +27,7 @@ class PPFolderCollectionViewFlowLayout: UICollectionViewFlowLayout {
 }
 
 var folderCollectionViewCellSize: CGSize {
-     return CGSize(width: screenWidth > screenHeight ? screenWidth / 4 : screenWidth / 3,
-                   height: screenWidth > screenHeight ? screenWidth / 4 / 1.25 : screenWidth / 3 / 1.25)
+     return CGSize(width:  screenWidth > screenHeight ? screenWidth / 4 : screenWidth / 3,
+                   height: screenWidth > screenHeight ? screenWidth / 4 : screenWidth / 3)
 }
 
