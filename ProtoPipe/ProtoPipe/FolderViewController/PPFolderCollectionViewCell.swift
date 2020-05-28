@@ -24,16 +24,18 @@ class PPFolderCollectionViewCell: UICollectionViewCell {
         addSubview(detailLabel)
         detailLabel.snp.makeConstraints { (make) in
             make.left.equalTo(30)
+            make.right.equalTo(-30)
             make.bottom.equalTo(-20)
         }
         
-        titleLabel.text = "未命名文件"
+        titleLabel.text = "未命名文件未命名文件未命名文件未命名文件"
         titleLabel.textColor = UIColor(withHex: 0xeeeeee)
         titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .light)
         titleLabel.sizeToFit()
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
             make.left.equalTo(30)
+            make.right.equalTo(-30)
             make.bottom.equalTo(detailLabel.snp.top).offset(-8)
         }
         
