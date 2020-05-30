@@ -45,13 +45,13 @@ class PPFolderNavigationBar: UIView {
             make.bottom.equalTo(0)
         }
         
-        barItems[0].snp.makeConstraints { (make) in
+        barItems[1].snp.makeConstraints { (make) in
             make.right.equalTo(-40)
             make.bottom.equalTo(-5)
         }
         
-        barItems[1].snp.makeConstraints { (make) in
-            make.right.equalTo(barItems[0].snp.left).offset(-20)
+        barItems[0].snp.makeConstraints { (make) in
+            make.right.equalTo(barItems[1].snp.left).offset(-20)
             make.bottom.equalTo(-5)
         }
     }

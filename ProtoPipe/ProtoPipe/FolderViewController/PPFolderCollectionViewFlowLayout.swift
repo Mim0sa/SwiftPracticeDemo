@@ -14,7 +14,6 @@ class PPFolderCollectionViewFlowLayout: UICollectionViewFlowLayout {
         super.init()
         
         scrollDirection = .vertical
-        scrollDirection = .vertical
         minimumLineSpacing = 0
         minimumInteritemSpacing = 0
 
