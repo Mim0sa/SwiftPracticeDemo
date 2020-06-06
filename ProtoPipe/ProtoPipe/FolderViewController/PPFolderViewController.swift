@@ -9,8 +9,8 @@
 import UIKit
 import SnapKit
 
-class PPFolderViewController: PPBaseViewController, PPCanvasViewControllerDelegate, UIViewControllerTransitioningDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
-    
+class PPFolderViewController: PPBaseViewController, PPCanvasViewControllerDelegate, UIViewControllerTransitioningDelegate, UICollectionViewDelegate, UICollectionViewDataSource, PPFolderNavigationBarDelegate {
+
     let folderNavigationBar = PPFolderNavigationBar()
     var collectionView: UICollectionView!
     
@@ -58,6 +58,14 @@ class PPFolderViewController: PPBaseViewController, PPCanvasViewControllerDelega
 
 }
 
+// MARK: - PPFolderNavigationBarDelegate
+extension PPFolderViewController {
+    func folderNavigationBarDidClickSelectButton(on folderNavigationBar: PPFolderNavigationBar) {
+        
+    }
+}
+
+// MARK: - UICollectionViewDelegate & UICollectionViewDataSource
 extension PPFolderViewController {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 17
@@ -74,12 +82,14 @@ extension PPFolderViewController {
     }
 }
 
+// MARK: - PPCanvasViewControllerDelegate
 extension PPFolderViewController {
-    func canvasViewControllerDidClickedFolderButton(vc: PPCanvasViewController) {
+    func canvasViewControllerDidClickedFolderButton(_ vc: PPCanvasViewController) {
         dismiss(animated: true, completion: nil)
     }
 }
 
+// MARK: - UIViewControllerTransitioningDelegate
 extension PPFolderViewController {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return MagicMoveAnimator()

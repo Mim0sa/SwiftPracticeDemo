@@ -8,10 +8,20 @@
 
 import UIKit
 
+protocol PPFolderNavigationBarDelegate {
+    func folderNavigationBarDidClickSelectButton(on folderNavigationBar: PPFolderNavigationBar)
+}
+
 class PPFolderNavigationBar: UIView {
 
     let barIcon: UIButton = UIButton(type: .system)
     var barItems: [UIButton] = []
+    
+    var isSelected: Bool = false {
+        willSet {
+            updateBarItems(with: newValue)
+        }
+    }
     
     init() {
         super.init(frame: CGRect())
@@ -53,6 +63,14 @@ class PPFolderNavigationBar: UIView {
         barItems[0].snp.makeConstraints { (make) in
             make.right.equalTo(barItems[1].snp.left).offset(-20)
             make.bottom.equalTo(-5)
+        }
+    }
+    
+    func updateBarItems(with status: Bool) {
+        if status {
+            
+        } else {
+            
         }
     }
     

@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 
 protocol PPCanvasViewControllerDelegate {
-    func canvasViewControllerDidClickedFolderButton(vc: PPCanvasViewController)
+    func canvasViewControllerDidClickedFolderButton(_ vc: PPCanvasViewController)
 }
 
 class PPCanvasViewController: PPBaseViewController {
@@ -38,7 +38,7 @@ class PPCanvasViewController: PPBaseViewController {
 
     @objc func buttonClicked(sender: UIButton) {
         if let delegate = delegate {
-            delegate.canvasViewControllerDidClickedFolderButton(vc: self)
+            delegate.canvasViewControllerDidClickedFolderButton(self)
         }
     }
     
