@@ -21,6 +21,7 @@ class PPFolderViewController: PPBaseViewController, PPCanvasViewControllerDelega
         
         view.backgroundColor = UIColor(withHex: 0x191B1D)
         
+        folderNavigationBar.delegate = self
         view.addSubview(folderNavigationBar)
         folderNavigationBar.snp.makeConstraints { (make) in
             make.left.right.top.equalTo(0)
@@ -60,8 +61,12 @@ class PPFolderViewController: PPBaseViewController, PPCanvasViewControllerDelega
 
 // MARK: - PPFolderNavigationBarDelegate
 extension PPFolderViewController {
-    func folderNavigationBarDidClickSelectButton(on folderNavigationBar: PPFolderNavigationBar) {
-        
+    func folderNavigationBarDidClickSelectButton(_ folderNavigationBar: PPFolderNavigationBar) {
+        folderNavigationBar.isSelected = true
+    }
+    
+    func folderNavigationBarDidClickCancelButton(_ folderNavigationBar: PPFolderNavigationBar) {
+        folderNavigationBar.isSelected = false
     }
 }
 
@@ -78,7 +83,7 @@ extension PPFolderViewController {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(collectionView.cellForItem(at: indexPath)?.frame.size)
+        print(collectionView.cellForItem(at: indexPath)?.frame.size ?? "error")
     }
 }
 
