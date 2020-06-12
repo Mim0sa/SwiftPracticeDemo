@@ -106,12 +106,13 @@ class PPFolderNavigationBar: UIView {
     }
     
     func updateAlertBar(withStyle isSelected: Bool) {
-        let alertBarHeight = isSelected ? 5 : 0
+        layoutIfNeeded()
+        let alertBarHeight = isSelected ? 6 : 0
+        alertBar.snp.updateConstraints { (make) in
+            make.height.equalTo(alertBarHeight)
+        }
         UIView.animate(withDuration: 0.2) {
-            self.alertBar.snp.updateConstraints { (make) in
-                make.height.equalTo(alertBarHeight)
-            }
-            self.updateConstraints()
+            self.layoutIfNeeded()
         }
     }
     

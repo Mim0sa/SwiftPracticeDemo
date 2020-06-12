@@ -21,13 +21,6 @@ class PPFolderViewController: PPBaseViewController, PPCanvasViewControllerDelega
         
         view.backgroundColor = UIColor(withHex: 0x191B1D)
         
-        folderNavigationBar.delegate = self
-        view.addSubview(folderNavigationBar)
-        folderNavigationBar.snp.makeConstraints { (make) in
-            make.left.right.top.equalTo(0)
-            make.height.equalTo(90)
-        }
-        
         collectionView = UICollectionView(frame: CGRect(), collectionViewLayout: PPFolderCollectionViewFlowLayout())
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -37,6 +30,13 @@ class PPFolderViewController: PPBaseViewController, PPCanvasViewControllerDelega
             make.left.bottom.equalTo(0)
             make.right.equalTo(10)
             make.top.equalTo(90)
+        }
+        
+        folderNavigationBar.delegate = self
+        view.addSubview(folderNavigationBar)
+        folderNavigationBar.snp.makeConstraints { (make) in
+            make.left.right.top.equalTo(0)
+            make.height.equalTo(90)
         }
     }
     
