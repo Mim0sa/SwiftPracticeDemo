@@ -16,7 +16,7 @@ protocol PPFolderNavigationBarDelegate {
 class PPFolderNavigationBar: UIView {
 
     let barIcon: UIButton = UIButton(type: .system)
-    var barItems: [UIButton] = [] // [New, Select, Cancel, Share, Delete]
+    private(set) var barItems: [UIButton] = [] // [New, Select, Cancel, Share, Delete]
     let alertBar = UIView()
     
     var currentBarItems: [UIButton] = []
@@ -131,8 +131,10 @@ extension PPFolderNavigationBar {
         case .New:
             break
         case .Select:
+            isSelected = true
             delegate?.folderNavigationBarDidClickSelectButton(self)
         case .Cancel:
+            isSelected = false
             delegate?.folderNavigationBarDidClickCancelButton(self)
         case .Share:
             break

@@ -14,6 +14,8 @@ class PPFolderViewController: PPBaseViewController, PPCanvasViewControllerDelega
     let folderNavigationBar = PPFolderNavigationBar()
     var collectionView: UICollectionView!
     
+    var collectionViewData: [PPFolderCollectionViewCellModel] = [PPFolderCollectionViewCellModel(title: "ProtoPipe原型设计第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isChosen: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型设计第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isChosen: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型设计第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isChosen: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型设计第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isChosen: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型设计第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isChosen: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型设计第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isChosen: false)]
+    
     let folderCollectionViewCellID = "FolderCollectionViewCell"
 
     override func viewDidLoad() {
@@ -62,23 +64,29 @@ class PPFolderViewController: PPBaseViewController, PPCanvasViewControllerDelega
 // MARK: - PPFolderNavigationBarDelegate
 extension PPFolderViewController {
     func folderNavigationBarDidClickSelectButton(_ folderNavigationBar: PPFolderNavigationBar) {
-        folderNavigationBar.isSelected = true
+        for i in 0...collectionViewData.count - 1 {
+            collectionViewData[i].isChosen = true
+        }
+        collectionView.reloadData()
     }
     
     func folderNavigationBarDidClickCancelButton(_ folderNavigationBar: PPFolderNavigationBar) {
-        folderNavigationBar.isSelected = false
+        for i in 0...collectionViewData.count - 1 {
+            collectionViewData[i].isChosen = false
+        }
+        collectionView.reloadData()
     }
 }
 
 // MARK: - UICollectionViewDelegate & UICollectionViewDataSource
 extension PPFolderViewController {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 17
+        return collectionViewData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: folderCollectionViewCellID, for: indexPath)
-        //cell.backgroundColor = .randomColor
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: folderCollectionViewCellID, for: indexPath) as!PPFolderCollectionViewCell
+        cell.model = collectionViewData[indexPath.row]
         return cell
     }
     
