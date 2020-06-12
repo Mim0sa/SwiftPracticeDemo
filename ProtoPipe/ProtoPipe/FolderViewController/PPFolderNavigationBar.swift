@@ -35,41 +35,32 @@ class PPFolderNavigationBar: UIView {
         
         backgroundColor = UIColor(withHex: 0x131415)
         
+        // barIcon
         barIcon.setTitle("ProtoPipe", for: .normal)
         barIcon.titleLabel?.font = UIFont.systemFont(ofSize: 44, weight: .heavy)
         barIcon.tintColor = UIColor(withHex: 0xeeeeee)
         barIcon.sizeToFit()
-        
-        alertBar.backgroundColor = UIColor(withHex: 0x50BAA1)
-        
-        let barItem_new = makeBarItem(with: .New)
-        barItems.append(barItem_new)
-        currentBarItems.append(barItem_new)
-        
-        let barItem_select = makeBarItem(with: .Select)
-        barItems.append(barItem_select)
-        currentBarItems.append(barItem_select)
-        
-        let barItem_cancel = makeBarItem(with: .Cancel)
-        barItem_cancel.isHidden = true
-        barItems.append(barItem_cancel)
-        
-        let barItem_share = makeBarItem(with: .Share)
-        barItem_share.isHidden = true
-        barItems.append(barItem_share)
-        
-        let barItem_delete = makeBarItem(with: .Delete)
-        barItem_delete.isHidden = true
-        barItems.append(barItem_delete)
-        
         addSubview(barIcon)
-        addSubview(alertBar)
-        addSubview(barItem_new)
-        addSubview(barItem_select)
-        addSubview(barItem_cancel)
-        addSubview(barItem_share)
-        addSubview(barItem_delete)
         
+        // alertBar
+        alertBar.backgroundColor = UIColor(withHex: 0x50BAA1)
+        addSubview(alertBar)
+        
+        // barItems
+        for style in PPFolderNavigationBar.barItemStyles {
+            let barItem = makeBarItem(with: style)
+            barItems.append(barItem)
+            addSubview(barItem)
+        }
+        
+        // initial config
+        currentBarItems.append(barItems[0])
+        currentBarItems.append(barItems[1])
+        barItems[2].isHidden = true
+        barItems[3].isHidden = true
+        barItems[4].isHidden = true
+        
+        // constraits
         barIcon.snp.makeConstraints { (make) in
             make.left.equalTo(40)
             make.bottom.equalTo(0)
@@ -83,6 +74,14 @@ class PPFolderNavigationBar: UIView {
         updateCurrentBarItemsConstraints()
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+
+// MARK: - UpdateStatus
+extension PPFolderNavigationBar {
     func updateCurrentBarItemsConstraints() {
         for i in 0...currentBarItems.count - 1 {
             currentBarItems[i].snp.updateConstraints { (make) in
@@ -115,11 +114,6 @@ class PPFolderNavigationBar: UIView {
             self.layoutIfNeeded()
         }
     }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
 }
 
 // MARK: - Target Actions
@@ -162,6 +156,12 @@ extension PPFolderNavigationBar {
         barItem.addTarget(self, action: #selector(barItemClicked(sender:)), for: .touchUpInside)
         return barItem
     }
+}
+
+// MARK: - Constant
+fileprivate extension PPFolderNavigationBar {
+    static let barItemStyles: [BarItemType] = [.New, .Select, .Cancel, .Share, .Delete]
+    
 }
 
 
