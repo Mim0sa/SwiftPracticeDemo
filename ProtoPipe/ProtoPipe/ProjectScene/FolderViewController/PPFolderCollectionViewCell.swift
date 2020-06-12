@@ -41,22 +41,21 @@ class PPFolderCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        detailLabel.textColor = UIColor(withHex: 0xdddddd)
-        detailLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        detailLabel.textColor = UIColor(withHex: 0xcccccc)
+        detailLabel.font = UIFont.systemFont(ofSize: 16, weight: .light)
         addSubview(detailLabel)
         detailLabel.snp.makeConstraints { (make) in
             make.left.equalTo(30)
-            make.right.greaterThanOrEqualTo(-60)
+            make.right.equalTo(-30)
             make.bottom.equalTo(-20)
         }
         
         titleLabel.textColor = UIColor(withHex: 0xeeeeee)
-        titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .light)
-        titleLabel.backgroundColor = .red
+        titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
             make.left.equalTo(30)
-            make.right.greaterThanOrEqualTo(-30)
+            make.right.equalTo(-60)
             make.bottom.equalTo(detailLabel.snp.top).offset(-8)
         }
         
