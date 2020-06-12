@@ -45,17 +45,18 @@ class PPFolderCollectionViewCell: UICollectionViewCell {
         detailLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         addSubview(detailLabel)
         detailLabel.snp.makeConstraints { (make) in
-            make.left.greaterThanOrEqualTo(60)
-            make.right.equalTo(-30)
+            make.left.equalTo(30)
+            make.right.greaterThanOrEqualTo(-60)
             make.bottom.equalTo(-20)
         }
         
         titleLabel.textColor = UIColor(withHex: 0xeeeeee)
         titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .light)
+        titleLabel.backgroundColor = .red
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
-            make.left.greaterThanOrEqualTo(60)
-            make.right.equalTo(-30)
+            make.left.equalTo(30)
+            make.right.greaterThanOrEqualTo(-30)
             make.bottom.equalTo(detailLabel.snp.top).offset(-8)
         }
         

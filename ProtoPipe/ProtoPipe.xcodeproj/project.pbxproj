@@ -22,6 +22,7 @@
 		1B9E672A247A2AB300D649B3 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E6729247A2AB300D649B3 /* Common.swift */; };
 		1B9E672C247BD41F00D649B3 /* PPFolderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E672B247BD41F00D649B3 /* PPFolderCollectionViewCell.swift */; };
 		1B9E672E247CC68200D649B3 /* PPItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E672D247CC68200D649B3 /* PPItem.swift */; };
+		1B9F013C2493714500D7473D /* YZDotButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9F013B2493714500D7473D /* YZDotButton.swift */; };
 		38241CB9BD9C7728BAC23700 /* Pods_ProtoPipe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5D18D6BD1039EFFC580209 /* Pods_ProtoPipe.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,7 +33,7 @@
 		1B34EAF024761FA3009AC43B /* PPFolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPFolderViewController.swift; sourceTree = "<group>"; };
 		1B34EAF42476311A009AC43B /* MagicMoveAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicMoveAnimator.swift; sourceTree = "<group>"; };
 		1B34EAF62477BCF0009AC43B /* PPFolderNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPFolderNavigationBar.swift; sourceTree = "<group>"; };
-		1B34EAF82477C521009AC43B /* Extension+UIcolor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Extension+UIcolor.swift"; path = "../../2048/2048/Extension/Extension+UIcolor.swift"; sourceTree = "<group>"; };
+		1B34EAF82477C521009AC43B /* Extension+UIcolor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIcolor.swift"; sourceTree = "<group>"; };
 		1B3C39D22462CCD60082AF94 /* ProtoPipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProtoPipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B3C39D52462CCD60082AF94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B3C39D72462CCD60082AF94 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +45,7 @@
 		1B9E6729247A2AB300D649B3 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		1B9E672B247BD41F00D649B3 /* PPFolderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPFolderCollectionViewCell.swift; sourceTree = "<group>"; };
 		1B9E672D247CC68200D649B3 /* PPItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPItem.swift; sourceTree = "<group>"; };
+		1B9F013B2493714500D7473D /* YZDotButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YZDotButton.swift; sourceTree = "<group>"; };
 		334305D6CEA0E208BF38B60B /* Pods-ProtoPipe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProtoPipe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProtoPipe/Pods-ProtoPipe.debug.xcconfig"; sourceTree = "<group>"; };
 		4567E6E41458F82F47AB6789 /* Pods-ProtoPipe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProtoPipe.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProtoPipe/Pods-ProtoPipe.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,17 +83,11 @@
 		1B3C39D42462CCD60082AF94 /* ProtoPipe */ = {
 			isa = PBXGroup;
 			children = (
-				1B3C39D52462CCD60082AF94 /* AppDelegate.swift */,
-				1B3C39D72462CCD60082AF94 /* SceneDelegate.swift */,
-				1B9E6726247A185D00D649B3 /* FolderViewController */,
-				1B34EAEC24761A42009AC43B /* PPCanvasViewController.swift */,
-				1B34EAEA247521F6009AC43B /* PPBaseViewController.swift */,
-				1B34EAF42476311A009AC43B /* MagicMoveAnimator.swift */,
-				1B34EAF82477C521009AC43B /* Extension+UIcolor.swift */,
-				1B9E6729247A2AB300D649B3 /* Common.swift */,
-				1B3C39DB2462CCD60082AF94 /* Main.storyboard */,
-				1B3C39DE2462CCDE0082AF94 /* Assets.xcassets */,
-				1B3C39E02462CCDE0082AF94 /* LaunchScreen.storyboard */,
+				1B9F0140249372C700D7473D /* ProjectScene */,
+				1B9F013E2493717000D7473D /* Transition */,
+				1B9F013D2493715200D7473D /* Helpers */,
+				1B9F013A249370D300D7473D /* YZKit */,
+				1B9F01412493735100D7473D /* SupportFiles */,
 				1B3C39E32462CCDE0082AF94 /* Info.plist */,
 			);
 			path = ProtoPipe;
@@ -107,6 +103,61 @@
 				1B9E672D247CC68200D649B3 /* PPItem.swift */,
 			);
 			path = FolderViewController;
+			sourceTree = "<group>";
+		};
+		1B9F013A249370D300D7473D /* YZKit */ = {
+			isa = PBXGroup;
+			children = (
+				1B9F013B2493714500D7473D /* YZDotButton.swift */,
+			);
+			path = YZKit;
+			sourceTree = "<group>";
+		};
+		1B9F013D2493715200D7473D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1B34EAF82477C521009AC43B /* Extension+UIcolor.swift */,
+				1B9E6729247A2AB300D649B3 /* Common.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		1B9F013E2493717000D7473D /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				1B34EAF42476311A009AC43B /* MagicMoveAnimator.swift */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
+		1B9F013F2493718E00D7473D /* CanvasViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1B34EAEC24761A42009AC43B /* PPCanvasViewController.swift */,
+			);
+			path = CanvasViewController;
+			sourceTree = "<group>";
+		};
+		1B9F0140249372C700D7473D /* ProjectScene */ = {
+			isa = PBXGroup;
+			children = (
+				1B34EAEA247521F6009AC43B /* PPBaseViewController.swift */,
+				1B9E6726247A185D00D649B3 /* FolderViewController */,
+				1B9F013F2493718E00D7473D /* CanvasViewController */,
+			);
+			path = ProjectScene;
+			sourceTree = "<group>";
+		};
+		1B9F01412493735100D7473D /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				1B3C39D72462CCD60082AF94 /* SceneDelegate.swift */,
+				1B3C39D52462CCD60082AF94 /* AppDelegate.swift */,
+				1B3C39DB2462CCD60082AF94 /* Main.storyboard */,
+				1B3C39DE2462CCDE0082AF94 /* Assets.xcassets */,
+				1B3C39E02462CCDE0082AF94 /* LaunchScreen.storyboard */,
+			);
+			path = SupportFiles;
 			sourceTree = "<group>";
 		};
 		BCBBD3E578BDEBB343B337F0 /* Frameworks */ = {
@@ -256,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B3C39D62462CCD60082AF94 /* AppDelegate.swift in Sources */,
+				1B9F013C2493714500D7473D /* YZDotButton.swift in Sources */,
 				1B34EAF52476311A009AC43B /* MagicMoveAnimator.swift in Sources */,
 				1B3C39D82462CCD60082AF94 /* SceneDelegate.swift in Sources */,
 				1B34EAF124761FA3009AC43B /* PPFolderViewController.swift in Sources */,
