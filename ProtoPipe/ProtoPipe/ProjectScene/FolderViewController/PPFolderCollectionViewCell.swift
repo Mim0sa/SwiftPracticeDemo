@@ -13,9 +13,14 @@ struct PPFolderCollectionViewCellModel {
     var detail: String
     var coverImage: UIImage
     var isEditing: Bool
+    var isChosen: Bool?
 }
 
-class PPFolderCollectionViewCell: UICollectionViewCell {
+protocol PPFolderCollectionViewCellDelegate {
+    func folderCollectionViewCellDidUpdateChosenStatus(_ cell: PPFolderCollectionViewCell)
+}
+
+class PPFolderCollectionViewCell: UICollectionViewCell, YZDotButtonDelegate {
     
     var model: PPFolderCollectionViewCellModel? {
         willSet { guard
@@ -24,6 +29,7 @@ class PPFolderCollectionViewCell: UICollectionViewCell {
             titleLabel.text = newModel.title
             coverView.image = newModel.coverImage
             isEditing = newModel.isEditing
+            isChosen = newModel.isChosen
         }
     }
     
@@ -32,9 +38,19 @@ class PPFolderCollectionViewCell: UICollectionViewCell {
     let detailLabel = UILabel()
     let dotButton = YZDotButton()
     
+    var delegate: PPFolderCollectionViewCellDelegate?
+    
     var isEditing: Bool = false {
         willSet {
-            updateEditStatus(with: newValue)
+            if newValue != isEditing {
+                updateEditStatus(with: newValue)
+            }
+        }
+    }
+    
+    var isChosen: Bool? {
+        willSet {
+            updateChosenStatus(with: newValue)
         }
     }
     
@@ -61,6 +77,8 @@ class PPFolderCollectionViewCell: UICollectionViewCell {
             make.bottom.equalTo(detailLabel.snp.top).offset(-8)
         }
         
+        dotButton.delegate = self
+        dotButton.isHidden = true
         addSubview(dotButton)
         dotButton.snp.makeConstraints { (make) in
             make.right.equalTo(-30)
@@ -79,12 +97,43 @@ class PPFolderCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func updateEditStatus(with isChosen: Bool) {
+    func updateEditStatus(with isEditing: Bool) {
+        if isEditing {
+            dotButton.alpha = 0
+            dotButton.isEnabled = false
+            dotButton.isHidden = false
+            UIView.animate(withDuration: 0.2, animations: {
+                self.dotButton.alpha = 1
+            }) { (isFinish) in
+                self.dotButton.isEnabled = true
+            }
+        } else {
+            dotButton.isEnabled = false
+            UIView.animate(withDuration: 0.2, animations: {
+                self.dotButton.alpha = 0
+            }) { (isFinish) in
+                self.dotButton.alpha = 0
+                self.dotButton.isHidden = true
+            }
+        }
+    }
+    
+    func updateChosenStatus(with isChosen: Bool?) {
+        guard let isChosen = isChosen else {
+            return
+        }
         
+        dotButton.isChosen = isChosen
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+}
+
+extension PPFolderCollectionViewCell {
+    func dotButtonDidUpdateChosenStatus(_ dotButton: YZDotButton) {
+        delegate?.folderCollectionViewCellDidUpdateChosenStatus(self)
+    }
 }

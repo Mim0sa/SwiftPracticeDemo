@@ -9,12 +9,12 @@
 import UIKit
 import SnapKit
 
-class PPFolderViewController: PPBaseViewController, PPCanvasViewControllerDelegate, UIViewControllerTransitioningDelegate, UICollectionViewDelegate, UICollectionViewDataSource, PPFolderNavigationBarDelegate {
+class PPFolderViewController: PPBaseViewController, PPCanvasViewControllerDelegate, UIViewControllerTransitioningDelegate, UICollectionViewDelegate, UICollectionViewDataSource, PPFolderNavigationBarDelegate,PPFolderCollectionViewCellDelegate {
 
     let folderNavigationBar = PPFolderNavigationBar()
     var collectionView: UICollectionView!
     
-    var collectionViewData: [PPFolderCollectionViewCellModel] = [PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false)]
+    var collectionViewData: [PPFolderCollectionViewCellModel] = [PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false), PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false), PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false)]
     
     let folderCollectionViewCellID = "FolderCollectionViewCell"
 
@@ -66,6 +66,7 @@ extension PPFolderViewController {
     func folderNavigationBarDidClickSelectButton(_ folderNavigationBar: PPFolderNavigationBar) {
         for i in 0...collectionViewData.count - 1 {
             collectionViewData[i].isEditing = true
+            collectionViewData[i].isChosen = false
         }
         collectionView.reloadData()
     }
@@ -73,6 +74,7 @@ extension PPFolderViewController {
     func folderNavigationBarDidClickCancelButton(_ folderNavigationBar: PPFolderNavigationBar) {
         for i in 0...collectionViewData.count - 1 {
             collectionViewData[i].isEditing = false
+            collectionViewData[i].isChosen = nil
         }
         collectionView.reloadData()
     }
@@ -85,13 +87,22 @@ extension PPFolderViewController {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: folderCollectionViewCellID, for: indexPath) as!PPFolderCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: folderCollectionViewCellID, for: indexPath) as! PPFolderCollectionViewCell
+        cell.delegate = self
         cell.model = collectionViewData[indexPath.row]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(collectionView.cellForItem(at: indexPath)?.frame.size ?? "error")
+    }
+}
+
+// MARK: - PPFolderCollectionViewCellDelegate
+extension PPFolderViewController {
+    func folderCollectionViewCellDidUpdateChosenStatus(_ cell: PPFolderCollectionViewCell) {
+        collectionViewData[collectionView.indexPath(for: cell)!.row].isChosen = !collectionViewData[collectionView.indexPath(for: cell)!.row].isChosen!
+        collectionView.reloadData()
     }
 }
 

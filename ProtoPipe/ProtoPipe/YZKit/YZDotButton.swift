@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol YZDotButtonDelegate {
+    func dotButtonDidUpdateChosenStatus(_ dotButton: YZDotButton)
+}
+
 class YZDotButton: UIControl {
+    
+    var delegate: YZDotButtonDelegate?
     
     var isChosen: Bool = false {
         willSet {
@@ -26,7 +32,7 @@ class YZDotButton: UIControl {
     }
     
     @objc func clicked(sender: UIControl) {
-        isChosen = !isChosen
+        delegate?.dotButtonDidUpdateChosenStatus(self)
     }
     
     override func draw(_ rect: CGRect) {
