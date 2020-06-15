@@ -63,6 +63,8 @@ class YZDotButton: UIControl {
             
             UIColor(withHex: 0x191B1D).set()
             tick.stroke()
+        } else {
+            print("1")
         }
     }
     
