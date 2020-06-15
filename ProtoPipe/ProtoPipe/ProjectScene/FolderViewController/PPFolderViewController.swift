@@ -74,7 +74,6 @@ extension PPFolderViewController {
     func folderNavigationBarDidClickCancelButton(_ folderNavigationBar: PPFolderNavigationBar) {
         for i in 0...collectionViewData.count - 1 {
             collectionViewData[i].isEditing = false
-            collectionViewData[i].isChosen = nil
         }
         collectionView.reloadData()
     }
@@ -88,13 +87,13 @@ extension PPFolderViewController {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: folderCollectionViewCellID, for: indexPath) as! PPFolderCollectionViewCell
-        cell.delegate = self
         cell.model = collectionViewData[indexPath.row]
+        cell.delegate = self
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(collectionView.cellForItem(at: indexPath)?.frame.size ?? "error")
+        
     }
 }
 

@@ -46,7 +46,7 @@ class YZDotButton: UIControl {
         let dotBorder = UIBezierPath(ovalIn: dotArea)
         dotBorder.lineWidth = lineWidth
         
-        UIColor(withHex: 0xcccccc).set()
+        UIColor(withHex: 0xbbbbbb).set()
         dotBorder.stroke()
         
         if isChosen {
