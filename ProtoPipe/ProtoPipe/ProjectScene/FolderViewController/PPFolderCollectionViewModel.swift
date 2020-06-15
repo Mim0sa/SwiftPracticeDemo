@@ -29,8 +29,8 @@ struct PPFolderCollectionViewModel {
         }
     }
     
-    mutating func chooseAt(index: Int) {
-        modelData[index].isChosen = !modelData[index].isChosen!
+    mutating func updateChosenStatus(at index: Int) {
+        modelData[index].isChosen?.toggle()
     }
     
 }

@@ -95,7 +95,7 @@ extension PPFolderViewController {
 // MARK: - PPFolderCollectionViewCellDelegate
 extension PPFolderViewController {
     func folderCollectionViewCellDidUpdateChosenStatus(_ cell: PPFolderCollectionViewCell) {
-        model.chooseAt(index: collectionView.indexPath(for: cell)!.row)
+        model.updateChosenStatus(at: collectionView.indexPath(for: cell)!.row)
         collectionView.reloadData()
     }
 }
