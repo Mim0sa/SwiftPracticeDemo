@@ -14,7 +14,7 @@ class PPFolderViewController: PPBaseViewController, PPCanvasViewControllerDelega
     let folderNavigationBar = PPFolderNavigationBar()
     var collectionView: UICollectionView!
     
-    var collectionViewData: [PPFolderCollectionViewCellModel] = [PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isChosen: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isChosen: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isChosen: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isChosen: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isChosen: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isChosen: false)]
+    var collectionViewData: [PPFolderCollectionViewCellModel] = [PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false)]
     
     let folderCollectionViewCellID = "FolderCollectionViewCell"
 
@@ -65,14 +65,14 @@ class PPFolderViewController: PPBaseViewController, PPCanvasViewControllerDelega
 extension PPFolderViewController {
     func folderNavigationBarDidClickSelectButton(_ folderNavigationBar: PPFolderNavigationBar) {
         for i in 0...collectionViewData.count - 1 {
-            collectionViewData[i].isChosen = true
+            collectionViewData[i].isEditing = true
         }
         collectionView.reloadData()
     }
     
     func folderNavigationBarDidClickCancelButton(_ folderNavigationBar: PPFolderNavigationBar) {
         for i in 0...collectionViewData.count - 1 {
-            collectionViewData[i].isChosen = false
+            collectionViewData[i].isEditing = false
         }
         collectionView.reloadData()
     }

@@ -12,7 +12,7 @@ struct PPFolderCollectionViewCellModel {
     var title: String
     var detail: String
     var coverImage: UIImage
-    var isChosen: Bool
+    var isEditing: Bool
 }
 
 class PPFolderCollectionViewCell: UICollectionViewCell {
@@ -23,7 +23,7 @@ class PPFolderCollectionViewCell: UICollectionViewCell {
             detailLabel.text = newModel.detail
             titleLabel.text = newModel.title
             coverView.image = newModel.coverImage
-            isEditing = newModel.isChosen
+            isEditing = newModel.isEditing
         }
     }
     
@@ -34,7 +34,7 @@ class PPFolderCollectionViewCell: UICollectionViewCell {
     
     var isEditing: Bool = false {
         willSet {
-            updateChosen(with: newValue)
+            updateEditStatus(with: newValue)
         }
     }
     
@@ -79,7 +79,7 @@ class PPFolderCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func updateChosen(with isChosen: Bool) {
+    func updateEditStatus(with isChosen: Bool) {
         
     }
     

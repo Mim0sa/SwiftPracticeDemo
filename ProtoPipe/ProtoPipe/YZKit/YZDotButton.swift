@@ -10,32 +10,67 @@ import UIKit
 
 class YZDotButton: UIControl {
     
+    var isChosen: Bool = false {
+        willSet {
+            setNeedsDisplay()
+        }
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        addTarget(self, action: #selector(clicked(sender:)), for: .touchUpInside)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func clicked(sender: UIControl) {
+        isChosen = !isChosen
+    }
+    
     override func draw(_ rect: CGRect) {
         
-        UIColor(withHex: 0xdddddd).set()
+        let lineWidth: CGFloat = rect.width / 8
+        let dotArea = CGRect(x: rect.minX + lineWidth / 2,
+                             y: rect.minY + lineWidth / 2,
+                             width: rect.width - lineWidth,
+                             height: rect.height -  lineWidth)
         
-        let lineWidth: CGFloat = rect.width / 10
-        let area = CGRect(x: rect.minX + lineWidth / 2,
-                          y: rect.minY + lineWidth / 2,
-                          width: rect.width - lineWidth,
-                          height: rect.height -  lineWidth)
+        let dotBorder = UIBezierPath(ovalIn: dotArea)
+        dotBorder.lineWidth = lineWidth
         
-        let path = UIBezierPath(ovalIn: area)
-        path.fill(with: .overlay, alpha: 1)
-        path.lineWidth = lineWidth
-        path.stroke()
+        UIColor(withHex: 0xcccccc).set()
+        dotBorder.stroke()
         
-        UIColor(withHex: 0xdddddd).set()
-        
-        let path2 = UIBezierPath()
-        path2.move(to: CGPoint(x: rect.width / 4.5, y: rect.height / 1.9))
-        path2.addLine(to: CGPoint(x: rect.width / 2.3, y: rect.height / 1.4))
-        path2.addLine(to: CGPoint(x: rect.width / 1.4, y: rect.height / 2.9))
-        path2.lineWidth = lineWidth
-        path2.lineCapStyle = .round
-        path2.lineJoinStyle = .round
+        if isChosen {
+            dotBorder.fill()
 
-        path2.stroke()
+            let tick = UIBezierPath()
+            tick.move(to: CGPoint(x: rect.width / 4, y: rect.height / 1.9))
+            tick.addLine(to: CGPoint(x: rect.width / 2.3, y: rect.height / 1.4))
+            tick.addLine(to: CGPoint(x: rect.width / 1.4, y: rect.height / 2.8))
+            tick.lineWidth = lineWidth
+            tick.lineCapStyle = .round
+            tick.lineJoinStyle = .round
+            
+            UIColor(withHex: 0x191B1D).set()
+            tick.stroke()
+        }
     }
-
+    
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        // MARK: If size lower than 44
+        if !(bounds.width < 44 && bounds.height < 44) {
+            return self
+        }
+        
+        let newRect = bounds.insetBy(dx: -8, dy: -8)
+        if newRect.contains(point) {
+            return self
+        } else {
+            return nil
+        }
+    }
+    
 }
