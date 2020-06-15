@@ -28,7 +28,7 @@ class PPFolderViewController: PPBaseViewController, PPCanvasViewControllerDelega
         collectionView = UICollectionView(frame: CGRect(), collectionViewLayout: PPFolderCollectionViewFlowLayout())
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(PPFolderCollectionViewCell.self, forCellWithReuseIdentifier: PPFolderViewController.FolderCollectionViewCellID)
+        collectionView.register(PPFolderCollectionViewCell.self, forCellWithReuseIdentifier: FolderCollectionViewCellID)
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints { (make) in
             make.left.bottom.equalTo(0)
@@ -75,19 +75,17 @@ extension PPFolderViewController {
 }
 
 // MARK: - UICollectionViewDelegate & UICollectionViewDataSource
+let FolderCollectionViewCellID = "FolderCollectionViewCell"
+
 extension PPFolderViewController {
-    static let FolderCollectionViewCellID = "FolderCollectionViewCell"
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return model.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PPFolderViewController.FolderCollectionViewCellID, for: indexPath) as! PPFolderCollectionViewCell
-        print(indexPath.row)
-        print(model.modelData[indexPath.row])
-        cell.model = model.modelData[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FolderCollectionViewCellID, for: indexPath) as! PPFolderCollectionViewCell
         cell.delegate = self
+        cell.model = model.modelData[indexPath.row]
         return cell
     }
     

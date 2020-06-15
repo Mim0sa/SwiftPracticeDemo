@@ -18,6 +18,7 @@ class YZDotButton: UIControl {
     
     var isChosen: Bool = false {
         didSet {
+            print(isChosen)
             setNeedsDisplay()
         }
     }

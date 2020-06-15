@@ -29,7 +29,7 @@ class PPFolderCollectionViewCell: UICollectionViewCell, YZDotButtonDelegate {
             titleLabel.text = newModel.title
             coverView.image = newModel.coverImage
             isEditing = newModel.isEditing
-            isChosen = newModel.isChosen
+            dotButton.isChosen = newModel.isChosen
         }
     }
     
@@ -48,11 +48,11 @@ class PPFolderCollectionViewCell: UICollectionViewCell, YZDotButtonDelegate {
         }
     }
     
-    var isChosen: Bool = false {
-        willSet {
-            updateChosenStatus(with: newValue)
-        }
-    }
+//    var isChosen: Bool = false {
+//        willSet {
+//            updateChosenStatus(with: newValue)
+//        }
+//    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -118,9 +118,9 @@ class PPFolderCollectionViewCell: UICollectionViewCell, YZDotButtonDelegate {
         }
     }
     
-    func updateChosenStatus(with isChosen: Bool) {
-        dotButton.isChosen = isChosen
-    }
+//    func updateChosenStatus(with isChosen: Bool) {
+//        dotButton.isChosen = isChosen
+//    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
