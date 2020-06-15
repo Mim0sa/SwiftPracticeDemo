@@ -10,12 +10,18 @@ import Foundation
 
 struct PPFolderCollectionViewModel {
     
-    var modelData: [PPFolderCollectionViewCellModel] = [PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false), PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false), PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false),PPFolderCollectionViewCellModel(title: "ProtoPipe原型 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false)]
+    var modelData: [PPFolderCollectionViewCellModel] = []
     
     var count: Int {
-        get {
-            return modelData.count
-        }
+        get { return modelData.count }
+    }
+    
+    init() {
+        for _ in 0...5 { addOneCellData() }
+    }
+    
+    mutating func addOneCellData() {
+        modelData.append(PPFolderCollectionViewCellModel(title: "ProtoPipe 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false))
     }
     
     mutating func updateEditStatus(with isEditing: Bool) {
@@ -25,12 +31,13 @@ struct PPFolderCollectionViewModel {
                 modelData[i].isChosen = false
             } else {
                 modelData[i].isEditing = false
+                modelData[i].isChosen = false
             }
         }
     }
     
     mutating func updateChosenStatus(at index: Int) {
-        modelData[index].isChosen?.toggle()
+        modelData[index].isChosen = !modelData[index].isChosen
     }
     
 }

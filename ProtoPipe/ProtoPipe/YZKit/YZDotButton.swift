@@ -17,7 +17,7 @@ class YZDotButton: UIControl {
     var delegate: YZDotButtonDelegate?
     
     var isChosen: Bool = false {
-        willSet {
+        didSet {
             setNeedsDisplay()
         }
     }
@@ -46,7 +46,7 @@ class YZDotButton: UIControl {
         let dotBorder = UIBezierPath(ovalIn: dotArea)
         dotBorder.lineWidth = lineWidth
         
-        UIColor(withHex: 0xbbbbbb).set()
+        UIColor(withHex: 0x50BAA1).set()
         dotBorder.stroke()
         
         if isChosen {

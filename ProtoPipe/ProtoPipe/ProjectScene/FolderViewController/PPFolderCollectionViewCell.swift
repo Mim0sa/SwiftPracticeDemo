@@ -13,7 +13,7 @@ struct PPFolderCollectionViewCellModel {
     var detail: String
     var coverImage: UIImage
     var isEditing: Bool
-    var isChosen: Bool?
+    var isChosen: Bool = false
 }
 
 protocol PPFolderCollectionViewCellDelegate {
@@ -48,7 +48,7 @@ class PPFolderCollectionViewCell: UICollectionViewCell, YZDotButtonDelegate {
         }
     }
     
-    var isChosen: Bool? {
+    var isChosen: Bool = false {
         willSet {
             updateChosenStatus(with: newValue)
         }
@@ -118,11 +118,7 @@ class PPFolderCollectionViewCell: UICollectionViewCell, YZDotButtonDelegate {
         }
     }
     
-    func updateChosenStatus(with isChosen: Bool?) {
-        guard let isChosen = isChosen else {
-            return
-        }
-        
+    func updateChosenStatus(with isChosen: Bool) {
         dotButton.isChosen = isChosen
     }
     

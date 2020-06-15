@@ -25,6 +25,7 @@
 		1B9F013C2493714500D7473D /* YZDotButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9F013B2493714500D7473D /* YZDotButton.swift */; };
 		38241CB9BD9C7728BAC23700 /* Pods_ProtoPipe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5D18D6BD1039EFFC580209 /* Pods_ProtoPipe.framework */; };
 		83CDE7A324973EB000BB72FB /* PPFolderCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CDE7A224973EB000BB72FB /* PPFolderCollectionViewModel.swift */; };
+		83CDE7A62497516400BB72FB /* FolderCollectionViewModelData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83CDE7A52497516400BB72FB /* FolderCollectionViewModelData.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		334305D6CEA0E208BF38B60B /* Pods-ProtoPipe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProtoPipe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProtoPipe/Pods-ProtoPipe.debug.xcconfig"; sourceTree = "<group>"; };
 		4567E6E41458F82F47AB6789 /* Pods-ProtoPipe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProtoPipe.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProtoPipe/Pods-ProtoPipe.release.xcconfig"; sourceTree = "<group>"; };
 		83CDE7A224973EB000BB72FB /* PPFolderCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPFolderCollectionViewModel.swift; sourceTree = "<group>"; };
+		83CDE7A52497516400BB72FB /* FolderCollectionViewModelData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FolderCollectionViewModelData.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				1B9F0140249372C700D7473D /* ProjectScene */,
 				1B9F013E2493717000D7473D /* Transition */,
 				1B9F013D2493715200D7473D /* Helpers */,
+				83CDE7A42497510300BB72FB /* DataResource */,
 				1B9F013A249370D300D7473D /* YZKit */,
 				1B9F01412493735100D7473D /* SupportFiles */,
 				1B3C39E32462CCDE0082AF94 /* Info.plist */,
@@ -161,6 +164,14 @@
 				1B3C39E02462CCDE0082AF94 /* LaunchScreen.storyboard */,
 			);
 			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		83CDE7A42497510300BB72FB /* DataResource */ = {
+			isa = PBXGroup;
+			children = (
+				83CDE7A52497516400BB72FB /* FolderCollectionViewModelData.plist */,
+			);
+			path = DataResource;
 			sourceTree = "<group>";
 		};
 		BCBBD3E578BDEBB343B337F0 /* Frameworks */ = {
@@ -245,6 +256,7 @@
 				1B3C39E22462CCDE0082AF94 /* LaunchScreen.storyboard in Resources */,
 				1B3C39DF2462CCDE0082AF94 /* Assets.xcassets in Resources */,
 				1B3C39DD2462CCD60082AF94 /* Main.storyboard in Resources */,
+				83CDE7A62497516400BB72FB /* FolderCollectionViewModelData.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,7 +14,11 @@ class PPFolderViewController: PPBaseViewController, PPCanvasViewControllerDelega
     let folderNavigationBar = PPFolderNavigationBar()
     var collectionView: UICollectionView!
     
-    var model = PPFolderCollectionViewModel()
+    var model = PPFolderCollectionViewModel() {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,12 +67,10 @@ class PPFolderViewController: PPBaseViewController, PPCanvasViewControllerDelega
 extension PPFolderViewController {
     func folderNavigationBarDidClickSelectButton(_ folderNavigationBar: PPFolderNavigationBar) {
         model.updateEditStatus(with: folderNavigationBar.isSelected)
-        collectionView.reloadData()
     }
     
     func folderNavigationBarDidClickCancelButton(_ folderNavigationBar: PPFolderNavigationBar) {
         model.updateEditStatus(with: folderNavigationBar.isSelected)
-        collectionView.reloadData()
     }
 }
 
@@ -82,6 +84,8 @@ extension PPFolderViewController {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PPFolderViewController.FolderCollectionViewCellID, for: indexPath) as! PPFolderCollectionViewCell
+        print(indexPath.row)
+        print(model.modelData[indexPath.row])
         cell.model = model.modelData[indexPath.row]
         cell.delegate = self
         return cell
@@ -96,7 +100,6 @@ extension PPFolderViewController {
 extension PPFolderViewController {
     func folderCollectionViewCellDidUpdateChosenStatus(_ cell: PPFolderCollectionViewCell) {
         model.updateChosenStatus(at: collectionView.indexPath(for: cell)!.row)
-        collectionView.reloadData()
     }
 }
 
