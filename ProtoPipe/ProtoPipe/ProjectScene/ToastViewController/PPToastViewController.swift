@@ -8,7 +8,9 @@
 
 import UIKit
 
-class PPToastViewController: PPBaseViewController {
+class PPToastViewController: PPBaseViewController, PPToastNavigationBarDelegate {
+    
+    let toastNavigationBar = PPToastNavigationBar()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +19,19 @@ class PPToastViewController: PPBaseViewController {
         
         view.backgroundColor = .sceneBlack
         
+        toastNavigationBar.delegate = self
+        view.addSubview(toastNavigationBar)
+        toastNavigationBar.snp.makeConstraints { (make) in
+            make.left.right.top.equalToSuperview()
+            make.height.equalTo(78)
+        }
         // Do any additional setup after loading the view.
     }
 
+}
+
+extension PPToastViewController {
+    func toastNavigationBarDidClickDismissButton(_ toastNavigationBar: PPToastNavigationBar) {
+        dismiss(animated: true, completion: nil)
+    }
 }
