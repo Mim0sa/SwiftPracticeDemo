@@ -84,7 +84,6 @@ extension PPFolderViewController {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FolderCollectionViewCellID, for: indexPath) as! PPFolderCollectionViewCell
-        cell.tag = 100 + indexPath.row
         cell.delegate = self
         cell.model = model.modelData[indexPath.row]
         return cell

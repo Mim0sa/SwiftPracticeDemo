@@ -17,7 +17,7 @@ struct PPFolderCollectionViewModel {
     }
     
     init() {
-        for _ in 0...5 { addOneCellData() }
+        for _ in 0...15 { addOneCellData() }
     }
     
     mutating func addOneCellData() {
@@ -31,7 +31,6 @@ struct PPFolderCollectionViewModel {
                 modelData[i].isChosen = false
             } else {
                 modelData[i].isEditing = false
-                modelData[i].isChosen = false
             }
         }
     }

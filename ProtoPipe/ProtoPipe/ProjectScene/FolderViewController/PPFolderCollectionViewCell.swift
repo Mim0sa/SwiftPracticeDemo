@@ -118,6 +118,10 @@ class PPFolderCollectionViewCell: UICollectionViewCell, YZDotButtonDelegate {
         }
     }
     
+    override func prepareForReuse() {
+        dotButton.isChosen = false
+    }
+    
 //    func updateChosenStatus(with isChosen: Bool) {
 //        dotButton.isChosen = isChosen
 //    }
