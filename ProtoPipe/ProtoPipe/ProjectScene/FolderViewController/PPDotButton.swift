@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol YZDotButtonDelegate {
+protocol PPDotButtonDelegate {
     func dotButtonDidUpdateChosenStatus(_ dotButton: PPDotButton)
 }
 
 class PPDotButton: UIControl {
     
-    var delegate: YZDotButtonDelegate?
+    var delegate: PPDotButtonDelegate?
     
     var isChosen: Bool = false {
         didSet {

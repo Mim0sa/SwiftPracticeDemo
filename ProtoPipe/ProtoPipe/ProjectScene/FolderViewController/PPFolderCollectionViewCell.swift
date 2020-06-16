@@ -20,7 +20,7 @@ protocol PPFolderCollectionViewCellDelegate {
     func folderCollectionViewCellDidUpdateChosenStatus(_ cell: PPFolderCollectionViewCell)
 }
 
-class PPFolderCollectionViewCell: UICollectionViewCell, YZDotButtonDelegate {
+class PPFolderCollectionViewCell: UICollectionViewCell, PPDotButtonDelegate {
     
     var model: PPFolderCollectionViewCellModel? {
         willSet { guard
@@ -36,7 +36,7 @@ class PPFolderCollectionViewCell: UICollectionViewCell, YZDotButtonDelegate {
     let coverView = UIImageView()
     let titleLabel = UILabel()
     let detailLabel = UILabel()
-    let dotButton = YZDotButton()
+    let dotButton = PPDotButton()
     
     var delegate: PPFolderCollectionViewCellDelegate?
     
@@ -133,7 +133,7 @@ class PPFolderCollectionViewCell: UICollectionViewCell, YZDotButtonDelegate {
 }
 
 extension PPFolderCollectionViewCell {
-    func dotButtonDidUpdateChosenStatus(_ dotButton: YZDotButton) {
+    func dotButtonDidUpdateChosenStatus(_ dotButton: PPDotButton) {
         delegate?.folderCollectionViewCellDidUpdateChosenStatus(self)
     }
 }
