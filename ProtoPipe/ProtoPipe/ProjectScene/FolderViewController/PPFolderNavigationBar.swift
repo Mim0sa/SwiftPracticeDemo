@@ -11,6 +11,7 @@ import UIKit
 protocol PPFolderNavigationBarDelegate {
     func folderNavigationBarDidClickSelectButton(_ folderNavigationBar: PPFolderNavigationBar)
     func folderNavigationBarDidClickCancelButton(_ folderNavigationBar: PPFolderNavigationBar)
+    func folderNavigationBarDidClickNewButton(_ folderNavigationBar: PPFolderNavigationBar)
 }
 
 class PPFolderNavigationBar: UIView {
@@ -33,17 +34,17 @@ class PPFolderNavigationBar: UIView {
     init() {
         super.init(frame: CGRect())
         
-        backgroundColor = UIColor(withHex: 0x131415)
+        backgroundColor = .navigatorBlack
         
         // barIcon
         barIcon.setTitle("ProtoPipe", for: .normal)
         barIcon.titleLabel?.font = UIFont.systemFont(ofSize: 44, weight: .heavy)
-        barIcon.tintColor = UIColor(withHex: 0xeeeeee)
+        barIcon.tintColor = .titleWhite
         barIcon.sizeToFit()
         addSubview(barIcon)
         
         // alertBar
-        alertBar.backgroundColor = UIColor(withHex: 0x50BAA1)
+        alertBar.backgroundColor = .activeGreen
         addSubview(alertBar)
         
         // barItems
@@ -129,7 +130,7 @@ extension PPFolderNavigationBar {
     @objc func barItemClicked(sender: UIButton) {
         switch BarItemType(rawValue: sender.currentTitle!) {
         case .New:
-            break
+            delegate?.folderNavigationBarDidClickNewButton(self)
         case .Select:
             isSelected = true
             delegate?.folderNavigationBarDidClickSelectButton(self)
@@ -153,7 +154,7 @@ extension PPFolderNavigationBar {
         let barItem = UIButton(type: .system)
         barItem.setTitle(barItemType.rawValue, for: .normal)
         barItem.titleLabel?.font = UIFont.systemFont(ofSize: 21, weight: .regular)
-        barItem.tintColor = UIColor(withHex: 0xeeeeee)
+        barItem.tintColor = .titleWhite
         barItem.sizeToFit()
         barItem.addTarget(self, action: #selector(barItemClicked(sender:)), for: .touchUpInside)
         return barItem

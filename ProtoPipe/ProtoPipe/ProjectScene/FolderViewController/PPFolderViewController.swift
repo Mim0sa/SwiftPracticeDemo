@@ -23,7 +23,7 @@ class PPFolderViewController: PPBaseViewController, PPCanvasViewControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor(withHex: 0x191B1D)
+        view.backgroundColor = .sceneBlack
         
         collectionView = UICollectionView(frame: CGRect(), collectionViewLayout: PPFolderCollectionViewFlowLayout())
         collectionView.delegate = self
@@ -71,6 +71,11 @@ extension PPFolderViewController {
     
     func folderNavigationBarDidClickCancelButton(_ folderNavigationBar: PPFolderNavigationBar) {
         model.updateEditStatus(with: folderNavigationBar.isSelected)
+    }
+    
+    func folderNavigationBarDidClickNewButton(_ folderNavigationBar: PPFolderNavigationBar) {
+        let vc = PPToastViewController()
+        present(vc, animated: true, completion: nil)
     }
 }
 

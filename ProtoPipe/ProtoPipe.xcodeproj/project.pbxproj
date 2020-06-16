@@ -26,6 +26,8 @@
 		38241CB9BD9C7728BAC23700 /* Pods_ProtoPipe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5D18D6BD1039EFFC580209 /* Pods_ProtoPipe.framework */; };
 		83CDE7A324973EB000BB72FB /* PPFolderCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CDE7A224973EB000BB72FB /* PPFolderCollectionViewModel.swift */; };
 		83CDE7A62497516400BB72FB /* FolderCollectionViewModelData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83CDE7A52497516400BB72FB /* FolderCollectionViewModelData.plist */; };
+		83CDE7A82498934600BB72FB /* PPToastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CDE7A72498934600BB72FB /* PPToastViewController.swift */; };
+		83CDE7AA2498ACB100BB72FB /* PPExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CDE7A92498ACB100BB72FB /* PPExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		4567E6E41458F82F47AB6789 /* Pods-ProtoPipe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProtoPipe.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProtoPipe/Pods-ProtoPipe.release.xcconfig"; sourceTree = "<group>"; };
 		83CDE7A224973EB000BB72FB /* PPFolderCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPFolderCollectionViewModel.swift; sourceTree = "<group>"; };
 		83CDE7A52497516400BB72FB /* FolderCollectionViewModelData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FolderCollectionViewModelData.plist; sourceTree = "<group>"; };
+		83CDE7A72498934600BB72FB /* PPToastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPToastViewController.swift; sourceTree = "<group>"; };
+		83CDE7A92498ACB100BB72FB /* PPExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,7 @@
 		1B9F013D2493715200D7473D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				83CDE7A92498ACB100BB72FB /* PPExtensions.swift */,
 				1B34EAF82477C521009AC43B /* Extension+UIcolor.swift */,
 				1B9E6729247A2AB300D649B3 /* Common.swift */,
 			);
@@ -140,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				1B34EAEA247521F6009AC43B /* PPBaseViewController.swift */,
+				83CDE7A72498934600BB72FB /* PPToastViewController.swift */,
 				1B9E6726247A185D00D649B3 /* FolderViewController */,
 				1B9F013F2493718E00D7473D /* CanvasViewController */,
 			);
@@ -315,8 +321,10 @@
 			files = (
 				1B3C39D62462CCD60082AF94 /* AppDelegate.swift in Sources */,
 				1B9F013C2493714500D7473D /* PPDotButton.swift in Sources */,
+				83CDE7AA2498ACB100BB72FB /* PPExtensions.swift in Sources */,
 				1B34EAF52476311A009AC43B /* MagicMoveAnimator.swift in Sources */,
 				1B3C39D82462CCD60082AF94 /* SceneDelegate.swift in Sources */,
+				83CDE7A82498934600BB72FB /* PPToastViewController.swift in Sources */,
 				1B34EAF124761FA3009AC43B /* PPFolderViewController.swift in Sources */,
 				1B34EAF72477BCF0009AC43B /* PPFolderNavigationBar.swift in Sources */,
 				1B34EAEB247521F6009AC43B /* PPBaseViewController.swift in Sources */,

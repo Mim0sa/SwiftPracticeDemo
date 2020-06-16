@@ -57,7 +57,7 @@ class PPFolderCollectionViewCell: UICollectionViewCell, PPDotButtonDelegate {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        detailLabel.textColor = UIColor(withHex: 0xcccccc)
+        detailLabel.textColor = .subtitleGray
         detailLabel.font = UIFont.systemFont(ofSize: 16, weight: .light)
         detailLabel.sizeToFit()
         addSubview(detailLabel)
@@ -67,7 +67,7 @@ class PPFolderCollectionViewCell: UICollectionViewCell, PPDotButtonDelegate {
             make.bottom.equalTo(-20)
         }
         
-        titleLabel.textColor = UIColor(withHex: 0xeeeeee)
+        titleLabel.textColor = .titleWhite
         titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         titleLabel.sizeToFit()
         addSubview(titleLabel)

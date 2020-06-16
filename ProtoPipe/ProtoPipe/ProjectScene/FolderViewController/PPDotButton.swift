@@ -47,7 +47,7 @@ class PPDotButton: UIControl {
         let dotBorder = UIBezierPath(ovalIn: dotArea)
         dotBorder.lineWidth = lineWidth
 
-        UIColor(withHex: 0x50BAA1).set()
+        UIColor.activeGreen.set()
         dotBorder.stroke()
 
         if isChosen {
@@ -61,7 +61,7 @@ class PPDotButton: UIControl {
             tick.lineCapStyle = .round
             tick.lineJoinStyle = .round
 
-            UIColor(withHex: 0x191B1D).set()
+            UIColor.sceneBlack.set()
             tick.stroke()
         }
     }
