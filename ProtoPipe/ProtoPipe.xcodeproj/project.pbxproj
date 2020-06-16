@@ -28,6 +28,7 @@
 		83CDE7A62497516400BB72FB /* FolderCollectionViewModelData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83CDE7A52497516400BB72FB /* FolderCollectionViewModelData.plist */; };
 		83CDE7A82498934600BB72FB /* PPToastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CDE7A72498934600BB72FB /* PPToastViewController.swift */; };
 		83CDE7AA2498ACB100BB72FB /* PPExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CDE7A92498ACB100BB72FB /* PPExtensions.swift */; };
+		83CDE7AC2498B1F800BB72FB /* PPToastNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CDE7AB2498B1F800BB72FB /* PPToastNavigationBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		83CDE7A52497516400BB72FB /* FolderCollectionViewModelData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FolderCollectionViewModelData.plist; sourceTree = "<group>"; };
 		83CDE7A72498934600BB72FB /* PPToastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPToastViewController.swift; sourceTree = "<group>"; };
 		83CDE7A92498ACB100BB72FB /* PPExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPExtensions.swift; sourceTree = "<group>"; };
+		83CDE7AB2498B1F800BB72FB /* PPToastNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPToastNavigationBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				1B34EAEA247521F6009AC43B /* PPBaseViewController.swift */,
-				83CDE7A72498934600BB72FB /* PPToastViewController.swift */,
+				83CDE7AD2498B1FE00BB72FB /* ToastViewController */,
 				1B9E6726247A185D00D649B3 /* FolderViewController */,
 				1B9F013F2493718E00D7473D /* CanvasViewController */,
 			);
@@ -170,6 +172,15 @@
 				83CDE7A52497516400BB72FB /* FolderCollectionViewModelData.plist */,
 			);
 			path = DataResource;
+			sourceTree = "<group>";
+		};
+		83CDE7AD2498B1FE00BB72FB /* ToastViewController */ = {
+			isa = PBXGroup;
+			children = (
+				83CDE7A72498934600BB72FB /* PPToastViewController.swift */,
+				83CDE7AB2498B1F800BB72FB /* PPToastNavigationBar.swift */,
+			);
+			path = ToastViewController;
 			sourceTree = "<group>";
 		};
 		BCBBD3E578BDEBB343B337F0 /* Frameworks */ = {
@@ -327,6 +338,7 @@
 				83CDE7A82498934600BB72FB /* PPToastViewController.swift in Sources */,
 				1B34EAF124761FA3009AC43B /* PPFolderViewController.swift in Sources */,
 				1B34EAF72477BCF0009AC43B /* PPFolderNavigationBar.swift in Sources */,
+				83CDE7AC2498B1F800BB72FB /* PPToastNavigationBar.swift in Sources */,
 				1B34EAEB247521F6009AC43B /* PPBaseViewController.swift in Sources */,
 				1B34EAED24761A42009AC43B /* PPCanvasViewController.swift in Sources */,
 				1B34EAF92477C521009AC43B /* Extension+UIcolor.swift in Sources */,

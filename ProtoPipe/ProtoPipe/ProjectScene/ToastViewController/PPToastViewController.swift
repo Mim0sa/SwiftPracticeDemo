@@ -15,7 +15,7 @@ class PPToastViewController: PPBaseViewController {
 
         modalPresentationStyle = .pageSheet
         
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = .sceneBlack
         
         // Do any additional setup after loading the view.
     }
