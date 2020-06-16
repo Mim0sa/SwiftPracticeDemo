@@ -18,14 +18,13 @@ class PPDotButton: UIControl {
     
     var isChosen: Bool = false {
         didSet {
-//            print(isChosen)
-//            setNeedsDisplay()
-            backgroundColor = isChosen ? .red : .green
+            setNeedsDisplay()
         }
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .clear
         addTarget(self, action: #selector(clicked(sender:)), for: .touchUpInside)
     }
     
@@ -37,35 +36,35 @@ class PPDotButton: UIControl {
         delegate?.dotButtonDidUpdateChosenStatus(self)
     }
     
-//    override func draw(_ rect: CGRect) {
-//
-//        let lineWidth: CGFloat = rect.width / 8
-//        let dotArea = CGRect(x: rect.minX + lineWidth / 2,
-//                             y: rect.minY + lineWidth / 2,
-//                             width: rect.width - lineWidth,
-//                             height: rect.height -  lineWidth)
-//
-//        let dotBorder = UIBezierPath(ovalIn: dotArea)
-//        dotBorder.lineWidth = lineWidth
-//
-//        UIColor(withHex: 0x50BAA1).set()
-//        dotBorder.stroke()
-//
-//        if isChosen {
-//            dotBorder.fill()
-//
-//            let tick = UIBezierPath()
-//            tick.move(to: CGPoint(x: rect.width / 4, y: rect.height / 1.9))
-//            tick.addLine(to: CGPoint(x: rect.width / 2.3, y: rect.height / 1.4))
-//            tick.addLine(to: CGPoint(x: rect.width / 1.4, y: rect.height / 2.8))
-//            tick.lineWidth = lineWidth
-//            tick.lineCapStyle = .round
-//            tick.lineJoinStyle = .round
-//
-//            UIColor(withHex: 0x191B1D).set()
-//            tick.stroke()
-//        }
-//    }
+    override func draw(_ rect: CGRect) {
+
+        let lineWidth: CGFloat = rect.width / 8
+        let dotArea = CGRect(x: rect.minX + lineWidth / 2,
+                             y: rect.minY + lineWidth / 2,
+                             width: rect.width - lineWidth,
+                             height: rect.height -  lineWidth)
+
+        let dotBorder = UIBezierPath(ovalIn: dotArea)
+        dotBorder.lineWidth = lineWidth
+
+        UIColor(withHex: 0x50BAA1).set()
+        dotBorder.stroke()
+
+        if isChosen {
+            dotBorder.fill()
+
+            let tick = UIBezierPath()
+            tick.move(to: CGPoint(x: rect.width / 4, y: rect.height / 1.9))
+            tick.addLine(to: CGPoint(x: rect.width / 2.3, y: rect.height / 1.4))
+            tick.addLine(to: CGPoint(x: rect.width / 1.4, y: rect.height / 2.8))
+            tick.lineWidth = lineWidth
+            tick.lineCapStyle = .round
+            tick.lineJoinStyle = .round
+
+            UIColor(withHex: 0x191B1D).set()
+            tick.stroke()
+        }
+    }
     
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         // MARK: If size lower than 44
