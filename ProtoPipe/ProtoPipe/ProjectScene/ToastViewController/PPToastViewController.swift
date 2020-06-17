@@ -8,9 +8,15 @@
 
 import UIKit
 
+protocol PPToastViewControllerDelegate {
+    func toastViewControllerDidClickDismissButton(_ vc: PPToastViewController)
+}
+
 class PPToastViewController: PPBaseViewController, PPToastNavigationBarDelegate {
     
     let toastNavigationBar = PPToastNavigationBar()
+    
+    var delegate: PPToastViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,13 +31,12 @@ class PPToastViewController: PPBaseViewController, PPToastNavigationBarDelegate 
             make.left.right.top.equalToSuperview()
             make.height.equalTo(78)
         }
-        // Do any additional setup after loading the view.
     }
 
 }
 
 extension PPToastViewController {
     func toastNavigationBarDidClickDismissButton(_ toastNavigationBar: PPToastNavigationBar) {
-        dismiss(animated: true, completion: nil)
+        delegate?.toastViewControllerDidClickDismissButton(self)
     }
 }

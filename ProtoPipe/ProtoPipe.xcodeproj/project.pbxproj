@@ -21,11 +21,9 @@
 		1B9E6728247A29DC00D649B3 /* PPFolderCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E6727247A29DC00D649B3 /* PPFolderCollectionViewFlowLayout.swift */; };
 		1B9E672A247A2AB300D649B3 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E6729247A2AB300D649B3 /* Common.swift */; };
 		1B9E672C247BD41F00D649B3 /* PPFolderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E672B247BD41F00D649B3 /* PPFolderCollectionViewCell.swift */; };
-		1B9E672E247CC68200D649B3 /* PPItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E672D247CC68200D649B3 /* PPItem.swift */; };
 		1B9F013C2493714500D7473D /* PPDotButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9F013B2493714500D7473D /* PPDotButton.swift */; };
 		38241CB9BD9C7728BAC23700 /* Pods_ProtoPipe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5D18D6BD1039EFFC580209 /* Pods_ProtoPipe.framework */; };
 		83CDE7A324973EB000BB72FB /* PPFolderCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CDE7A224973EB000BB72FB /* PPFolderCollectionViewModel.swift */; };
-		83CDE7A62497516400BB72FB /* FolderCollectionViewModelData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83CDE7A52497516400BB72FB /* FolderCollectionViewModelData.plist */; };
 		83CDE7A82498934600BB72FB /* PPToastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CDE7A72498934600BB72FB /* PPToastViewController.swift */; };
 		83CDE7AA2498ACB100BB72FB /* PPExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CDE7A92498ACB100BB72FB /* PPExtensions.swift */; };
 		83CDE7AC2498B1F800BB72FB /* PPToastNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CDE7AB2498B1F800BB72FB /* PPToastNavigationBar.swift */; };
@@ -49,12 +47,10 @@
 		1B9E6727247A29DC00D649B3 /* PPFolderCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPFolderCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		1B9E6729247A2AB300D649B3 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		1B9E672B247BD41F00D649B3 /* PPFolderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPFolderCollectionViewCell.swift; sourceTree = "<group>"; };
-		1B9E672D247CC68200D649B3 /* PPItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPItem.swift; sourceTree = "<group>"; };
 		1B9F013B2493714500D7473D /* PPDotButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPDotButton.swift; sourceTree = "<group>"; };
 		334305D6CEA0E208BF38B60B /* Pods-ProtoPipe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProtoPipe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProtoPipe/Pods-ProtoPipe.debug.xcconfig"; sourceTree = "<group>"; };
 		4567E6E41458F82F47AB6789 /* Pods-ProtoPipe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProtoPipe.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProtoPipe/Pods-ProtoPipe.release.xcconfig"; sourceTree = "<group>"; };
 		83CDE7A224973EB000BB72FB /* PPFolderCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPFolderCollectionViewModel.swift; sourceTree = "<group>"; };
-		83CDE7A52497516400BB72FB /* FolderCollectionViewModelData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FolderCollectionViewModelData.plist; sourceTree = "<group>"; };
 		83CDE7A72498934600BB72FB /* PPToastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPToastViewController.swift; sourceTree = "<group>"; };
 		83CDE7A92498ACB100BB72FB /* PPExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPExtensions.swift; sourceTree = "<group>"; };
 		83CDE7AB2498B1F800BB72FB /* PPToastNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPToastNavigationBar.swift; sourceTree = "<group>"; };
@@ -107,12 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				1B34EAF024761FA3009AC43B /* PPFolderViewController.swift */,
-				83CDE7A224973EB000BB72FB /* PPFolderCollectionViewModel.swift */,
 				1B34EAF62477BCF0009AC43B /* PPFolderNavigationBar.swift */,
-				1B9E6727247A29DC00D649B3 /* PPFolderCollectionViewFlowLayout.swift */,
-				1B9E672B247BD41F00D649B3 /* PPFolderCollectionViewCell.swift */,
-				1B9F013B2493714500D7473D /* PPDotButton.swift */,
-				1B9E672D247CC68200D649B3 /* PPItem.swift */,
+				83CDE7AE2499AAD700BB72FB /* CollectionView */,
 			);
 			path = FolderViewController;
 			sourceTree = "<group>";
@@ -169,7 +161,6 @@
 		83CDE7A42497510300BB72FB /* DataResource */ = {
 			isa = PBXGroup;
 			children = (
-				83CDE7A52497516400BB72FB /* FolderCollectionViewModelData.plist */,
 			);
 			path = DataResource;
 			sourceTree = "<group>";
@@ -181,6 +172,17 @@
 				83CDE7AB2498B1F800BB72FB /* PPToastNavigationBar.swift */,
 			);
 			path = ToastViewController;
+			sourceTree = "<group>";
+		};
+		83CDE7AE2499AAD700BB72FB /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				83CDE7A224973EB000BB72FB /* PPFolderCollectionViewModel.swift */,
+				1B9E672B247BD41F00D649B3 /* PPFolderCollectionViewCell.swift */,
+				1B9E6727247A29DC00D649B3 /* PPFolderCollectionViewFlowLayout.swift */,
+				1B9F013B2493714500D7473D /* PPDotButton.swift */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 		BCBBD3E578BDEBB343B337F0 /* Frameworks */ = {
@@ -265,7 +267,6 @@
 				1B3C39E22462CCDE0082AF94 /* LaunchScreen.storyboard in Resources */,
 				1B3C39DF2462CCDE0082AF94 /* Assets.xcassets in Resources */,
 				1B3C39DD2462CCD60082AF94 /* Main.storyboard in Resources */,
-				83CDE7A62497516400BB72FB /* FolderCollectionViewModelData.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,7 +345,6 @@
 				1B34EAF92477C521009AC43B /* Extension+UIcolor.swift in Sources */,
 				1B9E672A247A2AB300D649B3 /* Common.swift in Sources */,
 				1B9E6728247A29DC00D649B3 /* PPFolderCollectionViewFlowLayout.swift in Sources */,
-				1B9E672E247CC68200D649B3 /* PPItem.swift in Sources */,
 				83CDE7A324973EB000BB72FB /* PPFolderCollectionViewModel.swift in Sources */,
 				1B9E672C247BD41F00D649B3 /* PPFolderCollectionViewCell.swift in Sources */,
 			);

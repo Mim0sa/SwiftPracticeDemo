@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class PPFolderViewController: PPBaseViewController, PPCanvasViewControllerDelegate, UIViewControllerTransitioningDelegate, UICollectionViewDelegate, UICollectionViewDataSource, PPFolderNavigationBarDelegate,PPFolderCollectionViewCellDelegate {
+class PPFolderViewController: PPBaseViewController, PPCanvasViewControllerDelegate, UIViewControllerTransitioningDelegate, UICollectionViewDelegate, UICollectionViewDataSource, PPFolderNavigationBarDelegate, PPFolderCollectionViewCellDelegate, PPToastViewControllerDelegate {
 
     let folderNavigationBar = PPFolderNavigationBar()
     var collectionView: UICollectionView!
@@ -75,6 +75,7 @@ extension PPFolderViewController {
     
     func folderNavigationBarDidClickNewButton(_ folderNavigationBar: PPFolderNavigationBar) {
         let vc = PPToastViewController()
+        vc.delegate = self
         present(vc, animated: true, completion: nil)
     }
 }
@@ -103,6 +104,13 @@ extension PPFolderViewController {
 extension PPFolderViewController {
     func folderCollectionViewCellDidUpdateChosenStatus(_ cell: PPFolderCollectionViewCell) {
         model.updateChosenStatus(at: collectionView.indexPath(for: cell)!.row)
+    }
+}
+
+// MARK: - PPToastViewControllerDelegate
+extension PPFolderViewController {
+    func toastViewControllerDidClickDismissButton(_ vc: PPToastViewController) {
+        dismiss(animated: true, completion: nil)
     }
 }
 
