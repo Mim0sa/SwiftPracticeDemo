@@ -27,7 +27,6 @@
 		83CDE7A82498934600BB72FB /* PPToastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CDE7A72498934600BB72FB /* PPToastViewController.swift */; };
 		83CDE7AA2498ACB100BB72FB /* PPExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CDE7A92498ACB100BB72FB /* PPExtensions.swift */; };
 		83CDE7AC2498B1F800BB72FB /* PPToastNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CDE7AB2498B1F800BB72FB /* PPToastNavigationBar.swift */; };
-		83CDE7B3249AFD0000BB72FB /* PPToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CDE7B2249AFD0000BB72FB /* PPToastView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +54,6 @@
 		83CDE7A72498934600BB72FB /* PPToastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPToastViewController.swift; sourceTree = "<group>"; };
 		83CDE7A92498ACB100BB72FB /* PPExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPExtensions.swift; sourceTree = "<group>"; };
 		83CDE7AB2498B1F800BB72FB /* PPToastNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPToastNavigationBar.swift; sourceTree = "<group>"; };
-		83CDE7B2249AFD0000BB72FB /* PPToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPToastView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,7 +170,6 @@
 			children = (
 				83CDE7A72498934600BB72FB /* PPToastViewController.swift */,
 				83CDE7AB2498B1F800BB72FB /* PPToastNavigationBar.swift */,
-				83CDE7B2249AFD0000BB72FB /* PPToastView.swift */,
 			);
 			path = ToastViewController;
 			sourceTree = "<group>";
@@ -343,7 +340,6 @@
 				1B34EAF124761FA3009AC43B /* PPFolderViewController.swift in Sources */,
 				1B34EAF72477BCF0009AC43B /* PPFolderNavigationBar.swift in Sources */,
 				83CDE7AC2498B1F800BB72FB /* PPToastNavigationBar.swift in Sources */,
-				83CDE7B3249AFD0000BB72FB /* PPToastView.swift in Sources */,
 				1B34EAEB247521F6009AC43B /* PPBaseViewController.swift in Sources */,
 				1B34EAED24761A42009AC43B /* PPCanvasViewController.swift in Sources */,
 				1B34EAF92477C521009AC43B /* Extension+UIcolor.swift in Sources */,

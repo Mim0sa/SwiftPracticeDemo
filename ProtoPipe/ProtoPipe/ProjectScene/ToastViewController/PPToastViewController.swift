@@ -8,36 +8,10 @@
 
 import UIKit
 
-protocol PPToastViewControllerDelegate {
-    func toastViewControllerDidClickDismissButton(_ vc: PPToastViewController)
-    func toastViewControllerDidClickOKButton(_ vc: PPToastViewController)
-}
-
-struct PPToastModel {
-    let title: String
-    let toastView: PPToastView
-}
-
-class PPToastViewController: PPBaseViewController, PPToastViewDelegate {
+class PPToastViewController: PPBaseViewController {
     
     let toastNavigationBar = PPToastNavigationBar()
-    let toastView: PPToastView
-    
-    var toastModel: PPToastModel
-    
-    var delegate: PPToastViewControllerDelegate?
-    
-    init(toastModel: PPToastModel) {
-        self.toastModel = toastModel
-        self.toastView = toastModel.toastView
-        super.init(nibName: nil, bundle: nil)
-        
-        toastNavigationBar.title = toastModel.title
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    let toastView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,14 +33,4 @@ class PPToastViewController: PPBaseViewController, PPToastViewDelegate {
         }
     }
     
-}
-
-extension PPToastViewController {
-    func toastViewDidClickOKButton(_ toastView: PPToastView) {
-        delegate?.toastViewControllerDidClickOKButton(self)
-    }
-    
-    func toastViewDidClickDismissButton(_ toastView: PPToastView) {
-        delegate?.toastViewControllerDidClickDismissButton(self)
-    }
 }
