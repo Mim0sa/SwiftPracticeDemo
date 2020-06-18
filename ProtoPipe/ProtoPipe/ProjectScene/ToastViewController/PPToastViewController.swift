@@ -10,11 +10,13 @@ import UIKit
 
 protocol PPToastViewControllerDelegate {
     func toastViewControllerDidClickDismissButton(_ vc: PPToastViewController)
+    func toastViewControllerDidClickOKButton(_ vc: PPToastViewController)
 }
 
-class PPToastViewController: PPBaseViewController, PPToastNavigationBarDelegate {
+class PPToastViewController: PPBaseViewController, PPToastNavigationBarDelegate, PPToastViewDelegate {
     
     let toastNavigationBar = PPToastNavigationBar()
+    let toastView = PPToastView()
     
     var delegate: PPToastViewControllerDelegate?
 
@@ -31,6 +33,12 @@ class PPToastViewController: PPBaseViewController, PPToastNavigationBarDelegate 
             make.left.right.top.equalToSuperview()
             make.height.equalTo(78)
         }
+        
+        view.addSubview(toastView)
+        toastView.snp.makeConstraints { (make) in
+            make.left.right.bottom.equalToSuperview()
+            make.top.equalTo(toastNavigationBar.snp.bottom)
+        }
     }
 
 }
@@ -38,5 +46,9 @@ class PPToastViewController: PPBaseViewController, PPToastNavigationBarDelegate 
 extension PPToastViewController {
     func toastNavigationBarDidClickDismissButton(_ toastNavigationBar: PPToastNavigationBar) {
         delegate?.toastViewControllerDidClickDismissButton(self)
+    }
+    
+    func toastViewDidClickOKButton(_ toastView: PPToastView) {
+        delegate?.toastViewControllerDidClickOKButton(self)
     }
 }

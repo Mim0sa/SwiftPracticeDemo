@@ -112,6 +112,10 @@ extension PPFolderViewController {
     func toastViewControllerDidClickDismissButton(_ vc: PPToastViewController) {
         dismiss(animated: true, completion: nil)
     }
+    
+    func toastViewControllerDidClickOKButton(_ vc: PPToastViewController) {
+        
+    }
 }
 
 // MARK: - PPCanvasViewControllerDelegate
