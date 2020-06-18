@@ -13,12 +13,31 @@ protocol PPToastViewControllerDelegate {
     func toastViewControllerDidClickOKButton(_ vc: PPToastViewController)
 }
 
-class PPToastViewController: PPBaseViewController, PPToastNavigationBarDelegate, PPToastViewDelegate {
+struct PPToastModel {
+    let title: String
+    let toastView: PPToastView
+}
+
+class PPToastViewController: PPBaseViewController, PPToastViewDelegate {
     
     let toastNavigationBar = PPToastNavigationBar()
-    let toastView = PPToastView()
+    let toastView : PPToastView!
+    
+    var toastModel: PPToastModel
     
     var delegate: PPToastViewControllerDelegate?
+    
+    init(toastModel: PPToastModel) {
+        self.toastModel = toastModel
+        self.toastView = toastModel.toastView
+        super.init(nibName: nil, bundle: nil)
+
+        toastNavigationBar.title = toastModel.title
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +46,6 @@ class PPToastViewController: PPBaseViewController, PPToastNavigationBarDelegate,
         
         view.backgroundColor = .sceneBlack
         
-        toastNavigationBar.delegate = self
         view.addSubview(toastNavigationBar)
         toastNavigationBar.snp.makeConstraints { (make) in
             make.left.right.top.equalToSuperview()
@@ -44,11 +62,11 @@ class PPToastViewController: PPBaseViewController, PPToastNavigationBarDelegate,
 }
 
 extension PPToastViewController {
-    func toastNavigationBarDidClickDismissButton(_ toastNavigationBar: PPToastNavigationBar) {
-        delegate?.toastViewControllerDidClickDismissButton(self)
-    }
-    
     func toastViewDidClickOKButton(_ toastView: PPToastView) {
         delegate?.toastViewControllerDidClickOKButton(self)
+    }
+    
+    func toastViewDidClickDismissButton(_ toastView: PPToastView) {
+        delegate?.toastViewControllerDidClickDismissButton(self)
     }
 }

@@ -10,18 +10,11 @@ import UIKit
 
 protocol PPToastViewDelegate {
     func toastViewDidClickOKButton(_ toastView: PPToastView)
+    func toastViewDidClickDismissButton(_ toastView: PPToastView)
 }
 
 class PPToastView: UIView {
     
     var delegate: PPToastViewDelegate?
-
-    override init(frame: CGRect) {
-        super.init(frame: CGRect())
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
 }

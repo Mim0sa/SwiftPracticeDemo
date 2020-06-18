@@ -28,7 +28,6 @@
 		83CDE7AA2498ACB100BB72FB /* PPExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CDE7A92498ACB100BB72FB /* PPExtensions.swift */; };
 		83CDE7AC2498B1F800BB72FB /* PPToastNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CDE7AB2498B1F800BB72FB /* PPToastNavigationBar.swift */; };
 		83CDE7B3249AFD0000BB72FB /* PPToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CDE7B2249AFD0000BB72FB /* PPToastView.swift */; };
-		83CDE7B5249B424D00BB72FB /* PPToastKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CDE7B4249B424D00BB72FB /* PPToastKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +56,6 @@
 		83CDE7A92498ACB100BB72FB /* PPExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPExtensions.swift; sourceTree = "<group>"; };
 		83CDE7AB2498B1F800BB72FB /* PPToastNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPToastNavigationBar.swift; sourceTree = "<group>"; };
 		83CDE7B2249AFD0000BB72FB /* PPToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPToastView.swift; sourceTree = "<group>"; };
-		83CDE7B4249B424D00BB72FB /* PPToastKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPToastKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,7 +173,6 @@
 				83CDE7A72498934600BB72FB /* PPToastViewController.swift */,
 				83CDE7AB2498B1F800BB72FB /* PPToastNavigationBar.swift */,
 				83CDE7B2249AFD0000BB72FB /* PPToastView.swift */,
-				83CDE7B4249B424D00BB72FB /* PPToastKey.swift */,
 			);
 			path = ToastViewController;
 			sourceTree = "<group>";
@@ -338,7 +335,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B3C39D62462CCD60082AF94 /* AppDelegate.swift in Sources */,
-				83CDE7B5249B424D00BB72FB /* PPToastKey.swift in Sources */,
 				1B9F013C2493714500D7473D /* PPDotButton.swift in Sources */,
 				83CDE7AA2498ACB100BB72FB /* PPExtensions.swift in Sources */,
 				1B34EAF52476311A009AC43B /* MagicMoveAnimator.swift in Sources */,

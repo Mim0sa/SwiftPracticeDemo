@@ -74,7 +74,7 @@ extension PPFolderViewController {
     }
     
     func folderNavigationBarDidClickNewButton(_ folderNavigationBar: PPFolderNavigationBar) {
-        let vc = PPToastViewController()
+        let vc = PPToastViewController(toastModel: PPToastModel(title: "New File", toastView: PPToastView()))
         vc.delegate = self
         present(vc, animated: true, completion: nil)
     }
