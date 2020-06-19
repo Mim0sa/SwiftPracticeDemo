@@ -23,7 +23,6 @@ class PPToastNavigationBar: UIView {
         
         backgroundColor = .navigatorBlack
         
-        barTitle.text = ""
         barTitle.textColor = .titleWhite
         barTitle.font = UIFont.systemFont(ofSize: 40, weight: .bold)
         addSubview(barTitle)
