@@ -11,7 +11,7 @@ import UIKit
 class PPToastViewController: PPBaseViewController {
     
     let toastNavigationBar = PPToastNavigationBar()
-    let toastView = UIView()
+    var toastView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
