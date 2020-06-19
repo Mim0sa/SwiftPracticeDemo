@@ -13,10 +13,19 @@ class PPToastViewController: PPBaseViewController {
     let toastNavigationBar = PPToastNavigationBar()
     var toastView = UIView()
     
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+        modalPresentationStyle = .formSheet
+        modalTransitionStyle = .coverVertical
+    }
+    
+    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        modalPresentationStyle = .pageSheet
+        modalPresentationStyle = .formSheet
         
         view.backgroundColor = .sceneBlack
         

@@ -74,7 +74,7 @@ extension PPFolderViewController {
     }
     
     func folderNavigationBarDidClickNewButton(_ folderNavigationBar: PPFolderNavigationBar) {
-        let vc = PPToastViewController()
+        let vc = PPNewFileToast()
         present(vc, animated: true, completion: nil)
     }
 }

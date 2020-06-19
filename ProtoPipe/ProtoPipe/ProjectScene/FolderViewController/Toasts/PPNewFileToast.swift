@@ -10,9 +10,19 @@ import UIKit
 
 class PPNewFileToast: PPToastViewController {
     
+    var fileNameLbl: UILabel!
+    var deviceLbl: UILabel!
+    var templateLbl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        toastNavigationBar.title = "New File"
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print(toastView.frame)
     }
     
 }
