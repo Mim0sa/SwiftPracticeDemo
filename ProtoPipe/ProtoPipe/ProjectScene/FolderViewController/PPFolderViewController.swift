@@ -80,7 +80,7 @@ extension PPFolderViewController {
 }
 
 // MARK: - UICollectionViewDelegate & UICollectionViewDataSource
-let FolderCollectionViewCellID = "FolderCollectionViewCell"
+fileprivate let FolderCollectionViewCellID = "FolderCollectionViewCell"
 
 extension PPFolderViewController {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

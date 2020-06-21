@@ -15,4 +15,5 @@ extension UIColor {
     static let activeGreen      = UIColor(withHex: 0x50BAA1)
     static let titleWhite       = UIColor(withHex: 0xeeeeee)
     static let subtitleGray     = UIColor(withHex: 0xcccccc)
+    static let textFieldGray    = UIColor(withHex: 0x272829)
 }

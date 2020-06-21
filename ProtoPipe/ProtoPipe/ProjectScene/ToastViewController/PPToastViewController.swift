@@ -11,7 +11,7 @@ import UIKit
 class PPToastViewController: PPBaseViewController {
     
     let toastNavigationBar = PPToastNavigationBar()
-    var toastView = UIView()
+    var contentView = UIScrollView()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -35,8 +35,8 @@ class PPToastViewController: PPBaseViewController {
             make.height.equalTo(78)
         }
         
-        view.addSubview(toastView)
-        toastView.snp.makeConstraints { (make) in
+        view.addSubview(contentView)
+        contentView.snp.makeConstraints { (make) in
             make.left.right.bottom.equalToSuperview()
             make.top.equalTo(toastNavigationBar.snp.bottom)
         }
