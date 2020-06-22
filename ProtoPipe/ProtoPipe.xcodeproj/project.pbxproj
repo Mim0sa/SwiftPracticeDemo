@@ -166,9 +166,17 @@
 		1B9F0144249B82B900D7473D /* Toasts */ = {
 			isa = PBXGroup;
 			children = (
-				1B9F0145249B831D00D7473D /* PPNewFileToast.swift */,
+				8323A09824A041BC003152D2 /* NewFileToast */,
 			);
 			path = Toasts;
+			sourceTree = "<group>";
+		};
+		8323A09824A041BC003152D2 /* NewFileToast */ = {
+			isa = PBXGroup;
+			children = (
+				1B9F0145249B831D00D7473D /* PPNewFileToast.swift */,
+			);
+			path = NewFileToast;
 			sourceTree = "<group>";
 		};
 		83CDE7A42497510300BB72FB /* DataResource */ = {

@@ -35,6 +35,8 @@ class PPToastViewController: PPBaseViewController {
             make.height.equalTo(78)
         }
         
+        contentView.bounces = false
+        contentView.showsVerticalScrollIndicator = false
         view.addSubview(contentView)
         contentView.snp.makeConstraints { (make) in
             make.left.right.bottom.equalToSuperview()

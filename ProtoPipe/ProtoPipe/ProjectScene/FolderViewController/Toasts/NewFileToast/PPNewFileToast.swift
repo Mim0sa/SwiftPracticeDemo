@@ -21,7 +21,7 @@ class PPNewFileToast: PPToastViewController, UITextFieldDelegate, UICollectionVi
         super.viewDidLoad()
         
         toastNavigationBar.title = "New File"
-        contentView.contentSize = CGSize(width: 540, height: 679)
+        contentView.contentSize = CGSize(width: 540, height: 0)
         
         fileNameLbl = makeTitleLabel(title: "File Name")
         contentView .addSubview(fileNameLbl)
@@ -53,16 +53,8 @@ class PPNewFileToast: PPToastViewController, UITextFieldDelegate, UICollectionVi
             make.left.equalTo(28)
         }
         
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: 140, height: 180)
-        flowLayout.scrollDirection = .horizontal
-        
-        deviceCollectionView = UICollectionView(frame: CGRect(), collectionViewLayout: flowLayout)
-        deviceCollectionView.contentInset = UIEdgeInsets(top: 0, left: 28, bottom: 0, right: 28)
-        deviceCollectionView.backgroundColor = .clear
-        deviceCollectionView.delegate = self
-        deviceCollectionView.dataSource = self
-        deviceCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: CollectionViewCellID)
+        deviceCollectionView = makeCollectionView()
+        deviceCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: DeviceCollectionViewCellID)
         contentView.addSubview(deviceCollectionView)
         deviceCollectionView.snp.makeConstraints { (make) in
             make.top.equalTo(deviceLbl.snp.bottom).offset(14)
@@ -77,18 +69,16 @@ class PPNewFileToast: PPToastViewController, UITextFieldDelegate, UICollectionVi
             make.left.equalTo(28)
         }
         
-        templateCollectionView = UICollectionView(frame: CGRect(), collectionViewLayout: flowLayout)
-        templateCollectionView.contentInset = UIEdgeInsets(top: 0, left: 28, bottom: 0, right: 28)
-        templateCollectionView.backgroundColor = .clear
-        templateCollectionView.delegate = self
-        templateCollectionView.dataSource = self
-        templateCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: CollectionViewCellID)
+        templateCollectionView = makeCollectionView()
+        templateCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: TemplateCollectionViewCellID)
         contentView.addSubview(templateCollectionView)
         templateCollectionView.snp.makeConstraints { (make) in
             make.top.equalTo(templateLbl.snp.bottom).offset(14)
             make.left.right.equalTo(view)
             make.height.equalTo(180)
+            make.bottom.equalTo(-18)
         }
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -100,17 +90,30 @@ class PPNewFileToast: PPToastViewController, UITextFieldDelegate, UICollectionVi
 }
 
 // MARK: - UICollectionViewDelegate & UICollectionViewDataSource
-fileprivate let CollectionViewCellID = "CollectionViewCell"
+fileprivate let DeviceCollectionViewCellID   = "DeviceCollectionViewCell"
+fileprivate let TemplateCollectionViewCellID = "TemplateCollectionViewCell"
 
 extension PPNewFileToast {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 13
+        if collectionView == deviceCollectionView {
+            return 10
+        } else if collectionView == templateCollectionView {
+            return 5
+        }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCellID, for: indexPath)
-        cell.backgroundColor = .randomColor
-        return cell
+        if collectionView == deviceCollectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DeviceCollectionViewCellID, for: indexPath)
+            cell.backgroundColor = .randomColor
+            return cell
+        } else if collectionView == templateCollectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TemplateCollectionViewCellID, for: indexPath)
+            cell.backgroundColor = .randomColor
+            return cell
+        }
+        return UICollectionViewCell()
     }
 }
 
@@ -129,6 +132,22 @@ extension PPNewFileToast {
         lbl.textColor = UIColor.subtitleGray
         lbl.textAlignment = .left
         return lbl
+    }
+    
+    private func makeCollectionView() -> UICollectionView {
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.itemSize = CGSize(width: 140, height: 180)
+        flowLayout.scrollDirection = .horizontal
+        
+        let collectionView = UICollectionView(frame: CGRect(), collectionViewLayout: flowLayout)
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 28, bottom: 0, right: 28)
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.bounces = false
+        collectionView.backgroundColor = .clear
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        return collectionView
     }
 }
 
