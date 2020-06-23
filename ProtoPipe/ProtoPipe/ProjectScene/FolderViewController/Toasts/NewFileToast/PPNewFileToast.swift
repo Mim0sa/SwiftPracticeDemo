@@ -59,7 +59,7 @@ class PPNewFileToast: PPToastViewController, UITextFieldDelegate, UICollectionVi
         deviceCollectionView.snp.makeConstraints { (make) in
             make.top.equalTo(deviceLbl.snp.bottom).offset(14)
             make.left.right.equalTo(view)
-            make.height.equalTo(180)
+            make.height.equalTo(110)
         }
 
         templateLbl = makeTitleLabel(title: "Template")
@@ -75,7 +75,7 @@ class PPNewFileToast: PPToastViewController, UITextFieldDelegate, UICollectionVi
         templateCollectionView.snp.makeConstraints { (make) in
             make.top.equalTo(templateLbl.snp.bottom).offset(14)
             make.left.right.equalTo(view)
-            make.height.equalTo(180)
+            make.height.equalTo(110)
             make.bottom.equalTo(-18)
         }
 
@@ -84,7 +84,8 @@ class PPNewFileToast: PPToastViewController, UITextFieldDelegate, UICollectionVi
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        print(templateCollectionView.frame)
+        print(view.frame)
+        print(templateCollectionView.frame.maxY + 18)
     }
     
 }
@@ -94,11 +95,11 @@ fileprivate let DeviceCollectionViewCellID   = "DeviceCollectionViewCell"
 fileprivate let TemplateCollectionViewCellID = "TemplateCollectionViewCell"
 
 extension PPNewFileToast {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, bnumberOfItemsInSection section: Int) -> Int {
         if collectionView == deviceCollectionView {
-            return 10
+            return 6
         } else if collectionView == templateCollectionView {
-            return 5
+            return 7
         }
         return 0
     }
@@ -136,7 +137,7 @@ extension PPNewFileToast {
     
     private func makeCollectionView() -> UICollectionView {
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: 140, height: 180)
+        flowLayout.itemSize = CGSize(width: 100, height: 110)
         flowLayout.scrollDirection = .horizontal
         
         let collectionView = UICollectionView(frame: CGRect(), collectionViewLayout: flowLayout)
