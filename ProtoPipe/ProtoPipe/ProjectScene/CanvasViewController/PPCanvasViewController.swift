@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-protocol PPCanvasViewControllerDelegate {
+protocol PPCanvasViewControllerDelegate: class {
     func canvasViewControllerDidClickedFolderButton(_ vc: PPCanvasViewController)
 }
 
@@ -17,7 +17,7 @@ class PPCanvasViewController: PPBaseViewController {
 
     lazy var box = UIButton()
     
-    var delegate: PPCanvasViewControllerDelegate?
+    weak var delegate: PPCanvasViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -16,11 +16,11 @@ struct PPFolderCollectionViewCellModel {
     var isChosen: Bool = false
 }
 
-protocol PPFolderCollectionViewCellDelegate {
+protocol PPFolderCollectionViewCellDelegate: class {
     func folderCollectionViewCellDidUpdateChosenStatus(_ cell: PPFolderCollectionViewCell)
 }
 
-class PPFolderCollectionViewCell: UICollectionViewCell, PPDotButtonDelegate {
+class PPFolderCollectionViewCell: UICollectionViewCell {
     
     var model: PPFolderCollectionViewCellModel? {
         willSet { guard
@@ -38,7 +38,7 @@ class PPFolderCollectionViewCell: UICollectionViewCell, PPDotButtonDelegate {
     let detailLabel = UILabel()
     let dotButton = PPDotButton()
     
-    var delegate: PPFolderCollectionViewCellDelegate?
+    weak var delegate: PPFolderCollectionViewCellDelegate?
     
     var isEditing: Bool = false {
         willSet {
@@ -132,7 +132,7 @@ class PPFolderCollectionViewCell: UICollectionViewCell, PPDotButtonDelegate {
     
 }
 
-extension PPFolderCollectionViewCell {
+extension PPFolderCollectionViewCell: PPDotButtonDelegate {
     func dotButtonDidUpdateChosenStatus(_ dotButton: PPDotButton) {
         delegate?.folderCollectionViewCellDidUpdateChosenStatus(self)
     }

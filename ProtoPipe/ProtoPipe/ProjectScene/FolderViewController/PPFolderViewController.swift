@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class PPFolderViewController: PPBaseViewController, PPCanvasViewControllerDelegate, UIViewControllerTransitioningDelegate, UICollectionViewDelegate, UICollectionViewDataSource, PPFolderNavigationBarDelegate, PPFolderCollectionViewCellDelegate {
+class PPFolderViewController: PPBaseViewController, PPCanvasViewControllerDelegate {
 
     let folderNavigationBar = PPFolderNavigationBar()
     var collectionView: UICollectionView!
@@ -64,7 +64,7 @@ class PPFolderViewController: PPBaseViewController, PPCanvasViewControllerDelega
 }
 
 // MARK: - PPFolderNavigationBarDelegate
-extension PPFolderViewController {
+extension PPFolderViewController: PPFolderNavigationBarDelegate {
     func folderNavigationBarDidClickSelectButton(_ folderNavigationBar: PPFolderNavigationBar) {
         model.updateEditStatus(with: folderNavigationBar.isSelected)
     }
@@ -82,7 +82,7 @@ extension PPFolderViewController {
 // MARK: - UICollectionViewDelegate & UICollectionViewDataSource
 fileprivate let FolderCollectionViewCellID = "FolderCollectionViewCell"
 
-extension PPFolderViewController {
+extension PPFolderViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return model.count
     }
@@ -100,7 +100,7 @@ extension PPFolderViewController {
 }
 
 // MARK: - PPFolderCollectionViewCellDelegate
-extension PPFolderViewController {
+extension PPFolderViewController: PPFolderCollectionViewCellDelegate {
     func folderCollectionViewCellDidUpdateChosenStatus(_ cell: PPFolderCollectionViewCell) {
         model.updateChosenStatus(at: collectionView.indexPath(for: cell)!.row)
     }
@@ -114,7 +114,7 @@ extension PPFolderViewController {
 }
 
 // MARK: - UIViewControllerTransitioningDelegate
-extension PPFolderViewController {
+extension PPFolderViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return MagicMoveAnimator()
     }

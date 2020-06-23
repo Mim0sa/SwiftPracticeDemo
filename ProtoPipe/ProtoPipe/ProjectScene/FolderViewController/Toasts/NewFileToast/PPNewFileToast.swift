@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PPNewFileToast: PPToastViewController, UITextFieldDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
+class PPNewFileToast: PPToastViewController {
     
     var fileNameLbl: UILabel!
     var fileNameTextField: UITextField!
@@ -94,8 +94,8 @@ class PPNewFileToast: PPToastViewController, UITextFieldDelegate, UICollectionVi
 fileprivate let DeviceCollectionViewCellID   = "DeviceCollectionViewCell"
 fileprivate let TemplateCollectionViewCellID = "TemplateCollectionViewCell"
 
-extension PPNewFileToast {
-    func collectionView(_ collectionView: UICollectionView, bnumberOfItemsInSection section: Int) -> Int {
+extension PPNewFileToast: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == deviceCollectionView {
             return 6
         } else if collectionView == templateCollectionView {
@@ -153,7 +153,7 @@ extension PPNewFileToast {
 }
 
 // MARK: - UITextFieldDelegate
-extension PPNewFileToast {
+extension PPNewFileToast: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return textField.resignFirstResponder()
     }

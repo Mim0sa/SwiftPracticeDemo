@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol PPFolderNavigationBarDelegate {
+protocol PPFolderNavigationBarDelegate: class {
     func folderNavigationBarDidClickSelectButton(_ folderNavigationBar: PPFolderNavigationBar)
     func folderNavigationBarDidClickCancelButton(_ folderNavigationBar: PPFolderNavigationBar)
     func folderNavigationBarDidClickNewButton(_ folderNavigationBar: PPFolderNavigationBar)
@@ -29,7 +29,7 @@ class PPFolderNavigationBar: UIView {
         }
     }
     
-    var delegate: PPFolderNavigationBarDelegate?
+    weak var delegate: PPFolderNavigationBarDelegate?
     
     init() {
         super.init(frame: CGRect())

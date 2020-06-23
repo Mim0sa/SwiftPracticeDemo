@@ -8,6 +8,6 @@
 
 import UIKit
 
-protocol PPToastViewControllerDelegate {
+protocol PPToastViewControllerDelegate: class {
     
 }
