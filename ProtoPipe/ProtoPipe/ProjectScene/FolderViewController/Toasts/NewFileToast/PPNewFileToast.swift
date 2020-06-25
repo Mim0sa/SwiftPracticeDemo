@@ -16,6 +16,8 @@ class PPNewFileToast: PPToastViewController {
     var deviceCollectionView: UICollectionView!
     var templateLbl: UILabel!
     var templateCollectionView: UICollectionView!
+    var cancelBtn: UIButton!
+    var confirmBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +61,7 @@ class PPNewFileToast: PPToastViewController {
         deviceCollectionView.snp.makeConstraints { (make) in
             make.top.equalTo(deviceLbl.snp.bottom).offset(14)
             make.left.right.equalTo(view)
-            make.height.equalTo(110)
+            make.height.equalTo(100)
         }
 
         templateLbl = makeTitleLabel(title: "Template")
@@ -75,17 +77,35 @@ class PPNewFileToast: PPToastViewController {
         templateCollectionView.snp.makeConstraints { (make) in
             make.top.equalTo(templateLbl.snp.bottom).offset(14)
             make.left.right.equalTo(view)
-            make.height.equalTo(110)
-            make.bottom.equalTo(-18)
+            make.height.equalTo(100)
+        }
+        
+        cancelBtn = makeBtn(title: "Cancel")
+        contentView.addSubview(cancelBtn)
+        cancelBtn.snp.makeConstraints { (make) in
+            make.top.equalTo(templateCollectionView.snp.bottom).offset(35)
+            make.centerX.equalToSuperview().offset(-100)
+            make.width.equalTo(120)
+            make.height.equalTo(49)
+            make.bottom.equalTo(-35)
         }
 
+        confirmBtn = makeBtn(title: "Confirm", bgColor: .activeGreen, tintColor: .activeDarkGreen)
+        contentView.addSubview(confirmBtn)
+        confirmBtn.snp.makeConstraints { (make) in
+            make.top.equalTo(templateCollectionView.snp.bottom).offset(35)
+            make.centerX.equalToSuperview().offset(100)
+            make.width.equalTo(120)
+            make.height.equalTo(49)
+            make.bottom.equalTo(-35)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         print(view.frame)
-        print(templateCollectionView.frame.maxY + 18)
+        print(templateCollectionView.frame.maxY + 78)
     }
     
 }
@@ -107,11 +127,11 @@ extension PPNewFileToast: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == deviceCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DeviceCollectionViewCellID, for: indexPath)
-            cell.backgroundColor = .randomColor
+            cell.backgroundColor = .darkGray
             return cell
         } else if collectionView == templateCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TemplateCollectionViewCellID, for: indexPath)
-            cell.backgroundColor = .randomColor
+            cell.backgroundColor = .darkGray
             return cell
         }
         return UICollectionViewCell()
@@ -137,7 +157,7 @@ extension PPNewFileToast {
     
     private func makeCollectionView() -> UICollectionView {
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: 100, height: 110)
+        flowLayout.itemSize = CGSize(width: 100, height: 100)
         flowLayout.scrollDirection = .horizontal
         
         let collectionView = UICollectionView(frame: CGRect(), collectionViewLayout: flowLayout)
@@ -149,6 +169,16 @@ extension PPNewFileToast {
         collectionView.dataSource = self
         
         return collectionView
+    }
+    
+    private func makeBtn(title: String, bgColor: UIColor = .contentGray, tintColor: UIColor = .subtitleWhite) -> UIButton {
+        let btn = UIButton(type: .system)
+        btn.setTitle(title, for: .normal)
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 19, weight: .medium)
+        btn.tintColor = tintColor
+        btn.backgroundColor = bgColor
+        btn.layer.cornerRadius = 10
+        return btn
     }
 }
 
