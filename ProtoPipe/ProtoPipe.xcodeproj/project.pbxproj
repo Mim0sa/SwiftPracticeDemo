@@ -24,6 +24,7 @@
 		1B9F013C2493714500D7473D /* PPDotButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9F013B2493714500D7473D /* PPDotButton.swift */; };
 		1B9F0143249B829200D7473D /* PPToastViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9F0142249B829200D7473D /* PPToastViewControllerDelegate.swift */; };
 		1B9F0146249B831D00D7473D /* PPNewFileToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9F0145249B831D00D7473D /* PPNewFileToast.swift */; };
+		1BF7228224A7658400F301D4 /* PPRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF7228124A7658400F301D4 /* PPRoundedButton.swift */; };
 		38241CB9BD9C7728BAC23700 /* Pods_ProtoPipe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5D18D6BD1039EFFC580209 /* Pods_ProtoPipe.framework */; };
 		83CDE7A324973EB000BB72FB /* PPFolderCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CDE7A224973EB000BB72FB /* PPFolderCollectionViewModel.swift */; };
 		83CDE7A82498934600BB72FB /* PPToastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CDE7A72498934600BB72FB /* PPToastViewController.swift */; };
@@ -52,6 +53,7 @@
 		1B9F013B2493714500D7473D /* PPDotButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPDotButton.swift; sourceTree = "<group>"; };
 		1B9F0142249B829200D7473D /* PPToastViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPToastViewControllerDelegate.swift; sourceTree = "<group>"; };
 		1B9F0145249B831D00D7473D /* PPNewFileToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPNewFileToast.swift; sourceTree = "<group>"; };
+		1BF7228124A7658400F301D4 /* PPRoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPRoundedButton.swift; sourceTree = "<group>"; };
 		334305D6CEA0E208BF38B60B /* Pods-ProtoPipe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProtoPipe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProtoPipe/Pods-ProtoPipe.debug.xcconfig"; sourceTree = "<group>"; };
 		4567E6E41458F82F47AB6789 /* Pods-ProtoPipe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProtoPipe.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProtoPipe/Pods-ProtoPipe.release.xcconfig"; sourceTree = "<group>"; };
 		83CDE7A224973EB000BB72FB /* PPFolderCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPFolderCollectionViewModel.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			children = (
 				1B9F0140249372C700D7473D /* ProjectScene */,
 				1B9F013E2493717000D7473D /* Transition */,
+				1BF7227F24A7635000F301D4 /* Utils */,
 				1B9F013D2493715200D7473D /* Helpers */,
 				83CDE7A42497510300BB72FB /* DataResource */,
 				1B9F01412493735100D7473D /* SupportFiles */,
@@ -169,6 +172,22 @@
 				8323A09824A041BC003152D2 /* NewFileToast */,
 			);
 			path = Toasts;
+			sourceTree = "<group>";
+		};
+		1BF7227F24A7635000F301D4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1BF7228024A7651300F301D4 /* Component */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		1BF7228024A7651300F301D4 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				1BF7228124A7658400F301D4 /* PPRoundedButton.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 		8323A09824A041BC003152D2 /* NewFileToast */ = {
@@ -356,6 +375,7 @@
 				1B3C39D62462CCD60082AF94 /* AppDelegate.swift in Sources */,
 				1B9F0146249B831D00D7473D /* PPNewFileToast.swift in Sources */,
 				1B9F013C2493714500D7473D /* PPDotButton.swift in Sources */,
+				1BF7228224A7658400F301D4 /* PPRoundedButton.swift in Sources */,
 				83CDE7AA2498ACB100BB72FB /* PPExtensions.swift in Sources */,
 				1B34EAF52476311A009AC43B /* MagicMoveAnimator.swift in Sources */,
 				1B3C39D82462CCD60082AF94 /* SceneDelegate.swift in Sources */,

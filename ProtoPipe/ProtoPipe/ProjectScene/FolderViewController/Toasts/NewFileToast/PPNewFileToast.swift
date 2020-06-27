@@ -80,7 +80,7 @@ class PPNewFileToast: PPToastViewController {
             make.height.equalTo(100)
         }
         
-        cancelBtn = makeBtn(title: "Cancel")
+        cancelBtn = PPRoundedButton(type: .Cancel)
         contentView.addSubview(cancelBtn)
         cancelBtn.snp.makeConstraints { (make) in
             make.top.equalTo(templateCollectionView.snp.bottom).offset(35)
@@ -90,7 +90,7 @@ class PPNewFileToast: PPToastViewController {
             make.bottom.equalTo(-35)
         }
 
-        confirmBtn = makeBtn(title: "Confirm", bgColor: .activeGreen, tintColor: .activeDarkGreen)
+        confirmBtn = PPRoundedButton(type: .Confirm)
         contentView.addSubview(confirmBtn)
         confirmBtn.snp.makeConstraints { (make) in
             make.top.equalTo(templateCollectionView.snp.bottom).offset(35)
@@ -105,7 +105,6 @@ class PPNewFileToast: PPToastViewController {
         super.viewDidAppear(animated)
         
         print(view.frame)
-        print(templateCollectionView.frame.maxY + 78)
     }
     
 }
@@ -143,7 +142,7 @@ extension PPNewFileToast {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         
-        view.endEditing(true)
+        contentView.endEditing(true)
     }
     
     private func makeTitleLabel(title: String) -> UILabel {
@@ -169,16 +168,6 @@ extension PPNewFileToast {
         collectionView.dataSource = self
         
         return collectionView
-    }
-    
-    private func makeBtn(title: String, bgColor: UIColor = .contentGray, tintColor: UIColor = .subtitleWhite) -> UIButton {
-        let btn = UIButton(type: .system)
-        btn.setTitle(title, for: .normal)
-        btn.titleLabel?.font = UIFont.systemFont(ofSize: 19, weight: .medium)
-        btn.tintColor = tintColor
-        btn.backgroundColor = bgColor
-        btn.layer.cornerRadius = 10
-        return btn
     }
 }
 
