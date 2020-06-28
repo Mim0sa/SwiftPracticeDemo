@@ -149,7 +149,7 @@ extension PPNewFileToast {
         let lbl = UILabel()
         lbl.text = title
         lbl.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
-        lbl.textColor = UIColor.subtitleGray
+        lbl.textColor = .subtitleGray
         lbl.textAlignment = .left
         return lbl
     }

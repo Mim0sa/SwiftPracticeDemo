@@ -96,7 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				1B3C39DE2462CCDE0082AF94 /* Assets.xcassets */,
-				1B9F0140249372C700D7473D /* ProjectScene */,
+				8345DE8624A884A50035EE71 /* Model */,
+				1B9F0140249372C700D7473D /* Scene */,
 				1BF7227F24A7635000F301D4 /* Utils */,
 				1B9F01412493735100D7473D /* SupportFiles */,
 				1B3C39E32462CCDE0082AF94 /* Info.plist */,
@@ -141,7 +142,7 @@
 			path = CanvasViewController;
 			sourceTree = "<group>";
 		};
-		1B9F0140249372C700D7473D /* ProjectScene */ = {
+		1B9F0140249372C700D7473D /* Scene */ = {
 			isa = PBXGroup;
 			children = (
 				1B34EAEA247521F6009AC43B /* PPBaseViewController.swift */,
@@ -149,7 +150,7 @@
 				1B9E6726247A185D00D649B3 /* FolderViewController */,
 				1B9F013F2493718E00D7473D /* CanvasViewController */,
 			);
-			path = ProjectScene;
+			path = Scene;
 			sourceTree = "<group>";
 		};
 		1B9F01412493735100D7473D /* SupportFiles */ = {
@@ -195,6 +196,13 @@
 				1B9F0145249B831D00D7473D /* PPNewFileToast.swift */,
 			);
 			path = NewFileToast;
+			sourceTree = "<group>";
+		};
+		8345DE8624A884A50035EE71 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		83CDE7AD2498B1FE00BB72FB /* ToastViewController */ = {
