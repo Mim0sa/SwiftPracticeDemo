@@ -95,12 +95,13 @@
 		1B3C39D42462CCD60082AF94 /* ProtoPipe */ = {
 			isa = PBXGroup;
 			children = (
+				1B3C39E32462CCDE0082AF94 /* Info.plist */,
 				1B3C39DE2462CCDE0082AF94 /* Assets.xcassets */,
+				1B3C39DB2462CCD60082AF94 /* Main.storyboard */,
 				8345DE8624A884A50035EE71 /* Model */,
 				1B9F0140249372C700D7473D /* Scene */,
 				1BF7227F24A7635000F301D4 /* Utils */,
 				1B9F01412493735100D7473D /* SupportFiles */,
-				1B3C39E32462CCDE0082AF94 /* Info.plist */,
 			);
 			path = ProtoPipe;
 			sourceTree = "<group>";
@@ -158,7 +159,6 @@
 			children = (
 				1B3C39D72462CCD60082AF94 /* SceneDelegate.swift */,
 				1B3C39D52462CCD60082AF94 /* AppDelegate.swift */,
-				1B3C39DB2462CCD60082AF94 /* Main.storyboard */,
 				1B3C39E02462CCDE0082AF94 /* LaunchScreen.storyboard */,
 			);
 			path = SupportFiles;
@@ -201,8 +201,16 @@
 		8345DE8624A884A50035EE71 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8345DE8724A89BDE0035EE71 /* File */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8345DE8724A89BDE0035EE71 /* File */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = File;
 			sourceTree = "<group>";
 		};
 		83CDE7AD2498B1FE00BB72FB /* ToastViewController */ = {
