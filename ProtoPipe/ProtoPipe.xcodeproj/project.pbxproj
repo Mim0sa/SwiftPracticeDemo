@@ -95,11 +95,9 @@
 		1B3C39D42462CCD60082AF94 /* ProtoPipe */ = {
 			isa = PBXGroup;
 			children = (
+				1B3C39DE2462CCDE0082AF94 /* Assets.xcassets */,
 				1B9F0140249372C700D7473D /* ProjectScene */,
-				1B9F013E2493717000D7473D /* Transition */,
 				1BF7227F24A7635000F301D4 /* Utils */,
-				1B9F013D2493715200D7473D /* Helpers */,
-				83CDE7A42497510300BB72FB /* DataResource */,
 				1B9F01412493735100D7473D /* SupportFiles */,
 				1B3C39E32462CCDE0082AF94 /* Info.plist */,
 			);
@@ -160,7 +158,6 @@
 				1B3C39D72462CCD60082AF94 /* SceneDelegate.swift */,
 				1B3C39D52462CCD60082AF94 /* AppDelegate.swift */,
 				1B3C39DB2462CCD60082AF94 /* Main.storyboard */,
-				1B3C39DE2462CCDE0082AF94 /* Assets.xcassets */,
 				1B3C39E02462CCDE0082AF94 /* LaunchScreen.storyboard */,
 			);
 			path = SupportFiles;
@@ -178,6 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				1BF7228024A7651300F301D4 /* Component */,
+				1B9F013D2493715200D7473D /* Helpers */,
+				1B9F013E2493717000D7473D /* Transition */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -196,13 +195,6 @@
 				1B9F0145249B831D00D7473D /* PPNewFileToast.swift */,
 			);
 			path = NewFileToast;
-			sourceTree = "<group>";
-		};
-		83CDE7A42497510300BB72FB /* DataResource */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DataResource;
 			sourceTree = "<group>";
 		};
 		83CDE7AD2498B1FE00BB72FB /* ToastViewController */ = {
