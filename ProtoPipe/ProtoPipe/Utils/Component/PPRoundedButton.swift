@@ -9,6 +9,18 @@
 import UIKit
 
 class PPRoundedButton: UIButton {
+    
+    override var isHighlighted: Bool {
+        willSet {
+            UIView.animate(withDuration: 0.1) {
+                if newValue {
+                    self.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+                } else {
+                    self.transform = .identity
+                }
+            }
+        }
+    }
 
     init(type: PPRoundedButtonType) {
         super.init(frame: CGRect())
@@ -19,12 +31,12 @@ class PPRoundedButton: UIButton {
         switch type {
         case .Cancel:
             setTitleColor(.subtitleGray, for: .normal)
-            setTitleColor(.gray, for: .highlighted)
+//            setTitleColor(.gray, for: .highlighted)
             backgroundColor = .contentGray
             setTitle("Cancel", for: .normal)
         case .Confirm:
-            setTitleColor(.navigatorBlack, for: .normal)
-            setTitleColor(.darkGray, for: .highlighted)
+            setTitleColor(.titleWhite, for: .normal)
+//            setTitleColor(.darkGray, for: .highlighted)
             backgroundColor = .activeGreen
             setTitle("Confirm", for: .normal)
         }

@@ -56,7 +56,7 @@ class PPNewFileToast: PPToastViewController {
         }
         
         deviceCollectionView = makeCollectionView()
-        deviceCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: DeviceCollectionViewCellID)
+        deviceCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: PPNewFileToast.DeviceCellID)
         contentView.addSubview(deviceCollectionView)
         deviceCollectionView.snp.makeConstraints { (make) in
             make.top.equalTo(deviceLbl.snp.bottom).offset(14)
@@ -72,7 +72,7 @@ class PPNewFileToast: PPToastViewController {
         }
         
         templateCollectionView = makeCollectionView()
-        templateCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: TemplateCollectionViewCellID)
+        templateCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: PPNewFileToast.TemplateCellID)
         contentView.addSubview(templateCollectionView)
         templateCollectionView.snp.makeConstraints { (make) in
             make.top.equalTo(templateLbl.snp.bottom).offset(14)
@@ -110,10 +110,10 @@ class PPNewFileToast: PPToastViewController {
 }
 
 // MARK: - UICollectionViewDelegate & UICollectionViewDataSource
-fileprivate let DeviceCollectionViewCellID   = "DeviceCollectionViewCell"
-fileprivate let TemplateCollectionViewCellID = "TemplateCollectionViewCell"
-
 extension PPNewFileToast: UICollectionViewDelegate, UICollectionViewDataSource {
+    static let DeviceCellID = "DeviceCollectionViewCell"
+    static let TemplateCellID = "TemplateCollectionViewCell"
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == deviceCollectionView {
             return 6
@@ -125,11 +125,11 @@ extension PPNewFileToast: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == deviceCollectionView {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DeviceCollectionViewCellID, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PPNewFileToast.DeviceCellID, for: indexPath)
             cell.backgroundColor = .darkGray
             return cell
         } else if collectionView == templateCollectionView {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TemplateCollectionViewCellID, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PPNewFileToast.TemplateCellID, for: indexPath)
             cell.backgroundColor = .darkGray
             return cell
         }
