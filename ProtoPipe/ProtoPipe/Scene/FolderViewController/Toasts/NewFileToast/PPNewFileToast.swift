@@ -19,6 +19,12 @@ class PPNewFileToast: PPToastViewController {
     var cancelBtn: UIButton!
     var confirmBtn: UIButton!
     
+    typealias NewFileToastModel = (title: String, device: PPDevice, template: PPTemplate)
+    
+    let model: NewFileToastModel = ("", .Custom, .Blank)
+    
+    weak var delegate: PPToastViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -82,6 +88,7 @@ class PPNewFileToast: PPToastViewController {
         
         cancelBtn = PPRoundedButton(type: .Cancel)
         contentView.addSubview(cancelBtn)
+        cancelBtn.addTarget(self, action: #selector(cancel(sender:)), for: .touchUpInside)
         cancelBtn.snp.makeConstraints { (make) in
             make.top.equalTo(templateCollectionView.snp.bottom).offset(35)
             make.centerX.equalToSuperview().offset(-100)
@@ -92,6 +99,7 @@ class PPNewFileToast: PPToastViewController {
 
         confirmBtn = PPRoundedButton(type: .Confirm)
         contentView.addSubview(confirmBtn)
+        confirmBtn.addTarget(self, action: #selector(confirm(sender:)), for: .touchUpInside)
         confirmBtn.snp.makeConstraints { (make) in
             make.top.equalTo(templateCollectionView.snp.bottom).offset(35)
             make.centerX.equalToSuperview().offset(100)
@@ -103,8 +111,15 @@ class PPNewFileToast: PPToastViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         print(view.frame)
+    }
+    
+    @objc func cancel(sender: UIButton) {
+        delegate?.toastViewControllerDidClickCancelBtn(self)
+    }
+    
+    @objc func confirm(sender: UIButton) {
+        delegate?.newFileToastDidClickConfirmBtn?(self)
     }
     
 }

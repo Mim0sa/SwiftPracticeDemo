@@ -31,12 +31,12 @@ class PPRoundedButton: UIButton {
         switch type {
         case .Cancel:
             setTitleColor(.subtitleGray, for: .normal)
-//            setTitleColor(.gray, for: .highlighted)
+            //setTitleColor(.gray, for: .highlighted)
             backgroundColor = .contentGray
             setTitle("Cancel", for: .normal)
         case .Confirm:
             setTitleColor(.titleWhite, for: .normal)
-//            setTitleColor(.darkGray, for: .highlighted)
+            //setTitleColor(.darkGray, for: .highlighted)
             backgroundColor = .activeGreen
             setTitle("Confirm", for: .normal)
         }

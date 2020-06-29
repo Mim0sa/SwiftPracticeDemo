@@ -164,7 +164,6 @@ extension PPFolderNavigationBar {
 // MARK: - Constant
 fileprivate extension PPFolderNavigationBar {
     static let barItemStyles: [BarItemType] = [.New, .Select, .Cancel, .Share, .Delete]
-    
 }
 
 

@@ -74,8 +74,9 @@ extension PPFolderViewController: PPFolderNavigationBarDelegate {
     }
     
     func folderNavigationBarDidClickNewButton(_ folderNavigationBar: PPFolderNavigationBar) {
-        let vc = PPNewFileToast()
-        present(vc, animated: true, completion: nil)
+        let newFileToast = PPNewFileToast()
+        newFileToast.delegate = self
+        present(newFileToast, animated: true, completion: nil)
     }
 }
 
@@ -103,6 +104,17 @@ extension PPFolderViewController: UICollectionViewDelegate, UICollectionViewData
 extension PPFolderViewController: PPFolderCollectionViewCellDelegate {
     func folderCollectionViewCellDidUpdateChosenStatus(_ cell: PPFolderCollectionViewCell) {
         model.updateChosenStatus(at: collectionView.indexPath(for: cell)!.row)
+    }
+}
+
+// MARK: - PPToastViewControllerDelegate
+extension PPFolderViewController: PPToastViewControllerDelegate {
+    func toastViewControllerDidClickCancelBtn(_ toastViewController: PPToastViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func newFileToastDidClickConfirmBtn(_ toastViewController: PPToastViewController) {
+        dismiss(animated: true, completion: nil)
     }
 }
 
