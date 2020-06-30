@@ -8,6 +8,15 @@
 
 import UIKit
 
+enum PPDeviceType: String {
+    case Custom    = "Custom"
+    case iPhone8   = "iPhone 8"
+    case iPhone8p  = "iPhone 8p"
+    case iPhoneX   = "iPhone X"
+    case iPhone11p = "iPhone 11p"
+    case iPhoneSE  = "iPhone SE"
+}
+
 class PPDevice {
     
     let type: PPDeviceType
@@ -16,23 +25,19 @@ class PPDevice {
     let screenSize: CGSize
     let snapshotID: String
     
-    var iconNameStr: String!
-    
     init(type: PPDeviceType) {
         self.type = type
         
         name = type.rawValue
         screenSize = DeviceSizeDic[type] ?? CGSize()
         snapshotID = type.rawValue
-        
-        iconNameStr = getIconNameStr()
     }
     
 }
 
 // MARK: - Helper
 extension PPDevice {
-    private func getIconNameStr() -> String {
+    func getIconNameStr() -> String {
         switch type {
         case .Custom:
             return "Device_Icon_Custom"
@@ -44,15 +49,7 @@ extension PPDevice {
     }
 }
 
-enum PPDeviceType: String {
-    case Custom    = "Custom"
-    case iPhone8   = "iPhone 8"
-    case iPhone8p  = "iPhone 8p"
-    case iPhoneX   = "iPhone X"
-    case iPhone11p = "iPhone 11p"
-    case iPhoneSE  = "iPhone SE"
-}
-
+// MARK: - Static Model
 fileprivate let DeviceSizeDic: [PPDeviceType:CGSize] = [.Custom    : CGSize(width: 360, height: 640),
                                                         .iPhone8   : CGSize(width: 375, height: 667),
                                                         .iPhone8p  : CGSize(width: 414, height: 736),

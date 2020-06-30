@@ -8,14 +8,32 @@
 
 import UIKit
 
+enum PPTemplateType: String {
+    case Map    = "Map"
+    case Tab    = "Tab"
+    case List   = "List"
+    case Blank  = "Blank"
+    case Camera = "Camera"
+    case Secret = "Secret"
+}
+
 class PPTemplate {
     
+    let type: PPTemplateType
     
+    let name: String
+    
+    init(type: PPTemplateType) {
+        self.type = type
+        
+        name = type.rawValue
+    }
     
 }
 
-enum PPTemplateType {
-    case Blank
-    case Map
-    case Tabbed
+// MARK: - Helper
+extension PPTemplate {
+    func getIconNameStr() -> String {
+        return "Template_Icon_\(type.rawValue)"
+    }
 }

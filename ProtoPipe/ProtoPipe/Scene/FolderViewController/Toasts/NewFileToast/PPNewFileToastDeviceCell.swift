@@ -58,7 +58,7 @@ class PPNewFileToastDeviceCell: UICollectionViewCell {
     func updateStatus() {
         guard let device = device else { return }
         
-        icon.image = UIImage(named: device.device.iconNameStr)
+        icon.image = UIImage(named: device.device.getIconNameStr())
         title.text = device.device.name
         detail.text = "\(Int(device.device.screenSize.width)) x \(Int(device.device.screenSize.height))"
         backgroundColor = device.isSelected ? .activeGreen : .clear
