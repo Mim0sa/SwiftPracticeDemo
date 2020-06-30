@@ -29,7 +29,7 @@ class PPNewFileToast: PPToastViewController {
         super.viewDidLoad()
         
         toastNavigationBar.title = "New File"
-        contentView.contentSize = CGSize(width: 540, height: 0)
+        contentView.contentSize = preferredContentSize
         
         fileNameLbl = makeTitleLabel(title: "File Name")
         contentView .addSubview(fileNameLbl)
@@ -67,7 +67,7 @@ class PPNewFileToast: PPToastViewController {
         deviceCollectionView.snp.makeConstraints { (make) in
             make.top.equalTo(deviceLbl.snp.bottom).offset(14)
             make.left.right.equalTo(view)
-            make.height.equalTo(100)
+            make.height.equalTo(120)
         }
 
         templateLbl = makeTitleLabel(title: "Template")
@@ -83,7 +83,7 @@ class PPNewFileToast: PPToastViewController {
         templateCollectionView.snp.makeConstraints { (make) in
             make.top.equalTo(templateLbl.snp.bottom).offset(14)
             make.left.right.equalTo(view)
-            make.height.equalTo(100)
+            make.height.equalTo(120)
         }
         
         cancelBtn = PPRoundedButton(type: .Cancel)
@@ -171,7 +171,7 @@ extension PPNewFileToast {
     
     private func makeCollectionView() -> UICollectionView {
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: 100, height: 100)
+        flowLayout.itemSize = CGSize(width: 90, height: 120)
         flowLayout.scrollDirection = .horizontal
         
         let collectionView = UICollectionView(frame: CGRect(), collectionViewLayout: flowLayout)

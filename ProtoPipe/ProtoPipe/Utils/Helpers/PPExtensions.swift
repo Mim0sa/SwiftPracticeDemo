@@ -19,6 +19,6 @@ extension UIColor {
     static let subtitleWhite    = UIColor(withHex: 0xdddddd)
     static let titleWhite       = UIColor(withHex: 0xeeeeee)
     
-    static let activeGreen      = UIColor(withHex: 0x50BAA1)
+    static let activeGreen      = UIColor(withHex: 0x33AA91) //50BAA1
     static let activeDarkGreen  = UIColor(withHex: 0x35645d)
 }

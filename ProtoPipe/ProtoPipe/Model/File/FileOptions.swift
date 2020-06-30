@@ -8,12 +8,6 @@
 
 import Foundation
 
-enum PPDevice {
-    case Custom
-    case iPhone8
-    case iPhoneX
-}
-
 enum PPTemplate {
     case Blank
     case Map

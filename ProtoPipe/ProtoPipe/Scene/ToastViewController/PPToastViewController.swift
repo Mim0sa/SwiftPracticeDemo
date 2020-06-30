@@ -18,6 +18,7 @@ class PPToastViewController: PPBaseViewController {
         
         modalPresentationStyle = .formSheet
         modalTransitionStyle = .coverVertical
+        preferredContentSize = CGSize(width: 550, height: 660)
     }
     
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
