@@ -16,14 +16,32 @@ class PPDevice {
     let screenSize: CGSize
     let snapshotID: String
     
+    var iconNameStr: String!
+    
     init(type: PPDeviceType) {
         self.type = type
         
         name = type.rawValue
         screenSize = DeviceSizeDic[type] ?? CGSize()
         snapshotID = type.rawValue
+        
+        iconNameStr = getIconNameStr()
     }
     
+}
+
+// MARK: - Helper
+extension PPDevice {
+    private func getIconNameStr() -> String {
+        switch type {
+        case .Custom:
+            return "Device_Icon_Custom"
+        case .iPhone8, .iPhone8p, .iPhoneSE:
+            return "Device_Icon_iPhone 8"
+        case .iPhoneX, .iPhone11p:
+            return "Device_Icon_iPhone X"
+        }
+    }
 }
 
 enum PPDeviceType: String {

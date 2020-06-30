@@ -26,9 +26,10 @@
 		1B9F0146249B831D00D7473D /* PPNewFileToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9F0145249B831D00D7473D /* PPNewFileToast.swift */; };
 		1BF7228224A7658400F301D4 /* PPRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF7228124A7658400F301D4 /* PPRoundedButton.swift */; };
 		38241CB9BD9C7728BAC23700 /* Pods_ProtoPipe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5D18D6BD1039EFFC580209 /* Pods_ProtoPipe.framework */; };
-		839DB56524A9C76A002F0141 /* FileOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DB56424A9C76A002F0141 /* FileOptions.swift */; };
 		839DB56724AAD25F002F0141 /* PPNewFileToastDeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DB56624AAD25F002F0141 /* PPNewFileToastDeviceCell.swift */; };
 		839DB56924AAE93F002F0141 /* PPDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DB56824AAE93F002F0141 /* PPDevice.swift */; };
+		839DB56B24AB03AC002F0141 /* PPTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DB56A24AB03AC002F0141 /* PPTemplate.swift */; };
+		839DB56D24AB0C3E002F0141 /* Playground.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839DB56C24AB0C3E002F0141 /* Playground.storyboard */; };
 		83CDE7A324973EB000BB72FB /* PPFolderCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CDE7A224973EB000BB72FB /* PPFolderCollectionViewModel.swift */; };
 		83CDE7A82498934600BB72FB /* PPToastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CDE7A72498934600BB72FB /* PPToastViewController.swift */; };
 		83CDE7AA2498ACB100BB72FB /* PPExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CDE7A92498ACB100BB72FB /* PPExtensions.swift */; };
@@ -59,9 +60,10 @@
 		1BF7228124A7658400F301D4 /* PPRoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPRoundedButton.swift; sourceTree = "<group>"; };
 		334305D6CEA0E208BF38B60B /* Pods-ProtoPipe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProtoPipe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProtoPipe/Pods-ProtoPipe.debug.xcconfig"; sourceTree = "<group>"; };
 		4567E6E41458F82F47AB6789 /* Pods-ProtoPipe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProtoPipe.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProtoPipe/Pods-ProtoPipe.release.xcconfig"; sourceTree = "<group>"; };
-		839DB56424A9C76A002F0141 /* FileOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileOptions.swift; sourceTree = "<group>"; };
 		839DB56624AAD25F002F0141 /* PPNewFileToastDeviceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPNewFileToastDeviceCell.swift; sourceTree = "<group>"; };
 		839DB56824AAE93F002F0141 /* PPDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPDevice.swift; sourceTree = "<group>"; };
+		839DB56A24AB03AC002F0141 /* PPTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPTemplate.swift; sourceTree = "<group>"; };
+		839DB56C24AB0C3E002F0141 /* Playground.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Playground.storyboard; sourceTree = "<group>"; };
 		83CDE7A224973EB000BB72FB /* PPFolderCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPFolderCollectionViewModel.swift; sourceTree = "<group>"; };
 		83CDE7A72498934600BB72FB /* PPToastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPToastViewController.swift; sourceTree = "<group>"; };
 		83CDE7A92498ACB100BB72FB /* PPExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPExtensions.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				1B3C39E32462CCDE0082AF94 /* Info.plist */,
 				1B3C39DE2462CCDE0082AF94 /* Assets.xcassets */,
+				839DB56C24AB0C3E002F0141 /* Playground.storyboard */,
 				8345DE8624A884A50035EE71 /* Model */,
 				1B9F0140249372C700D7473D /* Scene */,
 				1BF7227F24A7635000F301D4 /* Utils */,
@@ -216,8 +219,8 @@
 		8345DE8724A89BDE0035EE71 /* File */ = {
 			isa = PBXGroup;
 			children = (
-				839DB56424A9C76A002F0141 /* FileOptions.swift */,
 				839DB56824AAE93F002F0141 /* PPDevice.swift */,
+				839DB56A24AB03AC002F0141 /* PPTemplate.swift */,
 			);
 			path = File;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B3C39E22462CCDE0082AF94 /* LaunchScreen.storyboard in Resources */,
+				839DB56D24AB0C3E002F0141 /* Playground.storyboard in Resources */,
 				1B3C39DF2462CCDE0082AF94 /* Assets.xcassets in Resources */,
 				1B3C39DD2462CCD60082AF94 /* Main.storyboard in Resources */,
 			);
@@ -389,10 +393,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				839DB56B24AB03AC002F0141 /* PPTemplate.swift in Sources */,
 				1B3C39D62462CCD60082AF94 /* AppDelegate.swift in Sources */,
 				1B9F0146249B831D00D7473D /* PPNewFileToast.swift in Sources */,
 				839DB56724AAD25F002F0141 /* PPNewFileToastDeviceCell.swift in Sources */,
-				839DB56524A9C76A002F0141 /* FileOptions.swift in Sources */,
 				1B9F013C2493714500D7473D /* PPDotButton.swift in Sources */,
 				1BF7228224A7658400F301D4 /* PPRoundedButton.swift in Sources */,
 				83CDE7AA2498ACB100BB72FB /* PPExtensions.swift in Sources */,

@@ -8,6 +8,11 @@
 
 import UIKit
 
+typealias NewFileToastModel = (
+    title: String,
+    devices: [(device: PPDevice, isSelected: Bool)],
+    templates: [(template: PPTemplate, isSelected: Bool)])
+
 class PPNewFileToast: PPToastViewController {
     
     var fileNameLbl: UILabel!
@@ -19,15 +24,21 @@ class PPNewFileToast: PPToastViewController {
     var cancelBtn: UIButton!
     var confirmBtn: UIButton!
     
-    typealias NewFileToastModel = (title: String, device: PPDevice, template: PPTemplate)
-    
-    let model: NewFileToastModel = ("", .Custom, .Blank)
+    var model: NewFileToastModel = ("", [], [])
     
     weak var delegate: PPToastViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Prepare Model
+        for type in PPNewFileToast.DeviceTypeList {
+            let device = PPDevice(type: type)
+            model.devices.append((device, false))
+        }
+        model.devices[0].isSelected = true
+        
+        // Prepare UI
         toastNavigationBar.title = "New File"
         contentView.contentSize = preferredContentSize
         
@@ -62,7 +73,7 @@ class PPNewFileToast: PPToastViewController {
         }
         
         deviceCollectionView = makeCollectionView()
-        deviceCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: PPNewFileToast.DeviceCellID)
+        deviceCollectionView.register(PPNewFileToastDeviceCell.self, forCellWithReuseIdentifier: PPNewFileToast.DeviceCellID)
         contentView.addSubview(deviceCollectionView)
         deviceCollectionView.snp.makeConstraints { (make) in
             make.top.equalTo(deviceLbl.snp.bottom).offset(14)
@@ -131,7 +142,7 @@ extension PPNewFileToast: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == deviceCollectionView {
-            return 6
+            return model.devices.count
         } else if collectionView == templateCollectionView {
             return 7
         }
@@ -140,8 +151,8 @@ extension PPNewFileToast: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == deviceCollectionView {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PPNewFileToast.DeviceCellID, for: indexPath)
-            cell.backgroundColor = .darkGray
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PPNewFileToast.DeviceCellID, for: indexPath) as! PPNewFileToastDeviceCell
+            cell.device = model.devices[indexPath.row]
             return cell
         } else if collectionView == templateCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PPNewFileToast.TemplateCellID, for: indexPath)
@@ -149,6 +160,16 @@ extension PPNewFileToast: UICollectionViewDelegate, UICollectionViewDataSource {
             return cell
         }
         return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == deviceCollectionView {
+            for i in 0...model.devices.count - 1 { model.devices[i].isSelected = false }
+            model.devices[indexPath.row].isSelected.toggle()
+            collectionView.reloadData()
+        } else if collectionView == templateCollectionView {
+            
+        }
     }
 }
 
@@ -191,4 +212,9 @@ extension PPNewFileToast: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return textField.resignFirstResponder()
     }
+}
+
+// MARK: - Static Model
+extension PPNewFileToast {
+    static let DeviceTypeList: [PPDeviceType] = [.iPhoneX, .iPhone8, .iPhoneSE, .iPhone8p, .iPhone11p, .Custom]
 }

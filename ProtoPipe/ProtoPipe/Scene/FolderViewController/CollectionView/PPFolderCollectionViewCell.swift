@@ -48,12 +48,6 @@ class PPFolderCollectionViewCell: UICollectionViewCell {
         }
     }
     
-//    var isChosen: Bool = false {
-//        willSet {
-//            updateChosenStatus(with: newValue)
-//        }
-//    }
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -121,10 +115,6 @@ class PPFolderCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         dotButton.isChosen = false
     }
-    
-//    func updateChosenStatus(with isChosen: Bool) {
-//        dotButton.isChosen = isChosen
-//    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
