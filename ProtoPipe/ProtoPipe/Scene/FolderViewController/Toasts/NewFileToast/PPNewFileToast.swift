@@ -192,7 +192,7 @@ extension PPNewFileToast {
     
     private func makeCollectionView() -> UICollectionView {
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: 90, height: 120)
+        flowLayout.itemSize = CGSize(width: 100, height: 120)
         flowLayout.scrollDirection = .horizontal
         
         let collectionView = UICollectionView(frame: CGRect(), collectionViewLayout: flowLayout)

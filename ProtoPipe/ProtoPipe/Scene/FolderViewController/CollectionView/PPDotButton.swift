@@ -69,10 +69,11 @@ class PPDotButton: UIControl {
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         // MARK: If size lower than 44
         if !(bounds.width < 44 && bounds.height < 44) {
-            return self
+            return super.hitTest(point, with: event)
         }
         
-        let newRect = bounds.insetBy(dx: -8, dy: -8)
+        let newRect = bounds.insetBy(dx: bounds.width > 44 ? 0 : bounds.width - 44,
+                                     dy: bounds.height > 44 ? 0 : bounds.height - 44)
         if newRect.contains(point) {
             return self
         } else {
