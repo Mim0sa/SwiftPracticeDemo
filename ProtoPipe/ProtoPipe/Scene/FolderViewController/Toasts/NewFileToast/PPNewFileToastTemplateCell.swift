@@ -25,7 +25,7 @@ class PPNewFileToastTemplateCell: UICollectionViewCell {
         layer.cornerRadius = 12
         
         icon = UIImageView()
-        icon.backgroundColor = .subtitleWhite
+        icon.backgroundColor = .subtitleGray
         icon.layer.cornerRadius = 8
         addSubview(icon)
         icon.snp.makeConstraints { (make) in

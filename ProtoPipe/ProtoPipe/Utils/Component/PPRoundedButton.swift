@@ -26,7 +26,7 @@ class PPRoundedButton: UIButton {
         super.init(frame: CGRect())
         
         layer.cornerRadius = 10
-        titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         
         switch type {
         case .Cancel:
