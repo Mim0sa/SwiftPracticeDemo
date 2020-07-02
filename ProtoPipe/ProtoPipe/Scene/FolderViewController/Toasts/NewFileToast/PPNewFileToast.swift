@@ -13,7 +13,17 @@ typealias NewFileToastModel = (
     devices: [(device: PPDevice, isSelected: Bool)],
     templates: [(template: PPTemplate, isSelected: Bool)])
 
-typealias NewFileModel = (title: String, device: PPDevice, template: PPTemplate)
+class NewFileModel: NSObject {
+    let title: String
+    let device: PPDevice
+    let template: PPTemplate
+    
+    init(title: String, device: PPDevice, template: PPTemplate) {
+        self.title = title
+        self.device = device
+        self.template = template
+    }
+}
 
 class PPNewFileToast: PPToastViewController {
     
@@ -138,7 +148,7 @@ class PPNewFileToast: PPToastViewController {
     }
     
     @objc func confirm(sender: UIButton) {
-        delegate?.newFileToastDidClickConfirmBtn?(self)
+        delegate?.newFileToastDidClickConfirmBtn?(self, newFileModel: getFilteredModel())
     }
     
 }
@@ -214,6 +224,23 @@ extension PPNewFileToast {
         collectionView.dataSource = self
         
         return collectionView
+    }
+    
+    private func getFilteredModel() -> NewFileModel {
+        var newFileModel = (fileNameTextField.text, PPDevice(type: .Custom), PPTemplate(type: .Blank))
+        for i in 0...model.devices.count - 1 {
+            if model.devices[i].isSelected {
+                newFileModel.1 = model.devices[i].device; break
+            }
+        }
+        
+        for i in 0...model.templates.count - 1 {
+            if model.templates[i].isSelected {
+                newFileModel.2 = model.templates[i].template; break
+            }
+        }
+        
+        return NewFileModel(title: newFileModel.0 ?? "File", device: newFileModel.1, template: newFileModel.2)
     }
 }
 

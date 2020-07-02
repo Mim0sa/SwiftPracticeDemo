@@ -112,8 +112,9 @@ extension PPFolderViewController: PPToastViewControllerDelegate {
     func toastViewControllerDidClickCancelBtn(_ toastViewController: PPToastViewController) {
         dismiss(animated: true, completion: nil)
     }
-    
-    func newFileToastDidClickConfirmBtn(_ toastViewController: PPToastViewController) {
+
+    func newFileToastDidClickConfirmBtn(_ toastViewController: PPToastViewController, newFileModel: NewFileModel) {
+        print(newFileModel.device.name, newFileModel.template.name, newFileModel.title)
         dismiss(animated: true, completion: nil)
     }
 }
