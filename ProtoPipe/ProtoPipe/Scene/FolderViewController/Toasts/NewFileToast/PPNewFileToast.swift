@@ -13,6 +13,8 @@ typealias NewFileToastModel = (
     devices: [(device: PPDevice, isSelected: Bool)],
     templates: [(template: PPTemplate, isSelected: Bool)])
 
+typealias NewFileModel = (title: String, device: PPDevice, template: PPTemplate)
+
 class PPNewFileToast: PPToastViewController {
     
     var fileNameLbl: UILabel!
