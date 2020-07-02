@@ -12,4 +12,6 @@ import UIKit
     func toastViewControllerDidClickCancelBtn(_ toastViewController: PPToastViewController)
     
     @objc optional func newFileToastDidClickConfirmBtn(_ toastViewController: PPToastViewController, newFileModel: NewFileModel)
+    
+    
 }

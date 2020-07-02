@@ -8,12 +8,12 @@
 
 import UIKit
 
-typealias NewFileToastModel = (
+typealias NewFileToastModel = ( // For Internal Transfer
     title: String,
     devices: [(device: PPDevice, isSelected: Bool)],
     templates: [(template: PPTemplate, isSelected: Bool)])
 
-class NewFileModel: NSObject {
+class NewFileModel: NSObject { // For Export
     let title: String
     let device: PPDevice
     let template: PPTemplate
@@ -142,7 +142,11 @@ class PPNewFileToast: PPToastViewController {
         super.viewDidAppear(animated)
         print(view.frame)
     }
-    
+
+}
+
+// MARK: - Target Actions
+extension PPNewFileToast {
     @objc func cancel(sender: UIButton) {
         delegate?.toastViewControllerDidClickCancelBtn(self)
     }
@@ -150,7 +154,6 @@ class PPNewFileToast: PPToastViewController {
     @objc func confirm(sender: UIButton) {
         delegate?.newFileToastDidClickConfirmBtn?(self, newFileModel: getFilteredModel())
     }
-    
 }
 
 // MARK: - UICollectionViewDelegate & UICollectionViewDataSource
