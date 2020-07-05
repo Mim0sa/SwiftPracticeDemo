@@ -15,12 +15,16 @@ class PPFile {
     var device: PPDevice
     let template: PPTemplate
     
-    let createTime = Date().timeIntervalSince1970
+    let createTimeStamp: TimeInterval
+    var lastChangeTimeStamp: TimeInterval
     
     init(name: String = "", device: PPDevice, template: PPTemplate) {
         self.name = name
         self.device = device
         self.template = template
+        
+        createTimeStamp = Date().timeIntervalSince1970
+        lastChangeTimeStamp = createTimeStamp
     }
 }
 

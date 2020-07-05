@@ -116,7 +116,7 @@ extension PPFolderViewController: PPToastViewControllerDelegate {
     func newFileToastDidClickConfirmBtn(_ toastViewController: PPToastViewController, newFileModel: NewFileModel) {
         dismiss(animated: true, completion: nil)
         let file = PPFile(name: newFileModel.title, device: newFileModel.device, template: newFileModel.template)
-        
+        print(file.getDateStr(file.lastChangeTimeStamp))
         print(file.name, file.device, file.template)
     }
 }
