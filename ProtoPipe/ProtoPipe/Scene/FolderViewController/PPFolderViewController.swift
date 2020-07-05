@@ -106,7 +106,7 @@ extension PPFolderViewController: PPFolderCollectionViewCellDelegate {
         model.updateChosenStatus(at: collectionView.indexPath(for: cell)!.row)
     }
 }
-
+ 
 // MARK: - PPToastViewControllerDelegate
 extension PPFolderViewController: PPToastViewControllerDelegate {
     func toastViewControllerDidClickCancelBtn(_ toastViewController: PPToastViewController) {
@@ -114,8 +114,10 @@ extension PPFolderViewController: PPToastViewControllerDelegate {
     }
 
     func newFileToastDidClickConfirmBtn(_ toastViewController: PPToastViewController, newFileModel: NewFileModel) {
-        print(newFileModel.device.name, newFileModel.template.name, newFileModel.title)
         dismiss(animated: true, completion: nil)
+        let file = PPFile(name: newFileModel.title, device: newFileModel.device, template: newFileModel.template)
+        
+        print(file.name, file.device, file.template)
     }
 }
 

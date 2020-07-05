@@ -25,6 +25,7 @@
 		1B9F0143249B829200D7473D /* PPToastViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9F0142249B829200D7473D /* PPToastViewControllerDelegate.swift */; };
 		1B9F0146249B831D00D7473D /* PPNewFileToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9F0145249B831D00D7473D /* PPNewFileToast.swift */; };
 		1BF7228224A7658400F301D4 /* PPRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF7228124A7658400F301D4 /* PPRoundedButton.swift */; };
+		1BF7228424B1821500F301D4 /* PPFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF7228324B1821500F301D4 /* PPFile.swift */; };
 		38241CB9BD9C7728BAC23700 /* Pods_ProtoPipe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5D18D6BD1039EFFC580209 /* Pods_ProtoPipe.framework */; };
 		839DB56724AAD25F002F0141 /* PPNewFileToastDeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DB56624AAD25F002F0141 /* PPNewFileToastDeviceCell.swift */; };
 		839DB56924AAE93F002F0141 /* PPDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DB56824AAE93F002F0141 /* PPDevice.swift */; };
@@ -59,6 +60,7 @@
 		1B9F0142249B829200D7473D /* PPToastViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPToastViewControllerDelegate.swift; sourceTree = "<group>"; };
 		1B9F0145249B831D00D7473D /* PPNewFileToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPNewFileToast.swift; sourceTree = "<group>"; };
 		1BF7228124A7658400F301D4 /* PPRoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPRoundedButton.swift; sourceTree = "<group>"; };
+		1BF7228324B1821500F301D4 /* PPFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPFile.swift; sourceTree = "<group>"; };
 		334305D6CEA0E208BF38B60B /* Pods-ProtoPipe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProtoPipe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProtoPipe/Pods-ProtoPipe.debug.xcconfig"; sourceTree = "<group>"; };
 		4567E6E41458F82F47AB6789 /* Pods-ProtoPipe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProtoPipe.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProtoPipe/Pods-ProtoPipe.release.xcconfig"; sourceTree = "<group>"; };
 		839DB56624AAD25F002F0141 /* PPNewFileToastDeviceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPNewFileToastDeviceCell.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 		8345DE8724A89BDE0035EE71 /* File */ = {
 			isa = PBXGroup;
 			children = (
+				1BF7228324B1821500F301D4 /* PPFile.swift */,
 				839DB56824AAE93F002F0141 /* PPDevice.swift */,
 				839DB56A24AB03AC002F0141 /* PPTemplate.swift */,
 			);
@@ -419,6 +422,7 @@
 				1B9E6728247A29DC00D649B3 /* PPFolderCollectionViewFlowLayout.swift in Sources */,
 				83CDE7A324973EB000BB72FB /* PPFolderCollectionViewModel.swift in Sources */,
 				1B9E672C247BD41F00D649B3 /* PPFolderCollectionViewCell.swift in Sources */,
+				1BF7228424B1821500F301D4 /* PPFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
