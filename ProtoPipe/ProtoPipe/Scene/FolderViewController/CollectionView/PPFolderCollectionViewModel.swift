@@ -16,12 +16,13 @@ struct PPFolderCollectionViewModel {
         get { return modelData.count }
     }
     
-    init() {
-        for _ in 0...15 { addOneCellData() }
-    }
-    
-    mutating func addOneCellData() {
-        modelData.append(PPFolderCollectionViewCellModel(title: "ProtoPipe 第一稿", detail: "最后修改于 2019/10/10", coverImage: #imageLiteral(resourceName: "pic"), isEditing: false))
+    // New File
+    mutating func newFile(_ file: PPFile) {
+        modelData.insert(PPFolderCollectionViewCellModel(title: file.name,
+                                                         detail: "最后修改于 \(file.getDateStr(file.lastChangeTimeStamp))",
+                                                         coverImage: #imageLiteral(resourceName: "pic"),
+                                                         isEditing: false),
+                         at: 0)
     }
     
     mutating func updateEditStatus(with isEditing: Bool) {

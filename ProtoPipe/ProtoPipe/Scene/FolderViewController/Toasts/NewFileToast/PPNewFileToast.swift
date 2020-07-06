@@ -137,11 +137,6 @@ class PPNewFileToast: PPToastViewController {
             make.bottom.equalTo(-35)
         }
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        print(view.frame)
-    }
 
 }
 
@@ -152,7 +147,11 @@ extension PPNewFileToast {
     }
     
     @objc func confirm(sender: UIButton) {
-        delegate?.newFileToastDidClickConfirmBtn?(self, newFileModel: getFilteredModel())
+        if fileNameTextField.text?.isEmpty == true {
+            print("empty")
+        } else {
+            delegate?.newFileToastDidClickConfirmBtn?(self, newFileModel: getFilteredModel())
+        }
     }
 }
 

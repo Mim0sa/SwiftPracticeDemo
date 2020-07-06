@@ -23,14 +23,14 @@ class PPDevice {
     
     let name: String
     let screenSize: CGSize
-    let snapshotID: String
+    let bezel: String
     
     init(type: PPDeviceType) {
         self.type = type
         
         name = type.rawValue
         screenSize = DeviceSizeDic[type] ?? CGSize()
-        snapshotID = type.rawValue
+        bezel = type.rawValue
     }
     
 }
