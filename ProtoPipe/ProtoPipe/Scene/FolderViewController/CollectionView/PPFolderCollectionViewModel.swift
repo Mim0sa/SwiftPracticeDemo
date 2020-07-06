@@ -26,6 +26,8 @@ struct PPFolderCollectionViewModel {
     }
     
     mutating func updateEditStatus(with isEditing: Bool) {
+        guard modelData.count != 0 else { return }
+        
         for i in 0...modelData.count - 1 {
             if isEditing {
                 modelData[i].isEditing = true
