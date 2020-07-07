@@ -14,11 +14,7 @@ class PPFolderViewController: PPBaseViewController, PPCanvasViewControllerDelega
     let folderNavigationBar = PPFolderNavigationBar()
     var collectionView: UICollectionView!
     
-    var model = PPFolderCollectionViewModel() {
-        didSet {
-            collectionView.reloadData()
-        }
-    }
+    var model = PPFolderCollectionViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,10 +63,12 @@ class PPFolderViewController: PPBaseViewController, PPCanvasViewControllerDelega
 extension PPFolderViewController: PPFolderNavigationBarDelegate {
     func folderNavigationBarDidClickSelectButton(_ folderNavigationBar: PPFolderNavigationBar) {
         model.updateEditStatus(with: folderNavigationBar.isSelected)
+        collectionView.reloadData()
     }
     
     func folderNavigationBarDidClickCancelButton(_ folderNavigationBar: PPFolderNavigationBar) {
         model.updateEditStatus(with: folderNavigationBar.isSelected)
+        collectionView.reloadData()
     }
     
     func folderNavigationBarDidClickNewButton(_ folderNavigationBar: PPFolderNavigationBar) {
@@ -104,6 +102,7 @@ extension PPFolderViewController: UICollectionViewDelegate, UICollectionViewData
 extension PPFolderViewController: PPFolderCollectionViewCellDelegate {
     func folderCollectionViewCellDidUpdateChosenStatus(_ cell: PPFolderCollectionViewCell) {
         model.updateChosenStatus(at: collectionView.indexPath(for: cell)!.row)
+        collectionView.reloadData()
     }
 }
  
@@ -117,10 +116,8 @@ extension PPFolderViewController: PPToastViewControllerDelegate {
         dismiss(animated: true, completion: nil)
         let file = PPFile(name: newFileModel.title, device: newFileModel.device, template: newFileModel.template)
 
-        collectionView.performBatchUpdates({
-            model.newFile(file)
-            collectionView.insertItems(at: [IndexPath(item: 0, section: 0)])
-        }, completion: nil)
+        model.newFile(file)
+        collectionView.insertItems(at: [IndexPath(item: 0, section: 0)])
     }
 }
 
