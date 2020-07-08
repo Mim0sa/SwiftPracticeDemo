@@ -49,14 +49,6 @@ class PPFolderViewController: PPBaseViewController, PPCanvasViewControllerDelega
         flowLayout.invalidateLayout()
     }
 
-    @objc func buttonClicked(sender: UIButton) {
-        let vc = PPCanvasViewController()
-        vc.modalPresentationStyle = .fullScreen
-        vc.transitioningDelegate = self
-        vc.delegate = self
-        present(vc, animated: true, completion: nil)
-    }
-
 }
 
 // MARK: - PPFolderNavigationBarDelegate
@@ -94,7 +86,11 @@ extension PPFolderViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let vc = PPCanvasViewController()
+        vc.modalPresentationStyle = .fullScreen
+        //vc.transitioningDelegate = self
+        vc.delegate = self
+        present(vc, animated: true, completion: nil)
     }
 }
 
@@ -114,9 +110,8 @@ extension PPFolderViewController: PPToastViewControllerDelegate {
 
     func newFileToastDidClickConfirmBtn(_ toastViewController: PPToastViewController, newFileModel: NewFileModel) {
         dismiss(animated: true, completion: nil)
-        let file = PPFile(name: newFileModel.title, device: newFileModel.device, template: newFileModel.template)
-
-        model.newFile(file)
+        
+        model.newFile(PPFile(name: newFileModel.title, device: newFileModel.device, template: newFileModel.template))
         collectionView.insertItems(at: [IndexPath(item: 0, section: 0)])
     }
 }
@@ -131,10 +126,10 @@ extension PPFolderViewController {
 // MARK: - UIViewControllerTransitioningDelegate
 extension PPFolderViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return MagicMoveAnimator()
+        return MagicMoveAnimator(fromRect: CGRect(x: 100, y: 100, width: 100, height: 100), toRect: view.frame)
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return MagicMoveAnimator()
+        return MagicMoveAnimator(fromRect: view.frame, toRect: CGRect(x: 100, y: 100, width: 100, height: 100))
     }
 }

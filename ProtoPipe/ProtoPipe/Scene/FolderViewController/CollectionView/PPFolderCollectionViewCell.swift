@@ -80,7 +80,6 @@ class PPFolderCollectionViewCell: UICollectionViewCell {
             make.centerY.equalTo(titleLabel)
         }
         
-        coverView.backgroundColor = .lightGray
         coverView.contentMode = .scaleAspectFit
         addSubview(coverView)
         coverView.snp.makeConstraints { (make) in

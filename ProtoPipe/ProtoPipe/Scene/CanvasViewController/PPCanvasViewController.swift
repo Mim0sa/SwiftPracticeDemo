@@ -27,9 +27,6 @@ class PPCanvasViewController: PPBaseViewController {
         self.view.addSubview(box)
         box.backgroundColor = .lightGray
         box.addTarget(self, action: #selector(buttonClicked(sender:)), for: .touchUpInside)
-    }
-    
-    override func viewWillLayoutSubviews() {
         box.snp.makeConstraints { (make) -> Void in
            make.width.height.equalTo(50)
            make.center.equalTo(self.view)

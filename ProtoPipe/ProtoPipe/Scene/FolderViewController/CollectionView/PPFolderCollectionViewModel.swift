@@ -16,6 +16,10 @@ struct PPFolderCollectionViewModel {
         get { return modelData.count }
     }
     
+    init() {
+        newFile(PPFile(name: "Test", device: PPDevice(type: .Custom), template: PPTemplate(type: .Blank)))
+    }
+    
     // New File
     mutating func newFile(_ file: PPFile) {
         modelData.insert(PPFolderCollectionViewCellModel(title: file.name,
