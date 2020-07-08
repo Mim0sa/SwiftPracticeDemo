@@ -14,29 +14,29 @@ protocol PPCanvasViewControllerDelegate: class {
 }
 
 class PPCanvasViewController: PPBaseViewController {
-
-    lazy var box = UIButton()
+    
+    let canvasNavigationBar = PPCanvasNavigationBar()
     
     weak var delegate: PPCanvasViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .purple
-
-        self.view.addSubview(box)
-        box.backgroundColor = .lightGray
-        box.addTarget(self, action: #selector(buttonClicked(sender:)), for: .touchUpInside)
-        box.snp.makeConstraints { (make) -> Void in
-           make.width.height.equalTo(50)
-           make.center.equalTo(self.view)
-        }
-    }
-
-    @objc func buttonClicked(sender: UIButton) {
-        if let delegate = delegate {
-            delegate.canvasViewControllerDidClickedFolderButton(self)
+        view.backgroundColor = .sceneBlack
+    
+        canvasNavigationBar.delegate = self
+        view.addSubview(canvasNavigationBar)
+        canvasNavigationBar.snp.makeConstraints { (make) in
+            make.left.right.top.equalTo(0)
+            make.height.equalTo(66)
         }
     }
     
+}
+
+// MARK: - PPCanvasNavigationBarDelegate
+extension PPCanvasViewController: PPCanvasNavigationBarDelegate {
+    func canvasNavigationBarDidClickBackBtn(_ canvasNavigationBar: PPCanvasNavigationBar) {
+        
+    }
 }

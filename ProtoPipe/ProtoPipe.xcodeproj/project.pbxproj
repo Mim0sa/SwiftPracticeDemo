@@ -27,6 +27,7 @@
 		1BF7228224A7658400F301D4 /* PPRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF7228124A7658400F301D4 /* PPRoundedButton.swift */; };
 		1BF7228424B1821500F301D4 /* PPFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF7228324B1821500F301D4 /* PPFile.swift */; };
 		38241CB9BD9C7728BAC23700 /* Pods_ProtoPipe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5D18D6BD1039EFFC580209 /* Pods_ProtoPipe.framework */; };
+		839718DE24B5BC3100A37E7E /* PPCanvasNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839718DD24B5BC3100A37E7E /* PPCanvasNavigationBar.swift */; };
 		839DB56724AAD25F002F0141 /* PPNewFileToastDeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DB56624AAD25F002F0141 /* PPNewFileToastDeviceCell.swift */; };
 		839DB56924AAE93F002F0141 /* PPDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DB56824AAE93F002F0141 /* PPDevice.swift */; };
 		839DB56B24AB03AC002F0141 /* PPTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DB56A24AB03AC002F0141 /* PPTemplate.swift */; };
@@ -63,6 +64,7 @@
 		1BF7228324B1821500F301D4 /* PPFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPFile.swift; sourceTree = "<group>"; };
 		334305D6CEA0E208BF38B60B /* Pods-ProtoPipe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProtoPipe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProtoPipe/Pods-ProtoPipe.debug.xcconfig"; sourceTree = "<group>"; };
 		4567E6E41458F82F47AB6789 /* Pods-ProtoPipe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProtoPipe.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProtoPipe/Pods-ProtoPipe.release.xcconfig"; sourceTree = "<group>"; };
+		839718DD24B5BC3100A37E7E /* PPCanvasNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPCanvasNavigationBar.swift; sourceTree = "<group>"; };
 		839DB56624AAD25F002F0141 /* PPNewFileToastDeviceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPNewFileToastDeviceCell.swift; sourceTree = "<group>"; };
 		839DB56824AAE93F002F0141 /* PPDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPDevice.swift; sourceTree = "<group>"; };
 		839DB56A24AB03AC002F0141 /* PPTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPTemplate.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				1B34EAEC24761A42009AC43B /* PPCanvasViewController.swift */,
+				839718DD24B5BC3100A37E7E /* PPCanvasNavigationBar.swift */,
 			);
 			path = CanvasViewController;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 			files = (
 				839DB56B24AB03AC002F0141 /* PPTemplate.swift in Sources */,
 				1B3C39D62462CCD60082AF94 /* AppDelegate.swift in Sources */,
+				839718DE24B5BC3100A37E7E /* PPCanvasNavigationBar.swift in Sources */,
 				1B9F0146249B831D00D7473D /* PPNewFileToast.swift in Sources */,
 				839DB56724AAD25F002F0141 /* PPNewFileToastDeviceCell.swift in Sources */,
 				1B9F013C2493714500D7473D /* PPDotButton.swift in Sources */,
