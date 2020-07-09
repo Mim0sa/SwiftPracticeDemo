@@ -28,7 +28,7 @@ class PPCanvasViewController: PPBaseViewController {
         view.addSubview(canvasNavigationBar)
         canvasNavigationBar.snp.makeConstraints { (make) in
             make.left.right.top.equalTo(0)
-            make.height.equalTo(66)
+            make.height.equalTo(56)
         }
     }
     

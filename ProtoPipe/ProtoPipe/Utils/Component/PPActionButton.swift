@@ -1,5 +1,5 @@
 //
-//  PPRoundedButton.swift
+//  PPActionButton.swift
 //  ProtoPipe
 //
 //  Created by 吉乞悠 on 2020/6/27.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PPRoundedButton: UIButton {
+class PPActionButton: UIButton {
     
     override var isHighlighted: Bool {
         willSet {

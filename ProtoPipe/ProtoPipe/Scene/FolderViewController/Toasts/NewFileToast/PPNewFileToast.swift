@@ -115,7 +115,7 @@ class PPNewFileToast: PPToastViewController {
             make.height.equalTo(120)
         }
         
-        cancelBtn = PPRoundedButton(type: .Cancel)
+        cancelBtn = PPActionButton(type: .Cancel)
         contentView.addSubview(cancelBtn)
         cancelBtn.addTarget(self, action: #selector(cancel(sender:)), for: .touchUpInside)
         cancelBtn.snp.makeConstraints { (make) in
@@ -126,7 +126,7 @@ class PPNewFileToast: PPToastViewController {
             make.bottom.equalTo(-35)
         }
 
-        confirmBtn = PPRoundedButton(type: .Confirm)
+        confirmBtn = PPActionButton(type: .Confirm)
         contentView.addSubview(confirmBtn)
         confirmBtn.addTarget(self, action: #selector(confirm(sender:)), for: .touchUpInside)
         confirmBtn.snp.makeConstraints { (make) in
