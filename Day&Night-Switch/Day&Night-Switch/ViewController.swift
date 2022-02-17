@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         let position = CGPoint(x: view.center.x, y: view.center.y)
-        let dnSwitch = DNSwitch(withSystemSizeOn: position, image: #imageLiteral(resourceName: "switchImg"))
+        let dnSwitch = DNSwitch(withSystemSizeOn: position, image: #imageLiteral(resourceName: "switchImg2"))
         view.addSubview(dnSwitch)
         
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
